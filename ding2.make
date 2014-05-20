@@ -143,6 +143,12 @@ projects[cookiecontrol][subdir] = "contrib"
 projects[cookiecontrol][version] = "1.6"
 projects[cookiecontrol][patch][0] = "http://drupal.org/files/issues/translatable_link_title-2174955-1.patch"
 
+;;; KKB modules
+projects[kkb-ddb-modules][type] = "module"
+projects[kkb-ddb-modules][download][type] = "git"
+projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"
+projects[kkb-ddb-modules][download][branch] = "master"
+
 ;;; KKB migration modules
 projects[migrate][subdir] = "contrib"
 projects[migrate][version] = "2.6-rc1"

@@ -37,4 +37,7 @@ dependencies[] = bpi
 dependencies[] = entitycache
 dependencies[] = ding_varnish
 
+; KKB modules
+dependencies[] = kkb_page
+
 files[] = ding2.profile
