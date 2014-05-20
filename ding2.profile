@@ -143,11 +143,34 @@ function ding2_install_tasks(&$install_state) {
       'run' => empty($tasks) ? INSTALL_TASK_RUN_IF_REACHED : INSTALL_TASK_SKIP,
       'display' => empty($tasks),
     ),
+
+    // Install tasks needed by KKB.
+    'ding2_kkb_install_tasks' => array(
+      'display_name' => 'Configure KKB...',
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'display' => TRUE,
+    ),
   ) + $tasks + array('profiler_install_profile_complete' => array());
 
   return $ret;
 }
 
+
+/**
+ * Configure KKB stuff during install.
+ *
+ * We enable the migrate related modules here and in a specific order - one by
+ * one.
+ *
+ * Although dependencies are specified in the modules the rather specific
+ * version requirements makes them fail when enabling them in one go.
+ */
+function ding2_kkb_install_tasks(&$install_state) {
+  module_enable(array('migrate'));
+  module_enable(array('migrate_d2d'));
+  module_enable(array('migrate_ding1_ding2'));
+  module_enable(array('migrate_ui'));
+}
 
 /**
  * Translation callback.
