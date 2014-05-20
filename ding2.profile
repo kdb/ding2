@@ -146,9 +146,10 @@ function ding2_install_tasks(&$install_state) {
 
     // Install tasks needed by KKB.
     'ding2_kkb_install_tasks' => array(
-      'display_name' => 'Configure KKB...',
+      'display_name' => 'Configure KKB',
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'display' => TRUE,
+      'type' => 'batch',
     ),
   ) + $tasks + array('profiler_install_profile_complete' => array());
 
@@ -160,16 +161,29 @@ function ding2_install_tasks(&$install_state) {
  * Configure KKB stuff during install.
  *
  * We enable the migrate related modules here and in a specific order - one by
- * one.
+ * one via the Batch API.
  *
  * Although dependencies are specified in the modules the rather specific
  * version requirements makes them fail when enabling them in one go.
  */
 function ding2_kkb_install_tasks(&$install_state) {
-  module_enable(array('migrate'));
-  module_enable(array('migrate_d2d'));
-  module_enable(array('migrate_ding1_ding2'));
-  module_enable(array('migrate_ui'));
+
+  $operations = array(
+    array('module_enable', array(array('migrate'))),
+    array('module_enable', array(array('date_migrate'))),
+    array('module_enable', array(array('migrate_extras'))),
+    array('module_enable', array(array('migrate_d2d'))),
+    array('module_enable', array(array('migrate_ding1_ding2'))),
+    array('module_enable', array(array('migrate_ui'))),
+  );
+
+  $batch = array(
+    'title' => st('Installing KKB translation modules'),
+    'operations' => $operations,
+    'finished' => 'migrate_static_registration',
+  );
+
+  return $batch;
 }
 
 /**
