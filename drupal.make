@@ -16,5 +16,5 @@ projects[drupal][patch][] = http://drupal.org/files/issues/translate_role_names-
 ; Get the profile, which will contain the next makefile.
 projects[ding2][type] = "profile"
 projects[ding2][download][type] = "git"
-projects[ding2][download][url] = "git@github.com:ding2tal/ding2.git"
-projects[ding2][download][tag] = "7.x-1.0-rc7"
+projects[ding2][download][url] = "git@github.com:kdb/ding2.git"
+projects[ding2][download][branch] = "kkb"
