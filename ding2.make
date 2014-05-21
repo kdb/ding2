@@ -144,6 +144,11 @@ projects[cookiecontrol][version] = "1.6"
 projects[cookiecontrol][patch][0] = "http://drupal.org/files/issues/translatable_link_title-2174955-1.patch"
 
 ;;; KKB modules
+projects[ding_eresource][type] = "module"
+projects[ding_eresource][download][type] = "git"
+projects[ding_eresource][download][url] = "git@github.com:vejlebib/ding_eresource.git"
+projects[ding_eresource][download][revision] = "12932364818b28137c3a77f74f739084d00f888c"
+
 projects[kkb-ddb-modules][type] = "module"
 projects[kkb-ddb-modules][download][type] = "git"
 projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"
