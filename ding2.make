@@ -149,6 +149,11 @@ projects[ding_eresource][download][type] = "git"
 projects[ding_eresource][download][url] = "git@github.com:vejlebib/ding_eresource.git"
 projects[ding_eresource][download][revision] = "12932364818b28137c3a77f74f739084d00f888c"
 
+projects[ding_faq][type] = "module"
+projects[ding_faq][download][type] = "git"
+projects[ding_faq][download][url] = "git@github.com:kdb/ding-faq.git"
+projects[ding_faq][download][revision] = "0383dc694178640338c7d066d30f470d9968d84f"
+
 projects[kkb-ddb-modules][type] = "module"
 projects[kkb-ddb-modules][download][type] = "git"
 projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"
