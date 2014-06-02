@@ -113,6 +113,15 @@ projects[ddbasic][download][type] = "git"
 projects[ddbasic][download][url] = "git@github.com:ding2tal/ddbasic.git"
 projects[ddbasic][download][tag] = "7.x-1.0-rc7"
 
+projects[bang][type] = "theme"
+projects[bang][download][type] = "git"
+projects[bang][download][url] = "https://github.com/kdb/bang.git"
+
+; Add the styleguide as a library to be included in bang theme.
+libraries[kkb_styleguide][download][type] = "git"
+libraries[kkb_styleguide][download][url] = "https://github.com/reload/kkb-styleguide.git"
+libraries[kkb_styleguide][download][revision] = "946600fbce3b6b3ce2fc1c2697952b05a1e06c17"
+
 ; Libraries
 libraries[profiler][download][type] = "git"
 libraries[profiler][download][url] = "http://git.drupal.org/project/profiler.git"
