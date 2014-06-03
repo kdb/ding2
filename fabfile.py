@@ -13,32 +13,15 @@ from fabric.state import _get_system_username
 
 # Hostname for each role.
 env.roledefs = {
-    'dev': ['kkbdeploy@halla.dbc.dk'],
+    'dev': ['kkbdeploy@hiri.dbc.dk'],
     'stg': ['kkbdeploy@hiri.dbc.dk'],
+    'demo': ['kkbdeploy@hiri.dbc.dk'],
     'prod': ['kkbdeploy@hiri.dbc.dk'],
-    'metropol:stg': ['deploy@haruna.dbc.dk'],
-    'metropol:prod': ['deploy@haruna.dbc.dk'],
-    'aabenraa:stg': ['deploy@aabenraa.dbc.dk'],
-    'aabenraa:prod': ['deploy@aabenraa.dbc.dk'],
-    'kolding:dev': ['deploy@kolding.dbc.dk'],
-    'kolding:stg': ['deploy@kolding.dbc.dk'],
-    'kolding:prod': ['deploy@kolding.dbc.dk'],
-    'billund:stg': ['deploy@billund.dbc.dk'],
-    'billund:prod': ['deploy@billund.dbc.dk'],
-    'roedovre:dev': ['deploy@roedovre.dbc.dk'],
-    'roedovre:stg': ['deploy@roedovre.dbc.dk'],
-    'roedovre:prod': ['deploy@roedovre.dbc.dk'],
-    'helsbib:stg': ['deploy@helsingoer.dbc.dk'],
-    'helsbib:prod': ['deploy@helsingoer.dbc.dk'],
-    'albertslund:dev': ['deploy@albertslund.dbc.dk'],
-    'albertslund:stg': ['deploy@albertslund.dbc.dk'],
-    'albertslund:prod': ['deploy@albertslund.dbc.dk'],
 }
 
 env.webroot_patterns = {
-    'default': '/data/www/%(project)s.%(role)s',
-    'hiri.dbc.dk': '/data/www/%(project)s.%(role)s.ting.dk',
-    'halla.dbc.dk': '/data/www/%(project)s.%(role)s.ting.dk',
+    'default': '/data/www/%(role)s.%(project)s',
+    'hiri.dbc.dk': '/data/www/%(role)s.%(project)s.reload.dk',
 }
 
 # Simple logging for actions. Use the WARNING level to tune out paramiko
@@ -60,7 +43,7 @@ def _env_settings(project=None):
             abort('No project in role and no project specified.')
 
     env.project = project
-    env.build_path = os.path.join('/home', env.user, 'build')
+    env.build_path = os.path.join('/home', env.user, 'ddb-cms-build')
     if env.host in env.webroot_patterns:
         env.webroot_pattern = env.webroot_patterns[env.host]
     else:

@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """
-Build script for Ding.
+Build script for DDB CMS.
 
-Utilises Drush make to build a site or install profile based on Ding.
+Utilizes Drush make to build a site or install profile based on DDB CMS.
 """
 
 from optparse import OptionParser
@@ -58,9 +58,9 @@ def make_command(options, make_path):
     """ Generate the make command based on current options. """
     # Set command based on mode.
     if options.mode == 'site':
-        command = ['drush', 'make', '--contrib-destination=profiles/ding', 'ding.make', make_path]
+        command = ['drush', 'make', '--contrib-destination=profiles/ding2', 'ding2.make', make_path]
     elif options.mode == 'profile':
-        command = ['drush', 'make', '--no-core', '--contrib-destination=.', 'ding.make', make_path]
+        command = ['drush', '--ding2-only-once', '--strict=0', 'make', '--no-core', '--contrib-destination=.', 'ding2.make', make_path]
     else:
         sys.exit('Unknown mode "%s", aborting.' % options.mode)
 
@@ -98,11 +98,11 @@ def setup_profile(options, make_path):
     Handles copying the profile file into the correct folder.
     """
     if options.mode == 'site':
-        path = os.path.join(make_path, 'profiles', 'ding')
+        path = os.path.join(make_path, 'profiles', 'ding2')
     else:
         path = make_path
 
-    shutil.copy('ding.profile', path)
+    shutil.copy('ding2.profile', path)
 
 def create_symlinks(options, folder_name):
     """
@@ -135,7 +135,7 @@ def main():
     try:
         folder_name = args[-1]
     except IndexError: 
-        folder_name = 'ding'
+        folder_name = 'ding2'
 
     make_path = 'build/%s' % folder_name
 
