@@ -56,7 +56,7 @@ def version(project=None):
     require('user', 'hosts', 'webroot',
         used_for='These variables are used for finding the target deployment environment.',
     )
-    with cd(os.path.join(env.build_path, env.project, 'build')):
+    with cd(os.path.join(env.build_path, env.project, 'ddb-cms-build')):
         run('git show | head -10')
 
 def reload_apache():
@@ -97,7 +97,7 @@ def deploy(project=None, commit=None):
 
     make_path = time.strftime('ding-%Y%m%d%H%M')[:-1]
     profile_path = os.path.join(env.build_path, env.project)
-    abs_make_path = os.path.join(profile_path, 'build', make_path)
+    abs_make_path = os.path.join(profile_path, 'ddb-cms-build', make_path)
 
     with cd(profile_path):
         # Update git checkout.

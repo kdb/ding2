@@ -109,11 +109,11 @@ def create_symlinks(options, folder_name):
     Set up symlinks to latest and previous build.
     """
     if options.symlink_prefix:
-        latest = 'build/%s-latest' % options.symlink_prefix
-        previous = 'build/%s-previous' % options.symlink_prefix
+        latest = 'ddb-cms-build/%s-latest' % options.symlink_prefix
+        previous = 'ddb-cms-build/%s-previous' % options.symlink_prefix
     else:
-        latest = 'build/latest'
-        previous = 'build/previous'
+        latest = 'ddb-cms-build/latest'
+        previous = 'ddb-cms-build/previous'
 
     # Revome previous symlink, if it exists.
     if os.path.lexists(previous):
@@ -137,7 +137,7 @@ def main():
     except IndexError: 
         folder_name = 'ding2'
 
-    make_path = 'build/%s' % folder_name
+    make_path = 'ddb-cms-build/%s' % folder_name
 
     logging.info('Starting make for mode "%s" in folder "%s"' % (options.mode, make_path))
     success = start_make(make_command(options, make_path))
