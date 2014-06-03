@@ -26,7 +26,7 @@ env.webroot_patterns = {
 
 # Simple logging for actions. Use the WARNING level to tune out paramiko
 # noise which is logged as "INFO".
-LOG_FILENAME = '/tmp/deploy.log'
+LOG_FILENAME = os.path.join('/tmp', 'deploy-' + env.user + '.log')
 logging.basicConfig(filename=LOG_FILENAME,level=logging.WARNING, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def _env_settings(project=None):
