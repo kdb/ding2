@@ -163,6 +163,11 @@ projects[ding_faq][download][type] = "git"
 projects[ding_faq][download][url] = "git@github.com:kdb/ding-faq.git"
 projects[ding_faq][download][revision] = "0383dc694178640338c7d066d30f470d9968d84f"
 
+projects[ding_kultunaut_feed][type] = "module"
+projects[ding_kultunaut_feed][download][type] = "git"
+projects[ding_kultunaut_feed][download][url] = "git@github.com:kdb/ding_kultunaut_feed.git"
+projects[ding_kultunaut_feed][download][branch] = "7.x-1.x"
+
 projects[kkb-ddb-modules][type] = "module"
 projects[kkb-ddb-modules][download][type] = "git"
 projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"

@@ -40,6 +40,7 @@ dependencies[] = ding_varnish
 ; KKB modules
 dependencies[] = ding_eresource
 dependencies[] = ding_faq
+dependencies[] = ding_kultunaut_feed
 dependencies[] = kkb_eresource
 dependencies[] = kkb_page
 
