@@ -154,9 +154,13 @@ projects[cookiecontrol][patch][0] = "http://drupal.org/files/issues/translatable
 
 ;;; KKB modules
 
-projects[colorpath][type] = "module"
-projects[colorpath][download][type] = "git"
-projects[colorpath][download][url] = "git@github.com:troelslenda/colorpath.git"
+projects[kkb_colorpath][type] = "module"
+projects[kkb_colorpath][download][type] = "git"
+projects[kkb_colorpath][download][url] = "git@github.com:troelslenda/colorpath.git"
+
+projects[kkb_frontpage_promotions][type] = "module"
+projects[kkb_frontpage_promotions][download][type] = "git"
+projects[kkb_frontpage_promotions][download][url] = "git@github.com:troelslenda/promotions.git"
 
 projects[ding_eresource][type] = "module"
 projects[ding_eresource][download][type] = "git"
@@ -172,6 +176,9 @@ projects[ding_kultunaut_feed][type] = "module"
 projects[ding_kultunaut_feed][download][type] = "git"
 projects[ding_kultunaut_feed][download][url] = "git@github.com:kdb/ding_kultunaut_feed.git"
 projects[ding_kultunaut_feed][download][branch] = "7.x-1.x"
+
+projects[field_collection][subdir] = "contrib"
+projects[field_collection][version] = "1.0-beta7"
 
 projects[kkb-ddb-modules][type] = "module"
 projects[kkb-ddb-modules][download][type] = "git"
