@@ -59,10 +59,8 @@ projects[ding_frontpage][download][tag] = "7.x-1.0-rc7"
 
 projects[ding_library][type] = "module"
 projects[ding_library][download][type] = "git"
-projects[ding_library][download][url] = "git@github.com:ding2tal/ding_library.git"
-projects[ding_library][download][tag] = "7.x-1.0-rc7"
-; Use fieldable opening_hours in library list.
-projects[ding_library][patch][] = "https://github.com/kdb/ding_library/compare/ding2tal:7.x-1.0-rc7...fieldable-opening-hours-7.x-1.0-rc7.patch"
+projects[ding_library][download][url] = "git@github.com:kdb/ding_library.git"
+projects[ding_library][download][tag] = "fieldable-opening-hours-7.x-1.0-rc7"
 
 projects[ding_news][type] = "module"
 projects[ding_news][download][type] = "git"
