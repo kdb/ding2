@@ -1,8 +1,26 @@
 <?php
 /**
  * @file
- * Setup default theme, shortcusts, roles, language, search and features.
+ * Setup default theme, shortcuts, roles, language, search and features.
  */
+
+/**
+ * Implements hook_requirements().
+ *
+ * Display build version on the status report page.
+ */
+function ding2_requirements($phase) {
+  $t = get_t();
+  if ($phase == 'runtime') {
+    return array(
+      'ddb_version' => array(
+        'title' => $t('DDB Version'),
+        'value' => 'development',
+        'severity' => REQUIREMENT_INFO,
+      ),
+    );
+  }
+}
 
 /**
  * Implements hook_install().
@@ -91,19 +109,6 @@ function ding2_install() {
   // Allow visitor account creation, but with administrative approval.
   //
   variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
-
-  //
-  // Enable default permissions for system roles.
-  //
-  try {
-    user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'search content'));
-    user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'search content'));
-  }
-  catch (Exception $e) {
-    // If not all modules have been enabled, this may throw an exception. It
-    // should not happen, but its better to carry on then halt the installation
-    // at this point.
-  }
 
   // Submit theme settings.
   variable_set('theme_' . $default_theme . '_settings', ding2_theme_settings());
@@ -240,4 +245,12 @@ function ding2_update_7005() {
  */
 function ding2_update_7006() {
   ding2_add_administrators_role(1);
+}
+
+/**
+ * Update our own translations.
+ */
+function ding2_update_7007() {
+  // Fixed month translation.
+  ding2_translation_update();
 }
