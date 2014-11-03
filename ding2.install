@@ -11,11 +11,14 @@
  */
 function ding2_requirements($phase) {
   $t = get_t();
+
+  // Get version form the profiles info file.
+  $info = install_profile_info('ding2');
   if ($phase == 'runtime') {
     return array(
       'ddb_version' => array(
         'title' => $t('DDB Version'),
-        'value' => 'development',
+        'value' => !empty($info['version']) ? $info['version'] : 'development',
         'severity' => REQUIREMENT_INFO,
       ),
     );
@@ -253,4 +256,11 @@ function ding2_update_7006() {
 function ding2_update_7007() {
   // Fixed month translation.
   ding2_translation_update();
+}
+
+/**
+ * Enable view unpublished module.
+ */
+function ding2_update_7008() {
+  module_enable(array('view_unpublished'), TRUE);
 }
