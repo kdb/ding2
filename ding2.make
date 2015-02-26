@@ -180,8 +180,8 @@ projects[view_unpublished][download][revision] = "e9df1d3"
 
 projects[ding_eresource][type] = "module"
 projects[ding_eresource][download][type] = "git"
-projects[ding_eresource][download][url] = "git@github.com:vejlebib/ding_eresource.git"
-projects[ding_eresource][download][revision] = "12932364818b28137c3a77f74f739084d00f888c"
+projects[ding_eresource][download][url] = "git@github.com:kdb/ding_eresource.git"
+projects[ding_eresource][download][branch] = "master"
 
 projects[ding_faq][type] = "module"
 projects[ding_faq][download][type] = "git"
