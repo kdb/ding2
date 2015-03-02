@@ -113,7 +113,7 @@ projects[bpi][download][tag] = "7.x-1.0.1"
 projects[ddbasic][type] = "theme"
 projects[ddbasic][download][type] = "git"
 projects[ddbasic][download][url] = "git@github.com:kdb/ddbasic.git"
-projects[ddbasic][download][branch] = "fieldable-opening-hours-7.x-1.0"
+projects[ddbasic][download][branch] = "kkb"
 
 projects[bang][type] = "theme"
 projects[bang][download][type] = "git"
