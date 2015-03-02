@@ -91,6 +91,8 @@ projects[ding_staff][type] = "module"
 projects[ding_staff][download][type] = "git"
 projects[ding_staff][download][url] = "git@github.com:ding2tal/ding_staff.git"
 projects[ding_staff][download][tag] = "7.x-1.0.1"
+// http://platform.dandigbib.org/issues/756: Fix links to users on staff list.
+projects[ding_staff][patch][0] = "https://github.com/ding2/ding_staff/pull/2.patch"
 
 projects[ding_varnish][type] = "module"
 projects[ding_varnish][download][type] = "git"
