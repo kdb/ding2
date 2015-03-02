@@ -195,6 +195,9 @@ projects[ding_kultunaut_feed][download][type] = "git"
 projects[ding_kultunaut_feed][download][url] = "git@github.com:kdb/ding_kultunaut_feed.git"
 projects[ding_kultunaut_feed][download][branch] = "7.x-1.x"
 
+projects[features_override][subdir] = "contrib"
+projects[features_override][version] = "2.0-rc2"
+
 projects[field_collection][subdir] = "contrib"
 projects[field_collection][version] = "1.0-beta7"
 
