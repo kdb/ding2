@@ -188,7 +188,7 @@ projects[ding_eresource][download][branch] = "master"
 projects[ding_faq][type] = "module"
 projects[ding_faq][download][type] = "git"
 projects[ding_faq][download][url] = "git@github.com:kdb/ding-faq.git"
-projects[ding_faq][download][revision] = "0383dc694178640338c7d066d30f470d9968d84f"
+projects[ding_faq][download][revision] = "7.x-1.x"
 
 projects[ding_kultunaut_feed][type] = "module"
 projects[ding_kultunaut_feed][download][type] = "git"
