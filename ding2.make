@@ -1,6 +1,16 @@
 core = 7.x
 api = 2
 
+; Overrrides
+; These projects are added at the beginning of the file to ensure that they are downloaded first
+; Subsequent declarations should be ignored to to the --ding2-only-once option.
+; This is useful when you need to add a patch to a single module.
+projects[og][subdir] = "contrib"
+projects[og][version] = "2.7"
+; Fix using organic groups for relationships in views
+; https://www.drupal.org/node/1890370
+projects[og][patch][] = "https://www.drupal.org/files/issues/add-gid-to-relationship-field-1890370-34.patch"
+
 ; Projects
 projects[alma][type] = "module"
 projects[alma][download][type] = "git"
@@ -46,6 +56,8 @@ projects[ding_content][type] = "module"
 projects[ding_content][download][type] = "git"
 projects[ding_content][download][url] = "git@github.com:ding2tal/ding_content.git"
 projects[ding_content][download][tag] = "7.x-1.0.1"
+; Add more filtering options in Workbench views
+projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/10.patch"
 
 projects[ding_example_content][type] = "module"
 projects[ding_example_content][download][type] = "git"
