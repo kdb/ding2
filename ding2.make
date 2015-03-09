@@ -104,7 +104,7 @@ projects[ding_staff][download][type] = "git"
 projects[ding_staff][download][url] = "git@github.com:ding2tal/ding_staff.git"
 projects[ding_staff][download][tag] = "7.x-1.0.1"
 // http://platform.dandigbib.org/issues/756: Fix links to users on staff list.
-projects[ding_staff][patch][0] = "https://github.com/ding2/ding_staff/pull/2.patch"
+projects[ding_staff][patch][] = "https://github.com/ding2/ding_staff/pull/2.patch"
 
 projects[ding_varnish][type] = "module"
 projects[ding_varnish][download][type] = "git"
@@ -136,7 +136,7 @@ libraries[profiler][download][type] = "git"
 libraries[profiler][download][url] = "http://git.drupal.org/project/profiler.git"
 libraries[profiler][download][branch] = "7.x-2.0-beta1"
 # https://drupal.org/node/1328796, keep dependency order of base profile.
-libraries[profiler][patch][0] = "http://drupal.org/files/profiler-reverse.patch"
+libraries[profiler][patch][] = "http://drupal.org/files/profiler-reverse.patch"
 
 ; DDB Modules that should be removed when FBS is ready
 projects[ding_redirect][type] = "module"
@@ -156,7 +156,7 @@ projects[apc][version] = "1.0-beta4"
 projects[entitycache][subdir] = "contrib"
 projects[entitycache][version] = "1.2"
 # https://drupal.org/node/2146543, profile 2 blank fields.
-projects[entitycache][patch][0] = "http://drupal.org/files/issues/2146543-ensure-entity-inserts-clears-caches.1.patch"
+projects[entitycache][patch][] = "http://drupal.org/files/issues/2146543-ensure-entity-inserts-clears-caches.1.patch"
 
 projects[fontyourface][subdir] = "contrib"
 projects[fontyourface][version] = "2.7"
@@ -176,7 +176,7 @@ projects[redirect][version] = "1.0-rc1"
 projects[cookiecontrol][subdir] = "contrib"
 projects[cookiecontrol][version] = "1.6"
 # https://drupal.org/node/2174955, fix translatable link.
-projects[cookiecontrol][patch][0] = "http://drupal.org/files/issues/translatable_link_title-2174955-1.patch"
+projects[cookiecontrol][patch][] = "http://drupal.org/files/issues/translatable_link_title-2174955-1.patch"
 
 # Using dev release, as the "stable" version is making errors in the install profile.
 projects[uuid][subdir] = "contrib"
