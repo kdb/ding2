@@ -218,6 +218,9 @@ projects[kkb-ddb-modules][download][type] = "git"
 projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"
 projects[kkb-ddb-modules][download][branch] = "master"
 
+projects[webform][subdir] = "contrib"
+projects[webform][version] = "4.4"
+
 ;;; KKB migration modules
 projects[migrate][subdir] = "contrib"
 projects[migrate][version] = "2.6-rc1"
