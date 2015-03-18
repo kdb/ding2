@@ -191,7 +191,7 @@ projects[cookiecontrol][version] = "1.6"
 ; https://drupal.org/node/2174955, fix translatable link.
 projects[cookiecontrol][patch][] = "http://drupal.org/files/issues/translatable_link_title-2174955-1.patch"
 ; https://www.drupal.org/node/2318997, fix cookie name with UTF-8 characters.
-projects[cookiecontrol][patch][] = "https://www.drupal.org/files/issues/cookie-control-utf_8_characters_in-2318997-4.patch"
+projects[cookiecontrol][patch][] = "https://www.drupal.org/files/issues/cookie-control-utf_8_characters_in-2318997-5.patch"
 
 # Using dev release, as the "stable" version is making errors in the install profile.
 projects[uuid][subdir] = "contrib"
