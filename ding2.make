@@ -88,6 +88,8 @@ projects[ding_permissions][type] = "module"
 projects[ding_permissions][download][type] = "git"
 projects[ding_permissions][download][url] = "git@github.com:ding2/ding_permissions.git"
 projects[ding_permissions][download][tag] = "v2.0.0"
+; http://platform.dandigbib.org/issues/678: Show profile names for users.
+projects[ding_permissions][patch][] = "https://github.com/ding2/ding_permissions/pull/2.patch"
 
 projects[ding_webtrends][type] = "module"
 projects[ding_webtrends][download][type] = "git"
@@ -105,6 +107,8 @@ projects[ding_staff][download][url] = "git@github.com:ding2/ding_staff.git"
 projects[ding_staff][download][tag] = "v2.0.0"
 ; http://platform.dandigbib.org/issues/756: Fix links to users on staff list.
 projects[ding_staff][patch][] = "https://github.com/ding2/ding_staff/pull/2.patch"
+; http://platform.dandigbib.org/issues/678: Show profile names for users.
+projects[ding_staff][patch][] = "https://github.com/ding2/ding_staff/pull/5.patch"
 
 projects[ding_varnish][type] = "module"
 projects[ding_varnish][download][type] = "git"
