@@ -16,6 +16,8 @@ projects[alma][type] = "module"
 projects[alma][download][type] = "git"
 projects[alma][download][url] = "git@github.com:ding2/alma.git"
 projects[alma][download][tag] = "v2.0.0"
+; http://platform.dandigbib.org/issues/1119: Support non-integer pickup numbers
+projects[alma][patch][] = "https://github.com/ding2/alma/pull/19.patch"
 
 projects[ding_devel][type] = "module"
 projects[ding_devel][download][type] = "git"
