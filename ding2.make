@@ -60,6 +60,8 @@ projects[ding_content][download][url] = "git@github.com:ding2/ding_content.git"
 projects[ding_content][download][tag] = "v2.0.0"
 ; Add more filtering options in Workbench views
 projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/10.patch"
+; http://platform.dandigbib.org/issues/1130: Show description on tag page
+projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/12.patch"
 
 projects[ding_example_content][type] = "module"
 projects[ding_example_content][download][type] = "git"
