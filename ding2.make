@@ -85,7 +85,7 @@ projects[ding_news][download][tag] = "v2.0.0"
 ; http://platform.dandigbib.org/issues/1106: Add more links to group lists
 projects[ding_news][patch][] = "https://github.com/ding2/ding_news/pull/12.patch"
 ; http://platform.dandigbib.org/issues/510: Remove empty text from groups list
-projects[ding_news][patch][] = "https://github.com/ding2/ding_news/pull/13.patch"
+projects[ding_news][patch][] = "https://github.com/ding2/ding_news/pull/14.patch"
 
 projects[ding_event][type] = "module"
 projects[ding_event][download][type] = "git"
