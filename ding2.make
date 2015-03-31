@@ -38,6 +38,8 @@ projects[ding_groups][type] = "module"
 projects[ding_groups][download][type] = "git"
 projects[ding_groups][download][url] = "git@github.com:ding2/ding_groups.git"
 projects[ding_groups][download][tag] = "v2.0.0"
+; http://platform.dandigbib.org/issues/508: Show title image instead of list image frontpage
+projects[ding_groups][patch][] = "https://github.com/ding2/ding_groups/pull/2.patch"
 
 projects[ding_user_frontend][type] = "module"
 projects[ding_user_frontend][download][type] = "git"
