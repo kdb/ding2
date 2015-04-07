@@ -33,6 +33,8 @@ projects[ding_frontend][type] = "module"
 projects[ding_frontend][download][type] = "git"
 projects[ding_frontend][download][url] = "git@github.com:ding2/ding_frontend.git"
 projects[ding_frontend][download][tag] = "v2.0.0"
+; Make taxonomy menu term context optional. This is needed for eresource frontpage.
+projects[ding_frontend][patch][] = "https://github.com/ding2/ding_frontend/pull/16.patch"
 
 projects[ding_groups][type] = "module"
 projects[ding_groups][download][type] = "git"
