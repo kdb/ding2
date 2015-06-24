@@ -51,6 +51,9 @@ projects[ding_user_frontend][download][url] = "git@github.com:ding2/ding_user_fr
 projects[ding_user_frontend][download][tag] = "7.x-2.0.0"
 ; http://platform.dandigbib.org/issues/1193: Fix security issue regarding viewing other user profile's names
 projects[ding_user_frontend][patch][] = "https://github.com/ding2/ding_user_frontend/pull/10.patch"
+; Fix erroneous caching of URLs containing user ids.
+projects[ding_user_frontend][patch][] = "https://github.com/ding2/ding_user_frontend/pull/11.patch"
+
 
 projects[ding_ting_frontend][type] = "module"
 projects[ding_ting_frontend][download][type] = "git"
