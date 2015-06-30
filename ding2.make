@@ -35,6 +35,8 @@ projects[ding_frontend][download][url] = "git@github.com:ding2/ding_frontend.git
 projects[ding_frontend][download][tag] = "7.x-2.0.0"
 ; Make taxonomy menu term context optional. This is needed for eresource frontpage.
 projects[ding_frontend][patch][] = "https://github.com/ding2/ding_frontend/pull/16.patch"
+; Add pseudo-delta support for ting_reference.
+projects[ding_frontend][patch][] = "https://gist.githubusercontent.com/gielfeldt/fb50c2974b8a82de2ae0/raw/064d559045ae7677104796c36ce5a1832457f617/pseudo-delta-meta-frontend"
 
 projects[ding_groups][type] = "module"
 projects[ding_groups][download][type] = "git"
