@@ -151,6 +151,8 @@ projects[bpi][type] = "module"
 projects[bpi][download][type] = "git"
 projects[bpi][download][url] = "git@github.com:ding2/bpi.git"
 projects[bpi][download][tag] = "7.x-2.0.0"
+; Issue #1161 - Fix BPI publishing.
+projects[bpi][patch][] = "https://gist.githubusercontent.com/gielfeldt/421a7b5a94fbb13e882c/raw/822dbf02c8407803aa41b4dd94479cd52b258892/bpi-push-fix-meta"
 
 projects[ddb_cp][type] = "module"
 projects[ddb_cp][download][type] = "git"
