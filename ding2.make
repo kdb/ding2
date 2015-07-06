@@ -18,6 +18,13 @@ projects[ting_reference][download][tag] = "7.x-2.0.0"
 ; Add pseudo-delta-support for ting references.
 projects[ting_reference][patch][] = "https://github.com/kdb/ting_reference/pull/1.patch"
 
+projects[ting_search][type] = "module"
+projects[ting_search][download][type] = "git"
+projects[ting_search][download][url] = "git@github.com:ding2/ting_search.git"
+projects[ting_search][download][tag] = "7.x-2.0.0"
+; Fix page cache bug for search form.
+projects[ting_search][patch][] = "https://github.com/ding2/ting_search/pull/20.patch"
+
 ; Projects
 projects[alma][type] = "module"
 projects[alma][download][type] = "git"
