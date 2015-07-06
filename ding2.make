@@ -123,7 +123,7 @@ projects[ding_permissions][download][tag] = "7.x-2.0.0"
 ; http://platform.dandigbib.org/issues/678: Show profile names for users.
 projects[ding_permissions][patch][] = "https://github.com/ding2/ding_permissions/pull/2.patch"
 ; added patch through Gist because of missing permissions on github
-projects[ding_permissions][patch][] = "https://gist.githubusercontent.com/feldmuesle/c26134a24c9f5f25dcac/raw/b58ad6d76dc31a18fd76cbe505b1c2fe80f8fc0d/notify"
+projects[ding_permissions][patch][] = "https://github.com/kdb/ding_permissions/pull/1.patch"
 
 projects[ding_webtrends][type] = "module"
 projects[ding_webtrends][download][type] = "git"
