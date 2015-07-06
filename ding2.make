@@ -11,6 +11,13 @@ projects[og][version] = "2.7"
 ; https://www.drupal.org/node/1890370
 projects[og][patch][] = "https://www.drupal.org/files/issues/add-gid-to-relationship-field-1890370-34.patch"
 
+projects[ting_reference][type] = "module"
+projects[ting_reference][download][type] = "git"
+projects[ting_reference][download][url] = "git@github.com:ding2/ting_reference.git"
+projects[ting_reference][download][tag] = "7.x-2.0.0"
+; Add pseudo-delta-support for ting references.
+projects[ting_reference][patch][] = "https://github.com/kdb/ting_reference/pull/1.patch"
+
 ; Projects
 projects[alma][type] = "module"
 projects[alma][download][type] = "git"
@@ -35,8 +42,6 @@ projects[ding_frontend][download][url] = "git@github.com:ding2/ding_frontend.git
 projects[ding_frontend][download][tag] = "7.x-2.0.0"
 ; Make taxonomy menu term context optional. This is needed for eresource frontpage.
 projects[ding_frontend][patch][] = "https://github.com/ding2/ding_frontend/pull/16.patch"
-; Add pseudo-delta support for ting_reference.
-projects[ding_frontend][patch][] = "https://gist.githubusercontent.com/gielfeldt/fb50c2974b8a82de2ae0/raw/d986e213032a3437fdc3ce3ec0d6e34266b896b4/pseudo-delta-meta-frontend"
 
 projects[ding_groups][type] = "module"
 projects[ding_groups][download][type] = "git"
