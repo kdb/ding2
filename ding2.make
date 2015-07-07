@@ -89,6 +89,8 @@ projects[ding_content][download][tag] = "7.x-2.0.0"
 projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/10.patch"
 ; http://platform.dandigbib.org/issues/1130: Show description on tag page
 projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/12.patch"
+; Enable comments and notification.
+projects[ding_content][patch][] = "https://github.com/kdb/ding_content/pull/1.patch"
 
 projects[ding_example_content][type] = "module"
 projects[ding_example_content][download][type] = "git"
