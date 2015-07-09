@@ -265,6 +265,8 @@ projects[ding_faq][type] = "module"
 projects[ding_faq][download][type] = "git"
 projects[ding_faq][download][url] = "git@github.com:kdb/ding-faq.git"
 projects[ding_faq][download][revision] = "7.x-1.x"
+; Add wrapper-div to faq-list.
+libraries[ding_faq][patch][] = "https://github.com/kdb/ding-faq/pull/1.patch"
 
 projects[ding_kultunaut_feed][type] = "module"
 projects[ding_kultunaut_feed][download][type] = "git"
