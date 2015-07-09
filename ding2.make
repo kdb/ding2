@@ -117,6 +117,8 @@ projects[ding_news][patch][] = "https://github.com/ding2/ding_news/pull/12.patch
 projects[ding_news][patch][] = "https://github.com/ding2/ding_news/pull/14.patch"
 ; http://platform.dandigbib.org/issues/1316: Enable comments.
 projects[ding_news][patch][] = "https://github.com/ding2/ding_news/pull/16.patch"
+; change news-link-url.
+projects[ding_news][patch][] = "https://github.com/kdb/ding_news/pull/1.patch"
 
 projects[ding_event][type] = "module"
 projects[ding_event][download][type] = "git"
