@@ -128,6 +128,8 @@ projects[ding_event][patch][] = "https://github.com/ding2/ding_event/pull/15.pat
 projects[ding_event][patch][] = "https://github.com/ding2/ding_event/pull/16.patch"
 ; http://platform.dandigbib.org/issues/1316: Enable comments.
 projects[ding_event][patch][] = "https://github.com/ding2/ding_event/pull/20.patch"
+; http://platform.dandigbib.org/issues/687: Show events that don't have a library attached.
+projects[ding_event][patch][] = "https://github.com/kdb/ding_event/pull/3.patch"
 
 projects[ding_permissions][type] = "module"
 projects[ding_permissions][download][type] = "git"
