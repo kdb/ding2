@@ -133,12 +133,8 @@ projects[ding_event][patch][] = "https://github.com/kdb/ding_event/pull/3.patch"
 
 projects[ding_permissions][type] = "module"
 projects[ding_permissions][download][type] = "git"
-projects[ding_permissions][download][url] = "git@github.com:ding2/ding_permissions.git"
-projects[ding_permissions][download][tag] = "7.x-2.0.0"
-; http://platform.dandigbib.org/issues/678: Show profile names for users.
-projects[ding_permissions][patch][] = "https://github.com/ding2/ding_permissions/pull/2.patch"
-; http://platform.dandigbib.org/issues/1316: Set permissions for comments and notifications.
-projects[ding_permissions][patch][] = "https://github.com/ding2/ding_permissions/pull/13.patch"
+projects[ding_permissions][download][url] = "git@github.com:kdb/ding_permissions.git"
+projects[ding_permissions][download][branch] = "kkb"
 
 projects[ding_webtrends][type] = "module"
 projects[ding_webtrends][download][type] = "git"
