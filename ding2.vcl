@@ -165,6 +165,13 @@ sub vcl_fetch {
   # We need this to cache 404s, 301s, 500s. Otherwise, depending on backend but
   # definitely in Drupal's case these responses are not cacheable by default.
   if (beresp.status == 404 || beresp.status == 301 || beresp.status == 500) {
+      # Requests to user/me/* will result in redirects containing user ids.
+      # These should not be cached as they are unique per user.
+      # A better solution would be to return 302s but that is not possible due
+      # to the globalredirect module.
+      if (req.url ~ "^/user/me/.*$") {
+        return (hit_for_pass);
+      }
     set beresp.ttl = 10m;
   }
 
