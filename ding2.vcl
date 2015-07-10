@@ -139,6 +139,15 @@ sub vcl_deliver {
   # Remove server information
   set resp.http.X-Powered-By = "Ding T!NG";
 
+  # Remove Etag and Last modified header for HTML responses. If not these
+  # can cause authenticated users who log out to recieve 304 responses
+  # after logging out causing the client to render cached pages where
+  # the user is logged in.
+  if (resp.http.Content-Type ~ "text/html") {
+    unset resp.http.Etag;
+    unset resp.http.Last-Modified;
+  }
+
   # Debug
   if (obj.hits > 0 ) {
     set resp.http.X-Varnish-Cache = "HIT";
