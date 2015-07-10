@@ -163,6 +163,8 @@ projects[ding_varnish][type] = "module"
 projects[ding_varnish][download][type] = "git"
 projects[ding_varnish][download][url] = "git@github.com:ding2/ding_varnish.git"
 projects[ding_varnish][download][tag] = "7.x-2.0.0"
+; http://platform.dandigbib.org/issues/1321 - Varnish purge og expire.
+projects[ding_varnish][patch][] = "https://github.com/ding2/ding_varnish/compare/master...kdb:1321-purge-and-expire.patch"
 
 projects[ding_contact][type] = "module"
 projects[ding_contact][download][type] = "git"
