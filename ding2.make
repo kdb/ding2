@@ -62,7 +62,7 @@ projects[ding_user_frontend][patch][] = "https://github.com/ding2/ding_user_fron
 ; Fix erroneous caching of URLs containing user ids.
 projects[ding_user_frontend][patch][] = "https://github.com/ding2/ding_user_frontend/pull/11.patch"
 ; Add paginator to bookmarks list.
-projects[ding_user_frontend][patch][] = "https://gist.githubusercontent.com/gielfeldt/d2a4d12df1590422c378/raw/d6e85a8c9553f2e968428f53c956dca66e9f859d/bookmark-paginator-meta-user-frontend"
+projects[ding_user_frontend][patch][] = "https://gist.githubusercontent.com/gielfeldt/d2a4d12df1590422c378/raw/7fef089b9c74f1645f73243c7b8b8350361be68e/bookmark-paginator-meta-user-frontend"
 
 projects[ding_ting_frontend][type] = "module"
 projects[ding_ting_frontend][download][type] = "git"
