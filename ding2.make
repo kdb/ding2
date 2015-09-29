@@ -81,7 +81,11 @@ projects[ding_content][download][tag] = "7.x-2.3.0"
 ; http://platform.dandigbib.org/issues/1130: Show description on tag page
 projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/12.patch"
 ; http://platform.dandigbib.org/issues/1316: Enable comments and notification.
-projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/17.patch"
+; projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/17.patch"
+; Using temporary patch from gist, because git pull-request patch from github contains stale content,
+; probably due to some caching at github.
+projects[ding_content][patch][] = "https://gist.githubusercontent.com/gielfeldt/3c2e67ca654912677bfc/raw/32faafb96fd51c2dd33e7fbe1e25864c52ad2235/pull-17.patch"
+
 
 projects[ding_example_content][type] = "module"
 projects[ding_example_content][download][type] = "git"
