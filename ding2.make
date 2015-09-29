@@ -11,6 +11,10 @@ projects[og][version] = "2.7"
 ; https://www.drupal.org/node/1890370
 projects[og][patch][] = "https://www.drupal.org/files/issues/add-gid-to-relationship-field-1890370-34.patch"
 
+; Make sure we get ctools 1.9 after upgrade to ding 2.3.0.
+projects[ctools][subdir] = "contrib"
+projects[ctools][version] = "1.9"
+
 projects[ting_reference][type] = "module"
 projects[ting_reference][download][type] = "git"
 projects[ting_reference][download][url] = "git@github.com:ding2/ting_reference.git"
