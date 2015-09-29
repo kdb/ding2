@@ -84,7 +84,7 @@ projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/12
 ; projects[ding_content][patch][] = "https://github.com/ding2/ding_content/pull/17.patch"
 ; Using temporary patch from gist, because git pull-request patch from github contains stale content,
 ; probably due to some caching at github.
-projects[ding_content][patch][] = "https://gist.githubusercontent.com/gielfeldt/3c2e67ca654912677bfc/raw/32faafb96fd51c2dd33e7fbe1e25864c52ad2235/pull-17.patch"
+projects[ding_content][patch][] = "https://gist.githubusercontent.com/gielfeldt/3c2e67ca654912677bfc/raw/52882d045906092344fc982078c6c6006b8652ae/pull-17.patch"
 
 
 projects[ding_example_content][type] = "module"
