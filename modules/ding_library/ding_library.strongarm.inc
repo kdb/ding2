@@ -96,7 +96,64 @@ function ding_library_strongarm() {
           'weight' => '7',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'opening_hours_week' => array(
+          'default' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'full' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'teaser' => array(
+            'weight' => '7',
+            'visible' => TRUE,
+          ),
+          'rss' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'search_index' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'search_result' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'diff_standard' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'teaser_highlight' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+          'token' => array(
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
+          ),
+        ),
+        'page_opening_hours_entity_view_1' => array(
+          'teaser' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__ding_library'] = $strongarm;
@@ -176,6 +233,13 @@ Om|bibliotek/[node:field-ding-library-slug]/om';
   $strongarm->name = 'opening_hours_enabled_library';
   $strongarm->value = 1;
   $export['opening_hours_enabled_library'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'opening_hours_week_label_position__ding_library__teaser';
+  $strongarm->value = 'hidden';
+  $export['opening_hours_week_label_position__ding_library__teaser'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

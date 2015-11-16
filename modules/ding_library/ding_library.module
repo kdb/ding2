@@ -387,3 +387,55 @@ function ding_library_node_delete($node) {
     nodequeue_subqueue_remove_node($sub_queue->sqid, $node->nid);
   }
 }
+
+/**
+ * Implements hook_field_extra_fields_alter().
+ *
+ * Add callback for extrafield_views_integration module so we can see our field
+ * in views.
+ *
+ * @see ding_library_opening_hours_callback()
+ */
+function ding_library_field_extra_fields_alter(&$info) {
+  $node_types = node_type_get_types();
+
+  foreach ($node_types as $node_type) {
+    // We only provide the extra fields on the enabled node types.
+    if (variable_get('opening_hours_enabled_' . $node_type->type, FALSE)
+      && !empty($info['node'][$node_type->type]['display']['opening_hours_week'])) {
+      $info['node'][$node_type->type]['display']['opening_hours_week']['callback'] = 'ding_library_opening_hours_callback';
+    }
+  }
+}
+
+/**
+ * Render opening hours for entity.
+ *
+ * Used as callback by extrafield_views_integration module so we can see our
+ * field in views.
+ *
+ * @see ding_library_field_extra_fields_alter()
+ */
+function ding_library_opening_hours_callback($entity) {
+  if (!opening_hours_present_on_node($entity->nid)) {
+    return NULL;
+  }
+
+  $render = array(
+    '#theme' => array('field'),
+    '#label_display' => 'hidden',
+    '#items' => array(0),
+    '#title' => $entity->title,
+    '#language' => $entity->language,
+    '#field_name' => 'opening_hours_week',
+    '#field_type' => 'text',
+    '#bundle' => $entity->type,
+    '#view_mode' => 'default',
+    0 => array(
+      '#theme' => 'opening_hours_week',
+      '#node' => $entity,
+    ),
+  );
+
+  return drupal_render($render);
+}
