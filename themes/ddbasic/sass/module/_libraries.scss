@@ -31,7 +31,7 @@
 
   /* Opening hours toggle */
   .opening-hours-toggle {
-    @include zen-grid-item(4, 1, right);
+    @include zen-float(right);
 
     padding-bottom: $medium-spacing;
     text-align: right;
@@ -40,7 +40,7 @@
   /* Media queries */
   @include small-medium() {
     .opening-hours-toggle {
-      @include zen-grid-item(9, 4);
+      @include zen-grid-item(6, 3);
       @include zen-clear();
 
       padding-bottom: 0;
@@ -51,14 +51,12 @@
 }
 
 .libraries-opening-hours {
-  @include zen-grid-item(4, 1, right);
   @include zen-clear(right);
 
   display: none;
 
   /* Media queries */
   @include small-medium() {
-    @include zen-grid-item(12, 1);
     @include zen-clear(both);
 
     margin-top: 20px;
@@ -66,7 +64,7 @@
 }
 
 .libraries {
-  @include zen-grid-item(8, 1);
+  @include zen-grid-item(12, 1);
   @extend .icon-camera;
 
   position: relative;
@@ -86,13 +84,25 @@
   }
 
   .ding-library-left {
-    @include zen-grid-item(3, 1);
+    @include zen-grid-item(2, 1);
 
     padding: 0;
   }
 
   .ding-library-right {
-    @include zen-grid-item(9, 4);
+    @include zen-grid-item(6, 3);
+  }
+
+  .ding-library-aside {
+    @include zen-grid-item(4, 1, right);
+  }
+
+  /* Media queries */
+  @include small-medium() {
+    .ding-library-aside {
+      @include zen-grid-item(12, 1);
+      @include zen-clear();
+    }
   }
 
   .library-title {
