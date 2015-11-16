@@ -381,7 +381,50 @@ function ding_bookmark_load_bookmarks($account) {
 
     $entities[] = reset($entity);
   }
+  return $entities;
+}
 
+/**
+ * @param $account
+ * Drupal user account object.
+ *
+ * @param $offset
+ * Pager offset.
+ *
+ * @param $per_page
+ * Amount of items to show per page.
+ *
+ * @return array
+ * Array of entities bookmarked in the user account and within pager-range.
+ */
+function ding_bookmark_load_paged_bookmarks($bookmark_flags, $offset, $per_page) {
+
+  $entities = array();
+
+  // Select only the items in the array for the current page.
+  $entity_ids = array_keys($bookmark_flags);
+  $entity_keys = array_slice($entity_ids, $offset, $per_page);
+  $entity_values = array_slice($bookmark_flags, $offset, $per_page);
+  $bookmark_flags = array_combine($entity_keys, $entity_values);
+
+  // Loop through array and load the entities.
+  foreach ($bookmark_flags as $entity_id => $entity_type) {
+    $type_info = ding_entity_info($entity_type);
+    $entity = entity_load($type_info['entity_type'], array($entity_id));
+    // Library code can be changed at any time by the site administrator.
+    // Every time when bookmark item is loaded,
+    // module should check, whether item is available in the current library.
+    // If item does not exists in the library it should be deleted from
+    // bookmark.
+    if (!$entity) {
+      // Remove item.
+      $flag = flag_get_flag('bookmark');
+      $flag->flag('unflag', $entity_id);
+      continue;
+    }
+
+    $entities[] = reset($entity);
+  }
   return $entities;
 }
 

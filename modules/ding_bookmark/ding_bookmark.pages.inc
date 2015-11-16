@@ -10,12 +10,27 @@
 function ding_bookmark_user_bookmark_page($account) {
   $output = t('You do not have any bookmarks yet.');
 
-  // Try to load all bookmarks for the user.
-  $entities = ding_bookmark_load_bookmarks($account);
-  if (!empty($entities)) {
-    // Bookmarks found, so render them as a material list form.
-    $bookmark_form = drupal_get_form('ding_bookmark_remove_form', $entities);
-    $output = drupal_render($bookmark_form);
+  // Check if there are any bookmarks at all.
+  $bookmark_flags = flag_load('bookmark')->get_user_content_ids($account->uid);
+
+  if (!empty($bookmark_flags)) {
+    // Params for pagination.
+    $total = count($bookmark_flags);
+    $per_page = variable_get('ding_bookmark_pager_count', 50);
+    $page = pager_default_initialize($total, $per_page);
+    $offset = $per_page * $page;
+
+    // Try to load all bookmarks for the user within pager-range.
+    $entities = ding_bookmark_load_paged_bookmarks($bookmark_flags, $offset, $per_page);
+
+    if (!empty($entities)) {
+      // Bookmarks found, so render them as a material list form.
+      $bookmark_form = drupal_get_form('ding_bookmark_remove_form', $entities);
+      $output = drupal_render($bookmark_form);
+
+      // Add pager.
+      $output .= theme('pager');
+    }
   }
 
   return $output;
