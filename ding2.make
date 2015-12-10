@@ -394,6 +394,12 @@ libraries[zen-grids][destination] = "libraries"
 projects[comment_notify][subdir] = "contrib"
 projects[comment_notify][version] = "1.2"
 
+projects[eva][subdir] = "contrib"
+projects[eva][version] = "1.2"
+
+projects[extrafield_views_integration][subdir] = "contrib"
+projects[extrafield_views_integration][version] = "1.3"
+
 projects[features_override][subdir] = "contrib"
 projects[features_override][version] = "2.0-rc2"
 
