@@ -212,6 +212,11 @@ projects[node_export][version] = "3.0"
 projects[node_export][patch][] = "http://drupal.org/files/suppress-feature-install-profile-import.patch"
 projects[node_export][patch][] = "http://drupal.org/files/check-field.patch"
 
+projects[oembed][subdir] = "contrib"
+projects[oembed][version] = "1.0-rc2"
+; Remove hook_system_info_alter() to allow installing modules depending on oembed, after oembed is installed.
+projects[oembed][patch][] = "http://www.drupal.org/files/issues/oembed-remove_hook_sytem_info_alter-2502817-1.patch"
+
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.7"
 projects[og][patch][] = "https://www.drupal.org/files/issues/entityreference_fields_do_not_validate-2249261-10.patch"
@@ -229,7 +234,11 @@ projects[opening_hours][type] = "module"
 projects[opening_hours][subdir] = "contrib"
 projects[opening_hours][download][type] = "git"
 projects[opening_hours][download][url] = "http://git.drupal.org/project/opening_hours.git"
-projects[opening_hours][download][revision] = "7.x-1.5-beta2"
+projects[opening_hours][download][revision] = "81146d1e8ab63ca70976596d928e4ec46dfdfd57"
+projects[opening_hours][patch][] = "http://drupal.org/files/issues/is-string-check-2260505-2.patch"
+projects[opening_hours][patch][] = "http://drupal.org/files/issues/change-path-2270935-2.patch"
+projects[opening_hours][patch][] = "http://www.drupal.org/files/issues/Issue620-single-minute-opening-hours.patch"
+projects[opening_hours][patch][] = "https://www.drupal.org/files/issues/opening_hours-2194867-D7.patch"
 
 projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.4"
@@ -260,7 +269,7 @@ projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc1"
 
 projects[relation][subdir] = "contrib"
-projects[relation][version] = "1.0-rc7"
+projects[relation][version] = "1.0"
 
 projects[role_delegation][subdir] = "contrib"
 projects[role_delegation][version] = "1.1"
@@ -348,11 +357,17 @@ projects[wysiwyg][download][type] = "git"
 projects[wysiwyg][download][url] = "http://git.drupal.org/project/wysiwyg.git"
 projects[wysiwyg][download][revision] = "7981731f4f3db2f932419499d2ec13a073e9b88f"
 
+projects[ask_vopros][type] = "module"
+projects[ask_vopros][subdir] = "contrib"
+projects[ask_vopros][download][type] = "git"
+projects[ask_vopros][download][url] = "git@github.com:Biblioteksvagten/ask_vopros.git"
+projects[ask_vopros][download][tag] = "1.1"
+
 ; Libraries
+libraries[bpi-client][destination] = "modules/bpi/lib"
 libraries[bpi-client][download][type] = "git"
 libraries[bpi-client][download][url] = "http://github.com/ding2/bpi-client.git"
-libraries[bpi-client][download][tag] = "7.x-2.4.0-rc3"
-libraries[bpi-client][destination] = "modules/bpi/lib"
+libraries[bpi-client][download][branch] = "master"
 
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.7/ckeditor_4.4.7_full.zip
@@ -376,7 +391,7 @@ libraries[profiler][patch][0] = "http://drupal.org/files/profiler-reverse.patch"
 
 libraries[ting-client][download][type] = "git"
 libraries[ting-client][download][url] = "http://github.com/ding2/ting-client.git"
-libraries[ting-client][download][tag] = "7.x-2.4.0-rc3"
+libraries[ting-client][download][branch] = "master"
 libraries[ting-client][destination] = "modules/ting/lib"
 
 libraries[zen-grids][download][type] = "git"
