@@ -451,7 +451,7 @@ projects[feedback_simple][subdir] = "contrib"
 projects[feedback_simple][version] = "1.6"
 ; Adds option to use text instead of image.
 ; See https://www.drupal.org/node/2750997
-projects[feedback_simple][patch][] = "https://www.drupal.org/files/issues/feedback_simple-add-text-option-2750997-2.patch"
+projects[feedback_simple][patch][] = "https://www.drupal.org/files/issues/feedback_simple-add-text-option-2750997-5.patch"
 
 ; Custom modules
 
