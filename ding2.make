@@ -447,6 +447,9 @@ projects[maillog][version] = "1.0-alpha1"
 projects[webform][subdir] = "contrib"
 projects[webform][version] = "4.4"
 
+projects[webform_remote_post][subdir] = "contrib"
+projects[webform_remote_post][version] = "1.23"
+
 projects[feedback_simple][subdir] = "contrib"
 projects[feedback_simple][version] = "1.6"
 ; Adds option to use text instead of image.
