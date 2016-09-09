@@ -473,6 +473,11 @@ projects[ding_kultunaut_feed][download][type] = "git"
 projects[ding_kultunaut_feed][download][url] = "git@github.com:kdb/ding_kultunaut_feed.git"
 projects[ding_kultunaut_feed][download][branch] = "7.x-1.x"
 
+projects[ding_wagnerguide][type] = "module"
+projects[ding_wagnerguide][download][type] = "git"
+projects[ding_wagnerguide][download][url] = "https://github.com/vejlebib/ding_wagnerguide.git"
+projects[ding_wagnerguide][download][branch] = "7.x-1.x"
+
 projects[kkb-ddb-modules][type] = "module"
 projects[kkb-ddb-modules][download][type] = "git"
 projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"
