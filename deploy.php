@@ -104,15 +104,43 @@ server('prod', 'bibliotek.kk.dk')
 desc("Ensure the profile has been checked out");
 task('build:prepare', function () {
   $repository = trim(get('repository'));
-  $branch = get('branch');
+  $what = get('branch');
   $git = get('bin/git');
+
+  if (input()->hasOption('branch')) {
+    $branch = input()->getOption('branch');
+    if (!empty($branch)) {
+      $what = "$branch";
+    }
+  }
+
+  if (input()->hasOption('tag')) {
+    $tag = input()->getOption('tag');
+    if (!empty($tag)) {
+      $what = "$tag";
+    }
+  }
+
+  if (input()->hasOption('revision')) {
+    $revision = input()->getOption('revision');
+    if (!empty($revision)) {
+      $what = $revision;
+    }
+  }
+
+  $sha = runLocally("$git rev-list -1 $what");
 
   cd('{{deploy_path}}');
   if (!test('[ -d build ]')) {
     run("$git clone $repository build");
+    cd('{{deploy_path}}/build');
+  }
+  else {
+    cd('{{deploy_path}}/build');
+    run("$git fetch");
   }
 
-  run("cd build && $git checkout $branch");
+  run("$git checkout $sha");
 });
 
 //desc("Build core.");
