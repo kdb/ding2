@@ -7,7 +7,7 @@ require 'recipe/common.php';
 // Configuration.
 set('ssh_type', 'native');
 
-set('drush', '/home/kkbdeploy/.composer/vendor/bin/drush');
+set('drush', '/home/kkbdeploy/.config/composer/vendor/bin/drush');
 
 // Dirs Configuration.
 set('drupal_site', 'default');
