@@ -227,7 +227,7 @@ task('site:sync_files', function () {
   foreach (get('shared_dirs') as $dir) {
     $name = get('server')['name'];
     writeln(parse("<comment>Syncing prod {$dir} to {$name}</comment>"));
-    run("rsync -ar --del {{sync_from}}/shared/{$dir}/ {{deploy_path}}/shared/{$dir}/");
+    run("rsync -ar --del --exclude styles --exclude ting/covers {{sync_from}}/shared/{$dir}/ {{deploy_path}}/shared/{$dir}/");
   }
 });
 
