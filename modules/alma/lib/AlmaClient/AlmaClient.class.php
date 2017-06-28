@@ -56,7 +56,7 @@ class AlmaClient {
     $start_time = explode(' ', microtime());
     // For use with a non-Drupal-system, we should have a way to swap
     // the HTTP client out.
-    $request = drupal_http_request(url($this->base_url . $method, array('query' => $params)), array('secure_socket_transport' => 'tls'));
+    $request = drupal_http_request(url($this->base_url . $method, array('query' => $params)), array('secure_socket_transport' => 'sslv3'));
     $stop_time = explode(' ', microtime());
     // For use with a non-Drupal-system, we should have a way to swap
     // logging and logging preferences out.
