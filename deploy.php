@@ -7,7 +7,7 @@ require 'recipe/common.php';
 // Configuration.
 set('ssh_type', 'native');
 
-set('drush', '/home/kkbdeploy/.composer/vendor/bin/drush');
+set('drush', '/home/kkbdeploy/.config/composer/vendor/bin/drush');
 
 // Dirs Configuration.
 set('drupal_site', 'default');
@@ -104,15 +104,43 @@ server('prod', 'bibliotek.kk.dk')
 desc("Ensure the profile has been checked out");
 task('build:prepare', function () {
   $repository = trim(get('repository'));
-  $branch = get('branch');
+  $what = get('branch');
   $git = get('bin/git');
+
+  if (input()->hasOption('branch')) {
+    $branch = input()->getOption('branch');
+    if (!empty($branch)) {
+      $what = "$branch";
+    }
+  }
+
+  if (input()->hasOption('tag')) {
+    $tag = input()->getOption('tag');
+    if (!empty($tag)) {
+      $what = "$tag";
+    }
+  }
+
+  if (input()->hasOption('revision')) {
+    $revision = input()->getOption('revision');
+    if (!empty($revision)) {
+      $what = $revision;
+    }
+  }
+
+  $sha = runLocally("$git rev-list -1 $what");
 
   cd('{{deploy_path}}');
   if (!test('[ -d build ]')) {
     run("$git clone $repository build");
+    cd('{{deploy_path}}/build');
+  }
+  else {
+    cd('{{deploy_path}}/build');
+    run("$git fetch");
   }
 
-  run("cd build && $git checkout $branch");
+  run("$git checkout $sha");
 });
 
 //desc("Build core.");
@@ -199,7 +227,7 @@ task('site:sync_files', function () {
   foreach (get('shared_dirs') as $dir) {
     $name = get('server')['name'];
     writeln(parse("<comment>Syncing prod {$dir} to {$name}</comment>"));
-    run("rsync -ar --del {{sync_from}}/shared/{$dir}/ {{deploy_path}}/shared/{$dir}/");
+    run("rsync -ar --del --exclude styles --exclude ting/covers {{sync_from}}/shared/{$dir}/ {{deploy_path}}/shared/{$dir}/");
   }
 });
 

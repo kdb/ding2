@@ -26,7 +26,7 @@ function ddbasic_preprocess_html(&$vars) {
   ddbasic_load_plugins();
 
   // Add conditional CSS for IE8.
-  drupal_add_css(path_to_theme() . '/css/ddbasic.ie8.css', array(
+  drupal_add_css(path_to_theme() . '/css/ddbasic.ie8.min.css', array(
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lte IE 8',
@@ -37,7 +37,7 @@ function ddbasic_preprocess_html(&$vars) {
   ));
 
   // Add conditional CSS for IE9.
-  drupal_add_css(path_to_theme() . '/css/ddbasic.ie9.css', array(
+  drupal_add_css(path_to_theme() . '/css/ddbasic.ie9.min.css', array(
     'group' => CSS_THEME,
     'browsers' => array(
       'IE' => 'lte IE 9',
@@ -271,6 +271,21 @@ function ddbasic_preprocess_views_view_unformatted(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_views_view_field().
+ */
+function ddbasic_preprocess_views_view_field(&$vars) {
+  $field = $vars['field'];
+
+  if (isset($field->field_info) && $field->field_info['field_name'] == 'field_ding_event_price') {
+    $ding_event_price = intval($vars['output']);
+    // Show "Free" text if ding_event_price is empty or zero.
+    if (empty($ding_event_price)) {
+      $vars['output'] = t('Free');
+    }
+  }
+}
+
+/**
  * Implements hook_preprocess_user_picture().
  *
  * Override or insert variables into template user_picture.tpl.php
@@ -333,6 +348,14 @@ function ddbasic_preprocess_node(&$variables, $hook) {
       ),
     ));
     $variables['ddbasic_event_time'] = $event_time_ra[0]['#markup'];
+
+    // Show "Free" text if ding_event_price is empty or zero. Unfortunately we
+    // can't use the field template for this, since it's not called when the
+    // price field is empty. This means we also need to handle this en the views
+    // field preprocess.
+    if (empty($variables['content']['field_ding_event_price']['#items'][0]['value'])) {
+      $variables['content']['field_ding_event_price'][0]['#markup'] = t('Free');
+    }
   }
 
   // Add tpl suggestions for node view modes.
@@ -346,16 +369,16 @@ function ddbasic_preprocess_node(&$variables, $hook) {
     switch ($variables['node']->type) {
       case 'ding_event':
         $more_link = array(
-          '#theme' => 'link',
-          '#text' => '<i class="icon-chevron-right"></i>',
-          '#path' => 'node/' . $variables['nid'],
+          '#type' => 'link',
+          '#title' => t('Read more'),
+          '#href' => 'node/' . $variables['nid'],
           '#options' => array(
             'attributes' => array(
               'title' => $variables['title'],
             ),
-            'html' => TRUE,
+            'html' => FALSE,
           ),
-          '#prefix' => '<div class="event-arrow-link">',
+          '#prefix' => '<span class="event-link">',
           '#surfix' => '</div>',
           '#weight' => 6,
         );
@@ -365,9 +388,9 @@ function ddbasic_preprocess_node(&$variables, $hook) {
 
       case 'ding_news':
         $more_link = array(
-          '#theme' => 'link',
-          '#text' => t('Read more'),
-          '#path' => 'node/' . $variables['nid'],
+          '#type' => 'link',
+          '#title' => t('Read more'),
+          '#href' => 'node/' . $variables['nid'],
           '#options' => array(
             'attributes' => array(
               'title' => $variables['title'],
@@ -384,9 +407,9 @@ function ddbasic_preprocess_node(&$variables, $hook) {
 
       case 'ding_eresource':
         $more_link = array(
-          '#theme' => 'link',
-          '#text' => t('Read more'),
-          '#path' => 'node/' . $variables['nid'],
+          '#type' => 'link',
+          '#title' => t('Read more'),
+          '#href' => 'node/' . $variables['nid'],
           '#options' => array(
             'attributes' => array(
               'title' => $variables['title'],
@@ -400,15 +423,34 @@ function ddbasic_preprocess_node(&$variables, $hook) {
 
         $variables['content']['group_right_col_search']['more_link'] = $more_link;
         break;
+
+      case 'ding_page':
+        $more_link = array(
+          '#type' => 'link',
+          '#title' => t('Read more'),
+          '#href' => 'node/' . $variables['nid'],
+          '#options' => array(
+            'attributes' => array(
+              'title' => $variables['title'],
+            ),
+            'html' => FALSE,
+          ),
+          '#prefix' => '<span class="page-link">',
+          '#surfix' => '</span>',
+          '#weight' => 6,
+        );
+
+        $variables['content']['group_right_col_search']['more_link'] = $more_link;
+        break;
     }
   }
 
   // For search result view mode move title into left col. group.
   if (isset($variables['content']['group_right_col_search'])) {
     $variables['content']['group_right_col_search']['title'] = array(
-      '#theme' => 'link',
-      '#text' => decode_entities($variables['title']),
-      '#path' => 'node/' . $variables['nid'],
+      '#type' => 'link',
+      '#title' => decode_entities($variables['title']),
+      '#href' => 'node/' . $variables['nid'],
       '#options' => array(
         'attributes' => array(
           'title' => $variables['title'],
@@ -576,6 +618,7 @@ function ddbasic_panels_default_style_render_region($vars) {
  */
 function ddbasic_preprocess_user_profile(&$variables) {
   $variables['user_profile']['summary']['member_for']['#access'] = FALSE;
+  unset($variables['user_profile']['og_user_node']);
 }
 
 
@@ -996,9 +1039,18 @@ function ddbasic_preprocess_ting_object(&$vars) {
           unset($content['ting_relations']);
         }
 
-        // Move the reset over if any have been defined in the UI.
+        // Move the rest over if any have been defined in the UI.
         if (!empty($content)) {
-          $vars['content'] += $content;
+          // Move the remaining content one level down in the array structure.
+          // The reason for this is that drupal_render passes it to
+          // element_children, which will sort the array by #weight if any
+          // element has the key, or keep the array order if they doesn't. This
+          // will seriously mess up the display, as the groups above doesn't
+          // have a weight and can sink to the bottom, depending on the #weights
+          // defined.
+          $vars['content'] += array(
+            'content' => $content,
+          );
         }
         break;
 
