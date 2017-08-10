@@ -576,18 +576,3 @@ projects[kkb-ddb-modules][download][branch] = "master"
 projects[bang][type] = "theme"
 projects[bang][download][type] = "git"
 projects[bang][download][url] = "git@github.com:kdb/bang.git"
-
-; KKB migration modules
-projects[migrate][subdir] = "contrib"
-projects[migrate][version] = "2.6-rc1"
-
-projects[migrate_d2d][subdir] = "contrib"
-projects[migrate_d2d][version] = "2.1-beta1"
-
-projects[migrate_extras][subdir] = "contrib"
-projects[migrate_extras][version] = "2.5"
-
-projects[migrate_ding1_ding2][type] = "module"
-projects[migrate_ding1_ding2][download][type] = "git"
-projects[migrate_ding1_ding2][download][url] = "git@github.com:kdb/migrate_ding1_ding2.git"
-projects[migrate_ding1_ding2][download][branch] = "kkb"
