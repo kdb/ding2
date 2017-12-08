@@ -572,6 +572,11 @@ projects[kkb-ddb-modules][download][type] = "git"
 projects[kkb-ddb-modules][download][url] = "git@github.com:kdb/kkb-ddb-modules.git"
 projects[kkb-ddb-modules][download][branch] = "master"
 
+projects[kkb_wayfinder][download][type] = "git"
+projects[kkb_wayfinder][download][url] = "git@github.com:kdb/kkb_wayfinder.git"
+projects[kkb_wayfinder][download][branch] = "master"
+
+
 ; Themes
 projects[bang][type] = "theme"
 projects[bang][download][type] = "git"
