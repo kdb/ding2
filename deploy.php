@@ -224,10 +224,15 @@ task('site:sync_files', function () {
     return;
   }
 
+  $options = '-ar --del --exclude styles --exclude ting/covers';
+  if (isVerbose()) {
+    $options .= ' --progress';
+  }
+
   foreach (get('shared_dirs') as $dir) {
     $name = get('server')['name'];
     writeln(parse("<comment>Syncing prod {$dir} to {$name}</comment>"));
-    run("rsync -ar --del --exclude styles --exclude ting/covers {{sync_from}}/shared/{$dir}/ {{deploy_path}}/shared/{$dir}/");
+    run("rsync $options {{sync_from}}/shared/{$dir}/ {{deploy_path}}/shared/{$dir}/");
   }
 });
 
