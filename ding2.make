@@ -576,6 +576,11 @@ projects[kkb_wayfinder][download][type] = "git"
 projects[kkb_wayfinder][download][url] = "git@github.com:kdb/kkb_wayfinder.git"
 projects[kkb_wayfinder][download][branch] = "master"
 
+projects[ding_webtrekk][download][type] = "git"
+projects[ding_webtrekk][download][url] = "git@github.com:kdb/ding_webtrekk.git"
+projects[ding_webtrekk][download][branch] = "master"
+projects[ding_webtrekk][subdir] = ""
+
 
 ; Themes
 projects[bang][type] = "theme"
