@@ -1,0 +1,6 @@
+name = Kkb Wayfinder
+description = Add button to find material in library
+core = 7.x
+package = KKB
+dependencies[] = ding_availability
+dependencies[] = ding_list

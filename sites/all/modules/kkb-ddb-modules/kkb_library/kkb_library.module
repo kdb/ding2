@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Code for the kkb_library feature.
+ */
+
+include_once 'kkb_library.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function kkb_library_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function kkb_library_theme() {
+  return array(
+    'kkb_library_general_opening_hours' => array(
+      'variables' => array(
+        'text' => NULL,
+        'button' => NULL,
+      ),
+      'template' => 'kkb_library_general_opening_hours',
+    ),
+  );
+}

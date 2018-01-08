@@ -1,0 +1,49 @@
+#feedback_simple a {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  position: fixed;
+  text-decoration: none !important;
+  z-index: 9999;
+}
+#feedback_simple div {
+  display: inline-block;
+  white-space: nowrap;
+}
+#feedback_simple img {
+  border: none;
+}
+.feedback_simple-left {
+  left: -2px;
+}
+.feedback_simple-right {
+  right: -2px;
+}
+
+/* Rotate link and rotate text if necessary. */
+.feedback_simple-left.feedback_simple-text {
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+.feedback_simple-left.feedback_simple-text.feedback-top-to-bottom div {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+.feedback_simple-right.feedback_simple-text {
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.feedback_simple-right.feedback_simple-text.feedback-bottom-to-top div {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}

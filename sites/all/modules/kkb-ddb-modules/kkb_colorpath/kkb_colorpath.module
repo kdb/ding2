@@ -1,0 +1,187 @@
+<?php
+
+
+
+/**
+ * Implements theme_preprocess_html().
+ */
+function kkb_colorpath_preprocess_html(&$variables) {
+
+  // Find the color.
+  if ($color = _kkb_colorpath_get_color(current_path())) {
+    $theme = $color['color'];
+  }
+  else {
+    // If no color exists for the path, choose a random one.
+    $colors = _kkb_colorpath_colors_as_options();
+    $themes = array_keys($colors);
+    array_shift($themes);
+    $theme = $themes[rand(0, sizeof($themes) - 1)];
+  }
+  $variables['classes_array'][] = $theme;
+
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kkb_colorpath_form_path_admin_form_alter(&$form, &$form_state) {
+  $color = _kkb_colorpath_get_color($form['source']['#default_value']);
+  $form['color'] = array(
+    '#type' => 'select',
+    '#title' => t('Theme color'),
+    '#options' => _kkb_colorpath_colors_as_options(),
+    '#default_value' => $color ? $color['color'] : 0,
+    '#maxlength' => 255,
+    '#description' => t('Choose which color theme this piece of content should have.'),
+  );
+  // If a color is already set, then remove the Not set option.
+  if ($color) {
+    array_shift($form['color']['#options']);
+  }
+  $form['#submit'][] = 'kkb_colorpath_set_color_submit';
+}
+
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node_form().
+ *
+ * @see path_form_element_validate()
+ */
+function kkb_colorpath_form_node_form_alter(&$form, $form_state) {
+
+  if (!isset($form['#node']->nid)) {
+    return;
+  }
+  $source = 'node/' . $form['#node']->nid;
+  $color = _kkb_colorpath_get_color($source);
+
+  $form['colorpath'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Color settings'),
+    '#collapsible' => TRUE,
+    '#attached' => array(
+      'js' => array(drupal_get_path('module', 'kkb_colorpath') . '/kkb_colorpath.js'),
+    ),
+
+    '#group' => 'additional_settings',
+    '#attributes' => array(
+      'class' => array('colorpath-form'),
+    ),
+    '#access' => user_access('create url aliases') || user_access('administer url aliases'),
+    '#weight' => 30,
+    '#tree' => TRUE,
+  );
+  $form['colorpath']['color'] = array(
+    '#type' => 'select',
+    '#title' => t('Theme color'),
+    '#options' => _kkb_colorpath_colors_as_options(),
+    '#default_value' => $color ? $color['color'] : 0,
+    '#maxlength' => 255,
+    '#description' => t('Choose which color theme this piece of content should have.'),
+  );
+  $form['colorpath']['source'] = array('#type' => 'value', '#value' => $source);
+  $form['#submit'][] = 'kkb_colorpath_node_submit';
+}
+
+
+/**
+ * Submit handler for node save.
+ */
+function kkb_colorpath_node_submit(&$form, &$form_state) {
+  if ($form_state['values']['colorpath']['color']) {
+    _kkb_colorpath_set_color($form_state['values']['colorpath']['source'], $form_state['values']['colorpath']['color']);
+  }
+}
+
+/**
+ * Submit handler for colorpath add/edit.
+ */
+function kkb_colorpath_set_color_submit(&$form, &$form_state) {
+  if ($form_state['values']['color']) {
+    _kkb_colorpath_set_color($form_state['values']['source'], $form_state['values']['color']);
+  }
+}
+
+/**
+ * Sets the color for each path.
+ */
+function _kkb_colorpath_set_color($source, $color) {
+  // Check for path.
+  $result = _kkb_colorpath_get_color($source);
+
+  $vars = array(
+    'source' => $source,
+    'color' => $color
+  );
+
+  // Update record!
+  if ($result) {
+    $vars['pid'] = $result['pid'];
+    drupal_write_record('kkb_colorpath', $vars, array('pid'));
+  }
+  else {
+    // Create new!
+    drupal_write_record('kkb_colorpath', $vars);
+  }
+}
+
+/**
+ * Check for entry in the table.
+ *
+ * @param string $source
+ *   The source to check.
+ *
+ * @return array
+ *   The db record.
+ */
+function _kkb_colorpath_get_color($source) {
+  // Check for path.
+  $result = db_select('kkb_colorpath', 'c')
+    ->fields('c')
+    ->condition('source', $source, '=')
+    ->execute()
+    ->fetchAssoc();
+  return $result;
+}
+
+/**
+ * Returns the colors as options for forms.
+ *
+ * @return array
+ *   The colors as a array.
+ */
+function _kkb_colorpath_colors_as_options() {
+  return array(
+    0 => t('Not set'),
+    'theme-red' => t('Red'),
+    'theme-purple' => t('Purple'),
+    'theme-blue' => t('Blue'),
+    'theme-yellow' => t('Yellow'),
+    'theme-green' => t('Green'),
+    'theme-pink' => t('Pink'),
+  );
+}
+
+
+function kkb_colorpath_init() {
+  return;
+
+  $role = user_role_load_by_name('staff');
+
+  $result = db_select('users_roles', 'ur')
+    ->fields('ur', array('uid'))
+    ->condition('rid', 9, '=')
+    ->execute();
+
+  foreach ($result as $record) {
+
+    $profile = profile2_load_by_user(user_load($record->uid));
+
+    $wrapper = entity_metadata_wrapper('profile2', current($profile));
+    $wrapper->field_ding_staff_department->set(array(10059));
+    $wrapper->save();
+    profile2_save(current($profile));
+
+  }
+}

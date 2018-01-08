@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * @file
+ * Adds button to material to find it physically at the library.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function kkb_wayfinder_menu() {
+  $items['admin/config/ding/wayfinder'] = array(
+    'title' => 'Wayfinder settings',
+    'description' => 'Manage wayfinder branch mapping.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('kkb_wayfinder_admin_form'),
+    'access arguments' => array('administer ding provider'),
+    'file' => 'kkb_wayfinder.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_ding_entity_buttons().
+ */
+function kkb_wayfinder_ding_entity_buttons($type, $entity) {
+  if ($type == 'ding_entity') {
+    $return = array();
+
+    $branches = variable_get('kkb_wayfinder_branches', array());
+
+    $availability = ding_availability_holdings(array($entity->localId));
+    $options = array();
+    foreach ($availability[$entity->localId]['holdings'] as $holding) {
+      if ($holding['available_count'] > 0 && isset($branches[drupal_strtolower($holding['placement'][0])])) {
+        $options[] = array(
+          'custom' => array(
+            'title' => $holding['placement'][0],
+            'href' => '#',
+            'attributes' => array(
+              'class' => array(),
+              'data-wayfinder-faust' => $entity->localId,
+              'data-wayfinder-branch' => $branches[drupal_strtolower($holding['placement'][0])],
+            ),
+          ),
+        );
+      }
+    }
+    if ($options) {
+      // We have to use drupal_add_js() because #attached on the
+      // ding_list_add_button is ignored for some reason.
+      drupal_add_js(drupal_get_path('module', 'kkb_wayfinder') . '/js/kkb_wayfinder.js');
+      drupal_add_js('https://os2.wayfindingkkb.dk/embed/v1/wayfinding.js', 'external');
+
+      $return[] = array(
+        '#theme' => 'ding_list_add_button',
+        '#title' => t('See on map'),
+        '#value' => $entity->ding_entity_id,
+        '#options' => $options,
+      );
+    }
+    return $return;
+  }
+
+}

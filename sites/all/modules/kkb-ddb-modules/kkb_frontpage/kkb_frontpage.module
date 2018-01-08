@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the kkb_frontpage feature.
+ */
+
+include_once 'kkb_frontpage.features.inc';

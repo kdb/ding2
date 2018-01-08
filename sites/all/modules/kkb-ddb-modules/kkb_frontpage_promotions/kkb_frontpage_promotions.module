@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KKB Frontpage Promotions feature.
+ */
+
+include_once 'kkb_frontpage_promotions.features.inc';

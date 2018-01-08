@@ -1,0 +1,17 @@
+name = Ding Kultunaut Feed
+description = Ding Kultunaut Feed
+core = 7.x
+package = Ding!
+version = 7.x-1.0
+project = ding_kultunaut_feed
+dependencies[] = ctools
+dependencies[] = strongarm
+dependencies[] = views
+dependencies[] = views_data_export
+features[ctools][] = strongarm:strongarm:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[variable][] = date_format_ding_kultunaut_feed_format
+features[views_view][] = ding_kultunaut_feed
+files[] = includes/views_handler_field_ding_kultunaut_feed_uid.inc
+mtime = 1502969350

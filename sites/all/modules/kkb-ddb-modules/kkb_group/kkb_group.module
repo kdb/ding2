@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the kkb_group feature.
+ */
+
+include_once 'kkb_group.features.inc';

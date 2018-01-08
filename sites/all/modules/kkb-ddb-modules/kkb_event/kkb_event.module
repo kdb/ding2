@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the kkb_event feature.
+ */
+
+include_once 'kkb_event.features.inc';

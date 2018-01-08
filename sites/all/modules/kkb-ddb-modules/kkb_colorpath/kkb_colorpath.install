@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function kkb_colorpath_schema() {
+  $schema = array();
+
+  $schema['kkb_colorpath'] = array(
+    'description' => 'Path to color mapping.',
+    'fields' => array(
+      'pid' => array(
+        'description' => 'auto increment',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'source' => array(
+        'description' => 'The path.',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'color' => array(
+        'description' => 'The color of the path.',
+        'type' => 'varchar',
+        'length' => '32',
+        'not null' => FALSE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('pid'),
+    'unique keys' => array(
+      'source' => array('table' => 'source'),
+    ),
+  );
+
+  return $schema;
+}

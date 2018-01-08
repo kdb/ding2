@@ -1,0 +1,10 @@
+.availability-holdings-table tr td a.wagnerguide,
+.periodical-holdings tr td a.wagnerguide {
+  background: url("../images/button-wagner-bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 110%;
+  height: 26px;
+  padding-left: 0.5em;
+  width: 85px;
+}

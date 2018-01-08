@@ -1,0 +1,4 @@
+name = KKB Color Path
+description = Specify a specific theme color based on the path.
+core = 7.x
+package = KKB

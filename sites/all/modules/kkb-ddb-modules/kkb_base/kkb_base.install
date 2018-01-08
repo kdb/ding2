@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * Install scripts for kkb_base module.
+ *
+ * This will basically be a lot of update hooks - primarily for en/disabling
+ * modules.
+ */
+
+/**
+ * Remove obsolete library menu links from content migration.
+ */
+function kkb_base_update_7000() {
+  // Remove links containing an unfiltered token placeholder. It is uncertain
+  // why these exist in the database but it is probably due to a combination
+  // of the migration and missing slugs.
+  // The proper links will have to be recreated manually if necessary.
+  db_delete('menu_links')
+    ->condition('link_path', '%[node:field-ding-library-slug]%', 'LIKE')
+    ->execute();
+}
+
+/**
+ * Enable modules with local customizations.
+ */
+function kkb_base_update_7001() {
+  module_enable(array(
+    'kkb_event',
+    'kkb_group',
+    'kkb_library',
+    'kkb_news',
+    'kkb_page',
+    'kkb_frontpage',
+    'kkb_permissions',
+    'webform',
+  ));
+}
+
+/**
+ * Update DB-table "menu_links" to remove wrong slugs for Ørestad-library.
+ */
+function kkb_base_update_7002() {
+  // Delete the superfluous menu link.
+  $mlid_to_delete = 2361;
+
+  $menu_links = db_delete('menu_links')
+    ->condition('mlid', $mlid_to_delete)
+    ->execute();
+
+  // Fetch remaining.
+  $menu_links = db_select('menu_links')
+    ->fields('menu_links')
+    ->condition('menu_name', 'menu-og-17')
+    ->condition('link_path', '%' . db_like('oerestad') . '%', 'LIKE')
+    ->execute();
+
+  foreach ($menu_links as $menu_link) {
+    $menu_link->link_path = str_replace('oerestad', 'orestad', $menu_link->link_path);
+    db_update('menu_links')
+      ->fields(array('link_path' => $menu_link->link_path))
+      ->condition('mlid', $menu_link->mlid)
+      ->execute();
+  }
+}
+
+/**
+ * Enable related links feature.
+ */
+function kkb_base_update_7003() {
+  module_enable(array('kkb_related_links'));
+}
+
+/**
+ * Enable webform_remote_post module.
+ */
+function kkb_base_update_7101() {
+  module_enable(array('webform_remote_post'));
+}
+
+/**
+ * Enable ding_gatewayf module.
+ */
+function kkb_base_update_7102() {
+  module_enable(array('ding_gatewayf'));
+}
+
+/**
+ * Enable ding_gatewayf_registration module.
+ */
+function kkb_base_update_7103() {
+  module_enable(array('ding_gatewayf_registration'));
+}
+
+/**
+ * Revert ding_ting_frontend.
+ */
+function kkb_base_update_7104() {
+  features_revert_module('ding_ting_frontend');
+}

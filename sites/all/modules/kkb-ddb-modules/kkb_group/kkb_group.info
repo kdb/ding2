@@ -1,0 +1,16 @@
+name = KKB Groups
+description = Custom handling of groups for bibliotek.kk.dk
+core = 7.x
+package = KKB
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = field_group
+dependencies[] = file
+features[ctools][] = field_group:field_group:1
+features[features_api][] = api:2
+features[features_overrides][] = field_instance.node-ding_group-field_ding_group_body.required
+features[features_overrides][] = field_instance.node-ding_group-field_ding_group_list_image.required
+features[field_base][] = field_ding_group_files
+features[field_group][] = group_ding_group_attachments|node|ding_group|form
+features[field_instance][] = node-ding_group-field_ding_group_files
+mtime = 1436440440

@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Code for the kkb_base feature.
+ */
+
+include_once 'kkb_base.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kkb_base_form_node_form_alter(&$form, $form_state) {
+  if ($form['#node']->type == 'ding_event' &&
+    empty($form['#node']-> nid)) {
+    // Set default tab to Scheduler options when creating new events as
+    // unpublish date is a required field.
+    // @see http://dropbucket.org/node/332
+    $form['additional_settings']['#default_tab'] = 'edit-scheduler-settings';
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ *
+ * Add filter option "promotion" to ding_node_search view.
+ */
+function kkb_base_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'ding_node_search') {
+    $filters = $view->display_handler->get_option('filters');
+    $filters['type']['value']['promotion'] = 'promotion';
+    $view->display_handler->override_option('filters', $filters);
+  }
+}
+
+/**
+ * Implements hook_field_group_pre_render().
+ *
+ * Alter the holdings field_group to not render collapsed.
+ */
+function kkb_base_field_group_pre_render(&$element, $group, &$form) {
+  if ($group->group_name == 'group_holdings_available') {
+    $group->format_settings['formatter'] = 'open';
+  }
+}

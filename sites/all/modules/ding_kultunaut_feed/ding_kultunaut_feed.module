@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Code for the Ding Kultunaut Feed feature.
+ */
+
+include_once 'ding_kultunaut_feed.features.inc';
+
+/**
+ * Implements hook_views_post_render().
+ *
+ * The Kultunaut feed requires an attribute on each <activity> tag. The
+ * attribute is expected to contain the word "1-dags" if the event is an one day
+ * event and the string "flerdags" if the event spans several days.
+ *
+ * The views_data_export module doesn't support attributes. The date field
+ * doesn't support telling us if an event spans several days or not.
+ *
+ * So we add a "pseudo" field to the feed and post process it with regular
+ * expressions (sic!).
+ *
+ * The "pseudo" field should look like this (startdate!enddate):
+ *
+ *   <ding_kultunaut_feed_duration>2014-07-25 13:37:00!2014-07-25 15:37:00</ding_kultunaut_feed_duration>
+ *
+ * @see http://xkcd.com/1171/
+ */
+function ding_kultunaut_feed_views_post_render(&$view, &$output, &$cache) {
+  // Find ding_kultunaut_feed_duration tags where startdate and enddate are
+  // identical.
+  $output = preg_replace('/\<activity\>[^<]*\<ding_kultunaut_feed_duration\>(\d{4}-\d{2}-\d{2})[^!]*!\1[^<]*\<\/ding_kultunaut_feed_duration\>/si', '<activity type="1-dags">', $output);
+
+  // The left over ding_kultunaut_feed_duration tags most be spanning several
+  // days.
+  $output = preg_replace('/\<activity\>[^<]*\<ding_kultunaut_feed_duration\>(\d{4}-\d{2}-\d{2})[^!]*!(\d{4}-\d{2}-\d{2})[^<]*\<\/ding_kultunaut_feed_duration\>/si', '<activity type="flerdages">', $output);
+}
+
+/**
+ * Implements hook_date_formats().
+ */
+function ding_kultunaut_feed_date_formats() {
+  return array(
+    array(
+      'type' => 'ding_kultunaut_feed_format',
+      'format' => 'Y/m/d H:i:\\0\\0 T',
+      'locales' => array(),
+    ),
+  );
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function ding_kultunaut_feed_date_format_types() {
+  return array(
+    'ding_kultunaut_feed_format' => t('Kultunaut feed format'),
+  );
+}

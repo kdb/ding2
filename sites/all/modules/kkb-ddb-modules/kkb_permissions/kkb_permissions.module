@@ -1,0 +1,125 @@
+<?php
+
+/**
+ * Define site permissions in code.
+ *
+ * Create a secure_permissions_data module directory and place this function
+ * in secure_permissions_data.module.
+ *
+ * @param $role
+ *   The role for which the permissions are being requested.
+ *
+ * @return
+ *   An array defining all the permissions for the site.
+ */
+function kkb_permissions_secure_permissions($role) {
+  $permissions = array(
+    'administrators' => array(
+      'eck add ding_type ding_interaction entities',
+      'eck edit ding_type ding_interaction entities',
+      'eck delete ding_type ding_interaction entities',
+      'eck list ding_type ding_interaction entities',
+      'eck view ding_type ding_interaction entities',
+      'access all webform results',
+      'access own webform results',
+      'access own webform submissions',
+      'create webform content',
+      'delete all webform submissions',
+      'delete any webform content',
+      'delete own webform content',
+      'delete own webform submissions',
+      'edit all webform submissions',
+      'edit any webform content',
+      'edit own webform content',
+      'edit own webform submissions',
+      'edit webform components',
+      'create promotion content',
+      'delete any promotion content',
+      'delete own promotion content',
+      'edit any promotion content',
+      'edit own promotion content',
+      'create ding_eresource content',
+      'delete any ding_eresource content',
+      'delete own ding_eresource content',
+      'edit any ding_eresource content',
+      'edit own ding_eresource content',
+      'create ding_faq_question content',
+      'delete any ding_faq_question content',
+      'delete own ding_faq_question content',
+      'edit any ding_faq_question content',
+      'edit own ding_faq_question content',
+      'administer personalisation',
+    ),
+    'editor' => array(
+      'eck add ding_type ding_interaction entities',
+      'eck edit ding_type ding_interaction entities',
+      'eck delete ding_type ding_interaction entities',
+      'eck list ding_type ding_interaction entities',
+      'eck view ding_type ding_interaction entities',
+      'access all webform results',
+      'access own webform results',
+      'access own webform submissions',
+      'create webform content',
+      'delete all webform submissions',
+      'delete any webform content',
+      'delete own webform content',
+      'delete own webform submissions',
+      'edit all webform submissions',
+      'edit any webform content',
+      'edit own webform content',
+      'edit own webform submissions',
+      'edit webform components',
+      'create ding_eresource content',
+      'delete any ding_eresource content',
+      'delete own ding_eresource content',
+      'edit any ding_eresource content',
+      'edit own ding_eresource content',
+      'create ding_faq_question content',
+      'delete any ding_faq_question content',
+      'delete own ding_faq_question content',
+      'edit any ding_faq_question content',
+      'edit own ding_faq_question content',
+    ),
+    'guest blogger' => array(
+    ),
+    'local administrator' => array(
+      'eck add ding_type ding_interaction entities',
+      'eck edit ding_type ding_interaction entities',
+      'eck delete ding_type ding_interaction entities',
+      'eck list ding_type ding_interaction entities',
+      'eck view ding_type ding_interaction entities',
+      'access all webform results',
+      'access own webform results',
+      'access own webform submissions',
+      'create webform content',
+      'delete all webform submissions',
+      'delete any webform content',
+      'delete own webform content',
+      'delete own webform submissions',
+      'edit all webform submissions',
+      'edit any webform content',
+      'edit own webform content',
+      'edit own webform submissions',
+      'edit webform components',
+      'create ding_eresource content',
+      'delete any ding_eresource content',
+      'delete own ding_eresource content',
+      'edit any ding_eresource content',
+      'edit own ding_eresource content',
+      'create ding_faq_question content',
+      'delete any ding_faq_question content',
+      'delete own ding_faq_question content',
+      'edit any ding_faq_question content',
+      'edit own ding_faq_question content',
+    ),
+    'local editor' => array(
+    ),
+    'provider' => array(
+    ),
+    'staff' => array(
+    ),
+  );
+  if (isset($permissions[$role])) {
+    return $permissions[$role];
+  }
+}

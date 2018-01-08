@@ -1,0 +1,5 @@
+name = KKB permissions
+description = Permissions for KKB specific features.
+core = 7.x
+package = KKB
+dependencies[] = secure_permissions

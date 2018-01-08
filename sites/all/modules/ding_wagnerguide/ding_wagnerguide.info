@@ -1,0 +1,9 @@
+name = WagnerGUIDE integration module
+description = Module for integrating WagnerGUIDE with a D!ng site
+package = Ding!
+core = 7.x
+version = 7.x-1.0
+
+configure = admin/config/ding/wagnerguide
+dependencies[] = alma
+dependencies[] = ding_popup

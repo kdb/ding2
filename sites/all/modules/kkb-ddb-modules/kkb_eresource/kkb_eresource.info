@@ -1,0 +1,10 @@
+name = KKB E-resurser
+description = KKB E-resurser feature
+core = 7.x
+package = KKB
+dependencies[] = ding_eresource
+dependencies[] = features
+dependencies[] = menu
+features[features_api][] = api:1
+features[menu_custom][] = main-menu
+features[menu_links][] = main-menu:e-materialer
