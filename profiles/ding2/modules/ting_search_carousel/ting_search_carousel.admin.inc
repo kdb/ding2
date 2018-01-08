@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Admin related backend.
@@ -12,7 +13,6 @@
  */
 function ting_search_carousel_admin_page() {
   drupal_add_js(drupal_get_path('module', 'ting_search_carousel') . '/js/ting_search_carousel.admin.js');
-  drupal_add_css(drupal_get_path('module', 'ting_search_carousel') . '/css/ting_search_carousel.css');
   variable_set('ting_carousel_search_queries_hidden', array());
 
   return drupal_get_form('ting_search_carousel_admin_form');
@@ -29,17 +29,6 @@ function ting_search_carousel_settings_admin_form($form, &$form_state) {
     '#title' => t('Frontend settings'),
   );
 
-  $form['settings']['ting_search_carousel_tabs_position'] = array(
-    '#title' => t('Position of navigational tabs'),
-    '#type' => 'select',
-    '#options' => array(
-      'bottom' => t("Bottom"),
-    ),
-    '#default_value' => variable_get('ting_search_carousel_tabs_position', 'bottom'),
-    '#required' => TRUE,
-    '#description' => t('Select where you want the tabs for displaying the various searches to be placed in frontend.'),
-  );
-
   $form['settings']['ting_search_carousel_description_toggle'] = array(
     '#title' => t('Show descriptions for navigational tabs'),
     '#type' => 'checkbox',
@@ -49,7 +38,7 @@ function ting_search_carousel_settings_admin_form($form, &$form_state) {
   );
 
   $transitions = array();
-  foreach (ting_search_carousel_transitions() as $name => $transition) {
+  foreach (ding_carousel_transitions() as $name => $transition) {
     $transitions[$name] = $transition['name'];
   }
 
@@ -59,14 +48,6 @@ function ting_search_carousel_settings_admin_form($form, &$form_state) {
     '#options' => $transitions,
     '#default_value' => variable_get('ting_search_carousel_transition', 'fade'),
     '#description' => t('The JS transition used when switching tabs. This applies to the front page carousel.'),
-  );
-
-  $form['settings']['ting_search_carousel_server_render'] = array(
-    '#title' => t('Number of items pre-loaded in carousel'),
-    '#type' => 'select',
-    '#options' => array_combine(range(3, 10), range(3, 10)),
-    '#default_value' => variable_get('ting_search_carousel_server_render', 5),
-    '#description' => t("Number of items that's fully visible. Used for fall-back purposes."),
   );
 
   return system_settings_form($form);

@@ -139,15 +139,6 @@ sub vcl_deliver {
   # Remove server information
   set resp.http.X-Powered-By = "Ding T!NG";
 
-  # Remove Etag and Last modified header for HTML responses. If not these
-  # can cause authenticated users who log out to recieve 304 responses
-  # after logging out causing the client to render cached pages where
-  # the user is logged in.
-  if (resp.http.Content-Type ~ "text/html") {
-    unset resp.http.Etag;
-    unset resp.http.Last-Modified;
-  }
-
   # Debug
   if (obj.hits > 0 ) {
     set resp.http.X-Varnish-Cache = "HIT";
@@ -165,13 +156,6 @@ sub vcl_fetch {
   # We need this to cache 404s, 301s, 500s. Otherwise, depending on backend but
   # definitely in Drupal's case these responses are not cacheable by default.
   if (beresp.status == 404 || beresp.status == 301 || beresp.status == 500) {
-      # Requests to user/me/* will result in redirects containing user ids.
-      # These should not be cached as they are unique per user.
-      # A better solution would be to return 302s but that is not possible due
-      # to the globalredirect module.
-      if (req.url ~ "^/user/me/.*$") {
-        return (hit_for_pass);
-      }
     set beresp.ttl = 10m;
   }
 

@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * Theme and preprocess files
+ * Theme and preprocess files.
  */
 
 /**
@@ -9,6 +10,35 @@
  */
 function theme_ding_list_message($variables) {
   return '<div class="ding-list-message">' . $variables['message'] . '</div>';
+}
+
+/**
+ * Info displayed, when a list is created.
+ */
+function theme_ding_list_create_info($variables) {
+  $list = $variables['list'];
+
+  $out = '<div class="ding-list-test-button"></div>';
+
+  $items = array();
+  $items[] = t("You've create the list !list.", array(
+    '!list' => l($list->title, 'list/' . $list->id),
+  ));
+  $items[] = t('Use the "More" button on materials, to add them to the list.');
+  $items[] = t('You can search after materials !search, that you can add to the list.', array(
+    '!search' => l(t('Here'), 'search'),
+  ));
+  $items[] = t('Read more about how you use the lists !help', array(
+    '!help' => l(t('Here'), 'help/lists'),
+  ));
+
+  $list = array(
+    '#theme' => 'item_list',
+    '#items' => $items,
+  );
+  $out .= drupal_render($list);;
+
+  return '<div class="ding-list-create-info">' . $out . '</div>';
 }
 
 /**
@@ -32,10 +62,9 @@ function template_preprocess_ding_list_list(&$variables) {
  */
 function template_preprocess_ding_list_add_button(&$variables) {
   if (empty($variables['title'])) {
-    $variables['title'] = t('More...');
+    $variables['title'] = t('Add to list');
   }
 
-  $path = drupal_get_path('module', 'ding_list');
   $variables['buttons'] = array(
     '#theme' => 'links',
     '#links' => array(),
@@ -44,8 +73,6 @@ function template_preprocess_ding_list_add_button(&$variables) {
     ),
     '#attached' => array(
       'library' => array(array('system', 'drupal.ajax')),
-      'css' => array($path . '/css/ding-list-add-button.css'),
-      'js' => array($path . '/js/ding-list-add-button.js'),
     ),
   );
 
@@ -59,9 +86,9 @@ function template_preprocess_ding_list_add_button(&$variables) {
   }
 
   if ($variables['type'] == 'ting_object') {
-    $options[] = array(
+    $new_list = array(
       'custom' => array(
-        'title' => t('Add to new list'),
+        'title' => '<div class="list-title">' . t('New list') . '</div><div class="add-to-list-button button">' . t('Add to new list') . '</div>',
         'href' => 'list/create',
         'attributes' => array(
           'class' => array(),
@@ -70,8 +97,19 @@ function template_preprocess_ding_list_add_button(&$variables) {
         'html' => TRUE,
       ),
     );
+
+    if (!user_is_logged_in()) {
+      $new_list['custom']['attributes']['class'][] = 'use-ajax';
+      $new_list['custom']['href'] = 'ding-list/login-create';
+    }
+
+    $options[] = $new_list;
   }
   foreach ($options as $option) {
+    if ($option['type'] == 'search_query') {
+      $option['title'] = t('Add to searches I follow');
+    }
+
     if (!isset($option['custom'])) {
       $l = array(
         'title' => $option['title'],
@@ -129,7 +167,7 @@ function theme_ding_list_followers($variables) {
 }
 
 /**
- * Ding list info theme
+ * Ding list info theme.
  */
 function theme_ding_list_info($variables) {
   $out = '';
@@ -149,11 +187,13 @@ function theme_ding_list_info($variables) {
  * Ding list lists theme.
  */
 function theme_ding_list_lists($variables) {
+  global $user;
   $out = '';
 
   foreach ($variables['groups'] as $group_name => $group) {
     $out .= "<a name='" . $group_name . "'></a>";
     $rows = array();
+    $group_name_class = drupal_html_class($group_name);
 
     foreach ($group['lists'] as $lists) {
       foreach ($lists as $list) {
@@ -164,24 +204,33 @@ function theme_ding_list_lists($variables) {
       }
     }
 
-    $out .= theme('item_list', array(
-      'items' => $rows,
-      'title' => $group['title'],
-      'type' => 'ul',
-      'attributes' => array(),
-    ));
+    if (!empty($rows)) {
+      $render = array(
+        '#theme' => 'item_list',
+        '#title' => $group['title'],
+        '#items' => $rows,
+        '#type' => 'ul',
+        '#attributes' => array('class' => array('list-links', $group_name_class)),
+      );
+      $out .= drupal_render($render);
+    }
   }
 
   // Footer links.
-  $out .= theme('item_list', array(
-    'items' => array(
-      l(t("Mark all notifications as read"), "ding_message/purge_user_messages", array('attributes' => array('class' => array('button')))),
-      l(t("Create new list"), "list/create", array('attributes' => array('class' => array('button')))),
-    ),
-    'title' => "",
-    'type' => 'ul',
-    'attributes' => array('class' => array('bottom-links')),
-  ));
+  if ($variables['uid'] == $user->uid) {
+    $render = array(
+      '#theme' => 'item_list',
+      '#items' => array(
+        l(t("Mark all notifications as read"), "ding_message/purge_user_messages", array('attributes' => array('class' => array('button')))),
+        l(t("Create new list"), "list/create", array('attributes' => array('class' => array('button')))),
+        l(t('View all public lists'), 'public-lists', array('attributes' => array('class' => array('button')))),
+      ),
+      '#title' => "",
+      '#type' => 'ul',
+      '#attributes' => array('class' => array('bottom-links')),
+    );
+    $out .= drupal_render($render);
+  }
 
   return '<div class="ding-user-lists">' . $out . '</div>';
 }

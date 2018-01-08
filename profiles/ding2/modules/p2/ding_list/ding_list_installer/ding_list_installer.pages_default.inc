@@ -19,11 +19,11 @@ function ding_list_installer_default_page_manager_pages() {
   $page->access = array(
     'plugins' => array(
       0 => array(
-        'name' => 'external_user',
-        'settings' => NULL,
-        'context' => array(
-          0 => 'logged-in-user',
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'use personalisation',
         ),
+        'context' => 'logged-in-user',
         'not' => FALSE,
       ),
     ),
@@ -148,7 +148,7 @@ function ding_list_installer_default_page_manager_pages() {
   $page->path = 'list/%ding_type/edit';
   $page->access = array(
     'plugins' => array(
-      0 => array(
+      1 => array(
         'name' => 'user_list',
         'settings' => array(
           'visibility_settings' => 'edit',
@@ -567,7 +567,7 @@ function ding_list_installer_default_page_manager_pages() {
     $pane->pid = 'new-6522f0cd-55b6-410c-9bae-3b3f8f08f00f';
     $pane->panel = 'main_content';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ding_list_elements-panel_pane_2';
+    $pane->subtype = 'ding_list_elements-with_states';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -597,7 +597,14 @@ function ding_list_installer_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
-    $pane->cache = array();
+    $pane->cache = array(
+      'method' => 'lazy',
+      'settings' => array(
+        'load_strategy' => 'page-loaded',
+        'show_spinner' => 1,
+        'load_text' => '',
+      ),
+    );
     $pane->style = array(
       'settings' => NULL,
     );
@@ -734,7 +741,7 @@ function ding_list_installer_default_page_manager_pages() {
     $pane->pid = 'new-027999f9-cb20-4a51-b97f-fadace305a3d';
     $pane->panel = 'main_content';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ding_list_elements-panel_pane_3';
+    $pane->subtype = 'ding_list_elements-with_weight';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -866,7 +873,7 @@ function ding_list_installer_default_page_manager_pages() {
     $pane->pid = 'new-e1195ffb-63fb-4b67-9ee9-6d20d0c0ead0';
     $pane->panel = 'main_content';
     $pane->type = 'views_panes';
-    $pane->subtype = 'ding_list_elements-panel_pane_1';
+    $pane->subtype = 'ding_list_elements-default_list';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1009,5 +1016,4 @@ function ding_list_installer_default_page_manager_pages() {
   $pages['page_ding_list_view'] = $page;
 
   return $pages;
-
 }

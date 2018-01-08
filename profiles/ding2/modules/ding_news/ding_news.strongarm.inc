@@ -42,7 +42,7 @@ function ding_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_ding_news';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_ding_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -93,27 +93,80 @@ function ding_news_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'workflow_tab' => array(
+        'custom_settings' => FALSE,
+      ),
+      'block_feature' => array(
+        'custom_settings' => TRUE,
+      ),
+      'alternative_layout_full' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '8',
+        ),
+        'redirect' => array(
+          'weight' => '9',
         ),
       ),
       'display' => array(
         'webform' => array(
+          'teaser' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'teaser_highlight' => array(
+            'weight' => '3',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '12',
+            'visible' => TRUE,
+          ),
           'search_result' => array(
-            'weight' => '10',
+            'weight' => '3',
             'visible' => FALSE,
+          ),
+          'full' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
+          'block_feature' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
+          'alternative_layout_full' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+        'ding_serendipity_info' => array(
+          'alternative_layout_full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
       ),
     ),
   );
   $export['field_bundle_settings_node__ding_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flag_push_to_mongo_default_ding_news';
+  $strongarm->value = 1;
+  $export['flag_push_to_mongo_default_ding_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

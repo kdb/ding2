@@ -109,8 +109,9 @@ function ding_library_strongarm() {
             'label' => 'above',
           ),
           'teaser' => array(
-            'weight' => '7',
-            'visible' => TRUE,
+            'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
           ),
           'rss' => array(
             'visible' => FALSE,
@@ -127,7 +128,7 @@ function ding_library_strongarm() {
             'weight' => 0,
             'label' => 'above',
           ),
-          'diff_standard' => array(
+          'alternative_layout_full' => array(
             'visible' => FALSE,
             'weight' => 0,
             'label' => 'above',
@@ -142,21 +143,23 @@ function ding_library_strongarm() {
             'weight' => 0,
             'label' => 'above',
           ),
-        ),
-        'page_opening_hours_entity_view_1' => array(
-          'teaser' => array(
-            'weight' => '8',
-            'visible' => TRUE,
-          ),
-          'default' => array(
-            'weight' => '10',
+          'workflow_tab' => array(
             'visible' => FALSE,
+            'weight' => 0,
+            'label' => 'above',
           ),
         ),
       ),
     ),
   );
   $export['field_bundle_settings_node__ding_library'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flag_push_to_mongo_default_ding_library';
+  $strongarm->value = 1;
+  $export['flag_push_to_mongo_default_ding_library'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -233,13 +236,6 @@ Om|bibliotek/[node:field-ding-library-slug]/om';
   $strongarm->name = 'opening_hours_enabled_library';
   $strongarm->value = 1;
   $export['opening_hours_enabled_library'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'opening_hours_week_label_position__ding_library__teaser';
-  $strongarm->value = 'hidden';
-  $export['opening_hours_week_label_position__ding_library__teaser'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

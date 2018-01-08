@@ -42,7 +42,7 @@ function ding_event_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_ding_event';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_ding_event'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -100,6 +100,12 @@ function ding_event_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'workflow_tab' => array(
+        'custom_settings' => FALSE,
+      ),
+      'alternative_layout_full' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -109,18 +115,46 @@ function ding_event_strongarm() {
         'path' => array(
           'weight' => '7',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(
         'webform' => array(
-          'search_result' => array(
+          'teaser' => array(
+            'weight' => '6',
+            'visible' => TRUE,
+          ),
+          'default' => array(
             'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'search_result' => array(
+            'weight' => '4',
             'visible' => FALSE,
+          ),
+        ),
+        'ding_serendipity_info' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
       ),
     ),
   );
   $export['field_bundle_settings_node__ding_event'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'flag_push_to_mongo_default_ding_event';
+  $strongarm->value = 1;
+  $export['flag_push_to_mongo_default_ding_event'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -149,6 +183,7 @@ function ding_event_strongarm() {
   $strongarm->name = 'node_options_ding_event';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'promote',
   );
   $export['node_options_ding_event'] = $strongarm;
 

@@ -34,11 +34,10 @@ function ding_list_list_menu_content_type_render($subtype, $conf, $panel_args, $
       '#theme' => 'links',
       '#links' => array(
         'to-lists' => array(
-          'href' => 'user/' . $user->uid . '/view',
+          'href' => 'user/' . $user->uid . '/my-library',
           'title' => t('To your lists'),
           'attributes' => array('class' => array('menu-item')),
           'html' => TRUE,
-          'fragment' => 'userlists',
         ),
         'view' => array(
           'href' => $uri['path'],

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Admin related functionality.
@@ -34,7 +35,13 @@ function ting_openlist_settings_form($form, &$form_state) {
     '#title' => t('Openlist prefix'),
     '#description' => t('The prefix used for creating a unique hashed user id.'),
     '#default_value' => variable_get('ting_openlist_prefix', uniqid()),
-    '#disabled' => TRUE,
+  );
+
+  $form['settings']['ting_openlist_authkey'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Openlist authkey'),
+    '#description' => t('The key that authenticates this library code towards OpenList.'),
+    '#default_value' => variable_get('ting_openlist_authkey', ''),
   );
 
   // Caching settings.
@@ -79,7 +86,7 @@ function ting_openlist_settings_form($form, &$form_state) {
     '#description' => t('Send the developer cookie to the service.'),
     '#default_value' => variable_get('ting_openlist_developer', FALSE),
   );
-  
+
   $form['debugging']['ting_openlist_no_wsdl_cache'] = array(
     '#type' => 'checkbox',
     '#title' => t('Disable WSDL caching'),
@@ -90,7 +97,8 @@ function ting_openlist_settings_form($form, &$form_state) {
   // Statistics.
   $form['stats'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Statistics'),
+    '#title' => t('Statistics and authentication test'),
+    '#description' => t('You can check that your authkey, library code and IP is correct by fetching the OpenList statistics here.'),
   );
 
   $form['stats']['show_stats'] = array(

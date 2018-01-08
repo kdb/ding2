@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Provider and configuration layer for connection with the OpenList service.
@@ -145,10 +146,10 @@ function ting_openlist_autocomplete_list($string) {
   $buffer = array();
 
   $lists = ding_provider_invoke('openlist', 'request', 'callModule', array(
-      'ListPermission',
-      'getPublicLists',
+    'ListPermission',
+    'getPublicLists',
       array($string),
-    ));
+  ));
 
   foreach ($lists as $list) {
     $buffer[$list['title'] . ' [' . $list['list_id'] . ']'] = $list['title'];
@@ -203,7 +204,7 @@ function ting_openlist_field_add_elements_submit($form, &$form_state) {
  * Ajax update the reference field.
  *
  * This is stolen from the field.form.inc module, it's basically the
- * field_add_more_js
+ * field_add_more_js.
  */
 function ting_openlist_field_add_elements_js($form, &$form_state) {
   $button = $form_state['triggering_element'];
@@ -233,7 +234,7 @@ function ting_openlist_field_add_elements_js($form, &$form_state) {
  * Validate function for the ting_openlist_id textfield.
  */
 function ting_openlist_field_validate($element, &$form_state, $form) {
-  // The format of a valid openlist id input is "ANYTHING SPACE [DIGIT]"
+  // The format of a valid openlist id input is "ANYTHING SPACE [DIGIT]".
   if (!empty($element['#value']) && !preg_match('/^.+\s\[\d*\]$/', $element['#value'], $matches)) {
     form_error($element, t('Invalid openlist list'));
   }
@@ -268,6 +269,7 @@ function ting_openlist_get_soap($wsdl = NULL, $trace = FALSE) {
       );
 
       $clients[$wsdl]->__setCookie('library_code', variable_get('ting_library_code', ''));
+      $clients[$wsdl]->__setCookie('authkey', variable_get('ting_openlist_authkey', ''));
 
       // Enable the developer cookie if specified.
       if (variable_get('ting_openlist_developer', FALSE)) {
@@ -303,7 +305,7 @@ function ting_openlist_get_soap($wsdl = NULL, $trace = FALSE) {
  * @return mixed
  *   Response from Openlist.
  */
-function ting_openlist_request($function, $arguments = array(), $detailed_log = FALSE) {
+function ting_openlist_request($function, array $arguments = array(), $detailed_log = FALSE) {
   $response = FALSE;
   $start_time = microtime(TRUE);
 
@@ -438,15 +440,15 @@ function ting_openlist_user_identifier($account = NULL) {
           $ids[$account->uid] = ting_openlist_create_identifier($creds['name']);
         }
         else {
-          // Standard drupal users (not loaners) will get the drupal private key
+          // Standard drupal users (not loaners) will get the Ding private key
           // prepended so they're unique across sites.
-          $ids[$account->uid] = ting_openlist_create_identifier(drupal_get_private_key() . $account->name);
+          $ids[$account->uid] = ting_openlist_create_identifier(ding_user_get_private_key() . $account->name);
         }
       }
       catch (Exception $e) {
-        // Standard drupal users (not loaners) will get the drupal private key
+        // Standard drupal users (not loaners) will get the Ding private key
         // prepended so they're unique across sites.
-        $ids[$account->uid] = ting_openlist_create_identifier(drupal_get_private_key() . $account->name);
+        $ids[$account->uid] = ting_openlist_create_identifier(ding_user_get_private_key() . $account->name);
       }
     }
   }
