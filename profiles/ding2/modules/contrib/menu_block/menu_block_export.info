@@ -9,7 +9,9 @@ files[] = menu_block_export.admin.inc
 
 configure = admin/config/user-interface/menu-block/export
 
-; Information added by drush on 2013-03-08
+
+; Information added by drush on 2017-11-10
 version = "32ab1cf08b729c93302455d67dd05f64ad2fc056"
 project = "menu_block"
-datestamp = "1362725790"
+datestamp = "1510328623"
+

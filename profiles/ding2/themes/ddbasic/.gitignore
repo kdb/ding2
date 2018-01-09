@@ -4,6 +4,8 @@
 npm-shrinkwrap.json
 node_modules
 
+# Compile the css via "gulp sass"
+sass_css
 
 # Compile the styleguide via "gulp kss"
 styleguide

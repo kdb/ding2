@@ -320,6 +320,7 @@ function dibs_schema() {
       'payment_transaction_id' => array(
         'type' => 'int',
         'unsigned' => TRUE,
+        'not null' => TRUE,
         'description' => t('Transaction id from DIBS.'),
       ),
       'delta' => array(
@@ -445,5 +446,21 @@ function dibs_update_7001(&$sandbox) {
   db_add_field('dibs_transactions', 'payment_fee', array(
     'type' => 'float',
     'description' => t('The fee for the transaction'),
+  ));
+}
+
+/**
+ * Add not null parameter to the payment_transaction_id in the dibs_split_payments table.
+ */
+function dibs_update_7002(&$sandbox) {
+  db_drop_primary_key('dibs_split_payments');
+  db_change_field('dibs_split_payments', 'payment_transaction_id', 'payment_transaction_id', array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+    'description' => t('Transaction id from DIBS.'),
+  ),
+  array(
+    'primary key' => array('tid', 'payment_transaction_id'),
   ));
 }
