@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import '../bootstrap/alerts';
+
+@mixin ss_alert($color){
+    background-color: desaturate(lighten($color,5),5);
+    border-color: darken($color,20);
+    color: darken($color,20);
+}
+
+
+.alert{
+    position: relative;
+    .btn{
+        margin: 10px 0 3px 0;
+    }
+    @include ss_alert($color-red);
+
+    p{
+        color:white;
+    }
+}
+
+.alert.alert-warning{
+//    @extend .alert-warning;
+    @include ss_alert($color-yellow);
+}
+
+.alert.alert-info{
+//    @extend .alert-info;
+    @include ss_alert($color-blue);
+}
+
+.alert.alert-success{
+//    @extend .alert-success;
+    @include ss_alert($color-green);
+}
+
+.alert.alert-infomation {
+  background-color: $color-black;
+  //padding-top: 32px;
+  margin-bottom: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: white;
+  h1, h2, h3, h4, p {
+    color: white;
+  }
+  .close {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
+
+  .alert-wrapper{
+    padding: 24px 0 0 0;
+   }
+}
+
+/*
+Alerts
+
+Markup: <div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4>Oh snap! You got an error!</h4>
+    <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+        <button class="btn btn-danger" data-dismiss="alert">Okay jeg forstår</button>
+</div>
+
+Styleguide 99.6
+*/
+
+/*
+Alerts colors
+
+Markup: <div class="alert {$modifiers}">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4>Oh snap! You got an error!</h4>
+    <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+</div>
+
+.alert-danger   - Danger
+.alert-warning  - Warning
+.alert-info     - Info
+.alert-success  - Success
+.alert-infomation  - Information
+
+Styleguide 99.7
+*/

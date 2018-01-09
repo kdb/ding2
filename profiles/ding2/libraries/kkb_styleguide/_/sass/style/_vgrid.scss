@@ -1,0 +1,37 @@
+@charset "UTF-8";
+// ----- V G R I D -----
+$basepx: 16;
+
+@function pxtoem($px, $basepx){
+    @return ($px/$basepx)+0em;
+}
+
+$vertical-grid-size: 8px; //pxtoem(8, $basepx);
+
+
+@function unit($val){
+    @return $vertical-grid-size * $val;
+}
+
+@mixin fontSize($val){
+    font-size: $vertical-grid-size * $val;
+}
+@mixin lineHeight($val){
+    line-height: $vertical-grid-size * $val;
+}
+
+@mixin padding($top, $bottom){
+    padding-top: $vertical-grid-size * $top;
+    padding-bottom: $vertical-grid-size * $bottom;
+}
+
+@mixin margin($top, $bottom){
+    margin-top: $vertical-grid-size * $top;
+    margin-bottom: $vertical-grid-size * $bottom;
+}
+
+@function calcMargin($val){
+    $a: $val % 24;
+    $b: 24 - $a;
+    @return $b;
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Settings in a seperate file so they can be overridden in implementation.
+ */
+
+$fa-font-path: "../css/fonts" !default;
+$font-path: "fonts/merriweatherweb/";
+
+$proxima-nova-font-name: 'proxima-nova', sans-serif;

@@ -1,0 +1,17 @@
+{
+    "name": "styleguide",
+    "version": "0.0.1",
+    "description": "A test for testing styleguides automation",
+    "main": "gruntfile.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "grunt": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-compass": "*",
+        "grunt-shell": "*"
+    },
+    "author": "Adalberth",
+    "license": "BSD-2-Clause"
+}

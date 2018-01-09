@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>Styleguide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="public/js/modernizr.js"></script>
+    <script type="text/javascript" src="public/js/css-calc.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/qqr6kuv.js"></script>
+    <script type="text/javascript">
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
+
+    <script>
+    </script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="public/js/selectivizr.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/normalize-css/normalize.css">
+    <link rel="stylesheet" href="public/zengrid.css">
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="shortcut icon" href="_/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="_/img/favicon.ico" type="image/x-icon">
+    
+    <style>
+        
+        .kss-head{
+            padding-top: 20px;
+        }
+        
+        
+        /* MENU */
+        .kss-head ul{
+            margin:0 0 0 10px; padding: 0;
+        }
+        .kss-head ul li{
+            margin: 0 0 20px 0; padding: 0;
+            list-style:none;
+        }
+        
+        .kss-head ul li a{
+            display:block;
+/*            border-bottom: 1px solid rgba(0,0,0,0.05);*/
+            padding-bottom: 5px;
+        }
+        
+        
+        .kss-head ul li ul{
+            margin: 0; padding: 0;            
+        }
+        
+        .kss-head ul li ul li{
+            margin: 0; padding: 0; 
+            border-bottom: none;           
+        }
+        
+        .kss-head ul li ul li a{
+            border-bottom: none;
+            color: rgba(0,0,0,0.3);
+            color: #bdbeb3\9;
+            padding-bottom: 0px;
+        }
+        
+        .kss-head ul li ul li a:hover{
+            color: rgba(0,0,0,0.5);
+            color: #b1b2ab\9;
+        }
+        
+        
+        /* SECTION */
+        .kss-section{
+           margin: 25px 100px 100px 0px;
+        }
+        
+        .kss-header{
+            border-bottom: 1px solid #d5d6c8;
+            margin-bottom:24px;
+        }
+        
+        .kss-title{
+            font-family: 'proxima-nova',sans-serif;
+            font-size: 24px;
+            font-weight: 100;
+            line-height: 24px;
+            padding-top: 25px;         
+        }
+        
+        .kss-title-top{
+            font-family: 'Merriweather',serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 24px;
+            padding-top: 25px;
+            color: #00b38a;     
+        }
+        
+        .kss-reference{
+            font-weight: 400;
+            color: #00b38a;
+        }
+        .kss-description{
+            margin:0 0 50px 0;
+        }
+        .kss-description:after{
+            content:"";
+            display: block;
+            clear: both;
+            float:none;
+        }
+        .kss-description>p{
+        }
+        .kss-markup{
+            margin-bottom:50px;
+        }
+        .kss-markup:after{
+            content:'';
+            display:block;
+            clear: both;
+        }
+        
+        
+        /* MODIFIER */
+        .kss-modifier{
+            margin:20px 0 20px 0;
+            border-radius:4px;
+            background-color: #F5F5EE;
+            border: 1px solid #DDDDD7;
+            position:relative;
+            padding: 30px;
+            padding-top: 50px;
+        }
+        
+        .kss-modifier>div, .kss-modifier .kss-description > p{
+            margin: 0;padding: 0;
+        }
+        .kss-modifier p{
+            line-height:auto;
+        }
+        
+        .kss-modifier .kss-description{
+            margin: 0 0 10px 0; padding: 0;
+            position:absolute;
+            top:-1px; left:-1px;
+            background-color: white;
+            width:100%;
+            border-radius:4px;
+            border: 1px solid #DDDDD7;
+        }
+        
+        .kss-modifier .kss-description p {
+            margin: 5px 5px 5px 10px;
+            font-size: 15px;
+             color:rgba(0,0,0,0.5);
+        }
+        
+        .kss-modifier .kss-name{
+            background-color: #7F7F7F;
+            float:right;
+            border-radius:4px;
+            color:white;
+            padding: 5px 8px 5px 8px;
+            position:absolute;
+            top:0px; right:-1px;
+            
+            font-size: 12px;
+        }
+        .kss-modifier .kss-markup{
+        }
+        
+        .kss-code-special{
+            float: left;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .kss-code pre{
+            background-color: #FCFCF9;
+            border-radius:10px;
+            padding:20px;
+            border: 1px solid #E3E3E1;
+            font-size: 13px;
+            font-weight: 200;
+        }
+        
+        code{
+            background-color: #FBFBF8;
+            color:black;
+            padding: 2px 4px;
+            border: 1px solid #E1E1DE;
+            font-size: 13px;
+        }
+        
+        code.block{
+/*            display:inline-block;*/
+/*            margin: 20px 0 20px 0;*/
+        }        
+        
+        
+        @media only screen and (max-width: 768px) {
+            .kss-section{
+               margin: 50px 0px 100px 0px;
+            }   
+            
+             .kss-head-menu{
+                position:relative;    
+                width:auto;
+            } 
+        }
+    </style> 
+    <script src="public/js/ua-parser.min.js"></script>
+    <script>
+        var parser = new UAParser(),
+            result = parser.getResult();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var html = document.getElementsByTagName('html')[0];
+            html.className += " " + result.os.name.split(' ').join('_').toLowerCase();
+            html.className += " " + result.browser.name.split(' ').join('_').toLowerCase();
+        })
+    </script>
+
+</head>
+
+<body>
+ 
+<div class="g3-1">
+    <div class="kss-head">
+        <div class="kss-head-menu">
+            <h1>Ding2 Styleguide</h1>
+            <ul>
+<!--                <li><a href="index.html">0.0 Overview</a></li>-->
+                <li><a href="index.html">Overview</a></li>
+                
+<!--                    <li><a href="section-1.html">1.0: Typografi</a>-->
+                    <li><a href="section-1.html">Typografi</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.1">1.1 Headers</a></li>-->
+                                <li><a href="section-1.html#1.1">Headers</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.2">1.2 Links</a></li>-->
+                                <li><a href="section-1.html#1.2">Links</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.2">1.2 Meta data</a></li>-->
+                                <li><a href="section-1.html#1.2">Meta data</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.3">1.3 Tags</a></li>-->
+                                <li><a href="section-1.html#1.3">Tags</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H1, H4</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H1, H4</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H2</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H2</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H3</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H3</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H3, H4</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H3, H4</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-2.html">2.0: Farver</a>-->
+                    <li><a href="section-2.html">Farver</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-2.html#2.1">2.1 Primær Farver</a></li>-->
+                                <li><a href="section-2.html#2.1">Primær Farver</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-2.html#2.2">2.2 Tema Farver</a></li>-->
+                                <li><a href="section-2.html#2.2">Tema Farver</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-3.html">3.0: Vertical List</a>-->
+                    <li><a href="section-3.html">Vertical List</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.1">3.1 Vertical List Nav</a></li>-->
+                                <li><a href="section-3.html#3.1">Vertical List Nav</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.2">3.2 Vertical List Separator</a></li>-->
+                                <li><a href="section-3.html#3.2">Vertical List Separator</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.3">3.3 Vertical List With Forms</a></li>-->
+                                <li><a href="section-3.html#3.3">Vertical List With Forms</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.4">3.4 Vertical List With Icons</a></li>-->
+                                <li><a href="section-3.html#3.4">Vertical List With Icons</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-4.html">4.0: Tables</a>-->
+                    <li><a href="section-4.html">Tables</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-4.html#4.1">4.1 Tables for data</a></li>-->
+                                <li><a href="section-4.html#4.1">Tables for data</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-4.html#4.2">4.2 Table in dropdown</a></li>-->
+                                <li><a href="section-4.html#4.2">Table in dropdown</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-4.html#4.3">4.3 Data pair</a></li>-->
+                                <li><a href="section-4.html#4.3">Data pair</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-6.html">6.0: Forms</a>-->
+                    <li><a href="section-6.html">Forms</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.1">6.1 Inputs</a></li>-->
+                                <li><a href="section-6.html#6.1">Inputs</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.2">6.2 Checkbox &amp; Radial</a></li>-->
+                                <li><a href="section-6.html#6.2">Checkbox &amp; Radial</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.3">6.3 Select</a></li>-->
+                                <li><a href="section-6.html#6.3">Select</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.4">6.4 Fieldset Legend</a></li>-->
+                                <li><a href="section-6.html#6.4">Fieldset Legend</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.5">6.5 Login</a></li>-->
+                                <li><a href="section-6.html#6.5">Login</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-7.html">7.0: Images &amp; Text</a>-->
+                    <li><a href="section-7.html">Images &amp; Text</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.1">7.1 Reponsive image</a></li>-->
+                                <li><a href="section-7.html#7.1">Reponsive image</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.2">7.2 Image limited center</a></li>-->
+                                <li><a href="section-7.html#7.2">Image limited center</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.3">7.3 Image &amp; Text in columns</a></li>-->
+                                <li><a href="section-7.html#7.3">Image &amp; Text in columns</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.4">7.4 Image &amp; Text in columns with scale</a></li>-->
+                                <li><a href="section-7.html#7.4">Image &amp; Text in columns with scale</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.5">7.5 Image hide</a></li>-->
+                                <li><a href="section-7.html#7.5">Image hide</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.6">7.6 Image underline</a></li>-->
+                                <li><a href="section-7.html#7.6">Image underline</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-70.html">70.0: Menu</a>-->
+                    <li><a href="section-70.html">Menu</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-70.html#70.1">70.1 Menu Colors</a></li>-->
+                                <li><a href="section-70.html#70.1">Menu Colors</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-75.html">75.0: Searchbar</a>-->
+                    <li><a href="section-75.html">Searchbar</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-75.html#75.1">75.1 Mini searchbar</a></li>-->
+                                <li><a href="section-75.html#75.1">Mini searchbar</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-80.html">80.0: Content</a>-->
+                    <li><a href="section-80.html">Content</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-80.html#80.1">80.1 Content List</a></li>-->
+                                <li><a href="section-80.html#80.1">Content List</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-80.html#80.2">80.2 Arrangement</a></li>-->
+                                <li><a href="section-80.html#80.2">Arrangement</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-80.html#80.3">80.3 Temaer</a></li>-->
+                                <li><a href="section-80.html#80.3">Temaer</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-90.html">90.0: Dropdown</a>-->
+                    <li><a href="section-90.html">Dropdown</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-90.html#90.1">90.1 Dropdown with links</a></li>-->
+                                <li><a href="section-90.html#90.1">Dropdown with links</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-90.html#90.2">90.2 Dropdown with content</a></li>-->
+                                <li><a href="section-90.html#90.2">Dropdown with content</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-90.html#90.3">90.3 Dropdown with Vertical list</a></li>-->
+                                <li><a href="section-90.html#90.3">Dropdown with Vertical list</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-99.html">99.0: Objects</a>-->
+                    <li><a href="section-99.html">Objects</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.1">99.1 Buttons</a></li>-->
+                                <li><a href="section-99.html#99.1">Buttons</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.2">99.2 Tip / Popover</a></li>-->
+                                <li><a href="section-99.html#99.2">Tip / Popover</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.4">99.4 Rating</a></li>-->
+                                <li><a href="section-99.html#99.4">Rating</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.5">99.5 Rating interactive</a></li>-->
+                                <li><a href="section-99.html#99.5">Rating interactive</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.6">99.6 Alerts</a></li>-->
+                                <li><a href="section-99.html#99.6">Alerts</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.7">99.7 Alerts colors</a></li>-->
+                                <li><a href="section-99.html#99.7">Alerts colors</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.8">99.8 Loader</a></li>-->
+                                <li><a href="section-99.html#99.8">Loader</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.9">99.9 Favicon</a></li>-->
+                                <li><a href="section-99.html#99.9">Favicon</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.10">99.10 Kalender</a></li>-->
+                                <li><a href="section-99.html#99.10">Kalender</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+<div class="g9-4">
+    <div class="kss-body">
+    
+        
+        
+                
+                    
+                    
+                    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="6.1">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">6.1.0</span> Inputs</h1>-->
+                            <h1 class="kss-title">Inputs</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <form action="">
+    <div class="form-group">
+        <label for="textinput">Basic Text input</label>
+        <input type="text" id="textinput" name="textinput" placeholder="Basic text input">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+    </div>  
+    <div class="form-group">
+        <label for="message">Text Area</label>
+        <textarea rows="5" cols="50" id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.</textarea>
+        <span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn ">
+        <button class="btn  btn-secondary">Cancel</button>
+    </div>
+</form>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;form action=&quot;&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;textinput&quot;&gt;Basic Text input&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;textinput&quot; name=&quot;textinput&quot; placeholder=&quot;Basic text input&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+        &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;&gt;
+    &lt;/div&gt;  
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;message&quot;&gt;Text Area&lt;/label&gt;
+        &lt;textarea rows=&quot;5&quot; cols=&quot;50&quot; id=&quot;message&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.&lt;/textarea&gt;
+        &lt;span class=&quot;meta-form&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; class=&quot;btn &quot;&gt;
+        &lt;button class=&quot;btn  btn-secondary&quot;&gt;Cancel&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="6.2">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">6.2.0</span> Checkbox &amp; Radial</h1>-->
+                            <h1 class="kss-title">Checkbox &amp; Radial</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <form action="">
+    <div class="form-group">
+        <label>Checkboxes</label><br>
+        <input id="checkboxone" class="input" type="checkbox" name="checkboxone" value="Checkbox One" checked >
+        <label class="label label-checkbox" for="checkboxone">Checkbox One</label><br>
+        <input id="checkboxtwo" class="input" type="checkbox" name="checkboxtwo" value="Checkbox One" >
+        <label class="label label-checkbox" for="checkboxtwo">Checkbox Two</label><br>
+        <input id="checkboxthree" class="input" type="checkbox" name="checkboxthree" value="Checkbox One" >
+        <label class="label label-checkbox" for="checkboxthree">Checkbox Three</label>
+    </div>
+    <div class="form-group">
+        <label>Radios</label><br>
+        <input id="radioone" class="input" type="radio" name="radio" value="Radio One" checked>
+        <label class="label label-radio" for="radioone">Radio One</label><br>
+        <input id="radiotwo" class="input" type="radio" name="radio" value="Radio Two">
+        <label class="label label-radio" for="radiotwo">Radio Two</label><br>
+        <input id="radiothree" class="input" type="radio" name="radio" value="Radio Three">
+        <label class="label label-radio" for="radiothree">Radio Three</label><br>
+    </div>
+</form>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;form action=&quot;&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label&gt;Checkboxes&lt;/label&gt;&lt;br&gt;
+        &lt;input id=&quot;checkboxone&quot; class=&quot;input&quot; type=&quot;checkbox&quot; name=&quot;checkboxone&quot; value=&quot;Checkbox One&quot; checked &gt;
+        &lt;label class=&quot;label label-checkbox&quot; for=&quot;checkboxone&quot;&gt;Checkbox One&lt;/label&gt;&lt;br&gt;
+        &lt;input id=&quot;checkboxtwo&quot; class=&quot;input&quot; type=&quot;checkbox&quot; name=&quot;checkboxtwo&quot; value=&quot;Checkbox One&quot; &gt;
+        &lt;label class=&quot;label label-checkbox&quot; for=&quot;checkboxtwo&quot;&gt;Checkbox Two&lt;/label&gt;&lt;br&gt;
+        &lt;input id=&quot;checkboxthree&quot; class=&quot;input&quot; type=&quot;checkbox&quot; name=&quot;checkboxthree&quot; value=&quot;Checkbox One&quot; &gt;
+        &lt;label class=&quot;label label-checkbox&quot; for=&quot;checkboxthree&quot;&gt;Checkbox Three&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label&gt;Radios&lt;/label&gt;&lt;br&gt;
+        &lt;input id=&quot;radioone&quot; class=&quot;input&quot; type=&quot;radio&quot; name=&quot;radio&quot; value=&quot;Radio One&quot; checked&gt;
+        &lt;label class=&quot;label label-radio&quot; for=&quot;radioone&quot;&gt;Radio One&lt;/label&gt;&lt;br&gt;
+        &lt;input id=&quot;radiotwo&quot; class=&quot;input&quot; type=&quot;radio&quot; name=&quot;radio&quot; value=&quot;Radio Two&quot;&gt;
+        &lt;label class=&quot;label label-radio&quot; for=&quot;radiotwo&quot;&gt;Radio Two&lt;/label&gt;&lt;br&gt;
+        &lt;input id=&quot;radiothree&quot; class=&quot;input&quot; type=&quot;radio&quot; name=&quot;radio&quot; value=&quot;Radio Three&quot;&gt;
+        &lt;label class=&quot;label label-radio&quot; for=&quot;radiothree&quot;&gt;Radio Three&lt;/label&gt;&lt;br&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="6.3">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">6.3.0</span> Select</h1>-->
+                            <h1 class="kss-title">Select</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <form action="">
+    <div class="form-group">
+        <label for="select">Select</label>
+        <select id="select" name="select" class="select">
+            <option value="Option One">Option One</option>
+            <option value="Option Two">Option Two</option>
+            <option value="Option Three">Option Three</option>
+            <option value="Option Four">Option Four</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selectmultiple">Select Multiple</label>
+        <select id="selectmultiple" multiple class="select-multiple">
+            <option value="Option One">Option One</option>
+            <option value="Option Two">Option Two</option>
+            <option value="Option Three">Option Three</option>
+            <option value="Option Four">Option Four</option>
+        </select>
+    </div>
+</form>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;form action=&quot;&quot;&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;select&quot;&gt;Select&lt;/label&gt;
+        &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select&quot;&gt;
+            &lt;option value=&quot;Option One&quot;&gt;Option One&lt;/option&gt;
+            &lt;option value=&quot;Option Two&quot;&gt;Option Two&lt;/option&gt;
+            &lt;option value=&quot;Option Three&quot;&gt;Option Three&lt;/option&gt;
+            &lt;option value=&quot;Option Four&quot;&gt;Option Four&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label for=&quot;selectmultiple&quot;&gt;Select Multiple&lt;/label&gt;
+        &lt;select id=&quot;selectmultiple&quot; multiple class=&quot;select-multiple&quot;&gt;
+            &lt;option value=&quot;Option One&quot;&gt;Option One&lt;/option&gt;
+            &lt;option value=&quot;Option Two&quot;&gt;Option Two&lt;/option&gt;
+            &lt;option value=&quot;Option Three&quot;&gt;Option Three&lt;/option&gt;
+            &lt;option value=&quot;Option Four&quot;&gt;Option Four&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="6.4">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">6.4.0</span> Fieldset Legend</h1>-->
+                            <h1 class="kss-title">Fieldset Legend</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <form action="">
+    <fieldset>
+        <legend>I'm Legend</legend>
+        <div class="form-group">
+            <label for="textinput">Basic Text input</label>
+            <input type="text" id="textinput" name="textinput" placeholder="Basic text input">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+        </div>  
+        <div class="form-group">
+            <label for="message">Text Area</label>
+            <textarea rows="5" cols="50" id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.</textarea>
+            <span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+        </div>
+        <button class="btn  btn-primary btn-sidebyside">Submit</button>
+        <a href="" class="btn btn-secondary">Cancel</a>
+    </fieldset>
+</form>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;form action=&quot;&quot;&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;I&#x27;m Legend&lt;/legend&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;textinput&quot;&gt;Basic Text input&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;textinput&quot; name=&quot;textinput&quot; placeholder=&quot;Basic text input&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+            &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;&gt;
+        &lt;/div&gt;  
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;message&quot;&gt;Text Area&lt;/label&gt;
+            &lt;textarea rows=&quot;5&quot; cols=&quot;50&quot; id=&quot;message&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.&lt;/textarea&gt;
+            &lt;span class=&quot;meta-form&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;button class=&quot;btn  btn-primary btn-sidebyside&quot;&gt;Submit&lt;/button&gt;
+        &lt;a href=&quot;&quot; class=&quot;btn btn-secondary&quot;&gt;Cancel&lt;/a&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="6.5">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">6.5.0</span> Login</h1>-->
+                            <h1 class="kss-title">Login</h1>
+                        </div>
+                            
+                                    
+                        
+                            <div class="kss-description">
+                                     <style>
+.color-pink-dark{
+    padding: 0px 20px;
+    width:100%;
+    float:left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.color-pink-dark:after{
+    content:&apos;&apos;;
+    display:block;
+    clear: both;
+}
+</style>
+                            </div>
+                        
+                        
+                        <div class="kss-markup">
+                            <div class="color-pink-dark">
+    <form action="" class="login">
+        <div class="form-group email">
+            <label for="email" class="meta-form">Låner- eller cpr-nr.</label>
+            <input type="text" id="email" name="email" placeholder="Nummeret er på 10 cifre">
+        </div>
+        <div class="form-group password">
+            <label for="password" class="meta-form">Pinkode</label>
+            <input type="password" id="password" name="password" placeholder="Pinkoden er på 4 cifre">
+            <input type="submit" value="Log ind" class="btn btn-secondary">
+        </div>
+    </form>
+</div>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class=&quot;color-pink-dark&quot;&gt;
+    &lt;form action=&quot;&quot; class=&quot;login&quot;&gt;
+        &lt;div class=&quot;form-group email&quot;&gt;
+            &lt;label for=&quot;email&quot; class=&quot;meta-form&quot;&gt;Låner- eller cpr-nr.&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Nummeret er på 10 cifre&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-group password&quot;&gt;
+            &lt;label for=&quot;password&quot; class=&quot;meta-form&quot;&gt;Pinkode&lt;/label&gt;
+            &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Pinkoden er på 4 cifre&quot;&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;Log ind&quot; class=&quot;btn btn-secondary&quot;&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+      
+    </div>
+</div>
+      
+      
+
+  <!-- SCRIPTS -->
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/holder.js"></script>
+    <script src="public/js/respond.min.js"></script>
+    <script src="public/js/calendar.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popup"]').popover();
+            $('.modal').on('shown.bs.modal', function() {
+                var wheight = $(window).height();
+                var initModalHeight = $('.modal-dialog').outerHeight();
+                if(initModalHeight<wheight) $('.modal-dialog').css('margin-top', (wheight/2) - (initModalHeight/2));
+            });
+        })
+    </script>
+</div>
+</body>
+</html>

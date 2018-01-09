@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Styleguide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/qqr6kuv.js"></script>
+    <script type="text/javascript">
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
+
+    <script>
+    </script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="bower_components/selectivizr/selectivizr.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="_/css/zengrid.css">
+    <link rel="stylesheet" href="_/css/style.css">
+    <link rel="shortcut icon" href="_/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="_/img/favicon.ico" type="image/x-icon">
+    <style>
+        #map{
+            width: 100%;
+            height: 450px;
+        }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 15,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(55.67609,12.56833),
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{'featureType':'water','stylers':[{'visibility':'on'},{'color':'#acbcc9'}]},{'featureType':'landscape','stylers':[{'color':'#e5e2d4'}]},{'featureType':'road.highway','elementType':'geometry','stylers':[{'color':'#c5c6c6'}]},{'featureType':'road.arterial','elementType':'geometry','stylers':[{'color':'#e4d7c6'}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#fbfaf7'}]},{'featureType':'poi.park','elementType':'geometry','stylers':[{'color':'#c5dac6'}]},{'featureType':'administrative','stylers':[{'visibility':'on'},{'lightness':33}]},{'featureType':'road'},{'featureType':'poi.park','elementType':'labels','stylers':[{'visibility':'on'},{'lightness':20}]},{},{'featureType':'road','stylers':[{'lightness':20}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using out element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+            }
+    </script>
+
+</head>
+
+<body>
+    <style>
+        #header{
+/*            background-image: url('_/img/content/rune.png');*/
+        }
+    </style>
+    <div id="header" class="color-green">
+        <div class="container" style="position:relative;">
+            <a href="" class="logo">
+                <img src="_/img/kk_bib_logo.png" alt="">
+            </a>
+            <div class="g9-4" style="position:relative">
+                
+                <div id="helper" style="position:absolute; width:100%; top:61px; left:0px;">
+                    <nav class="navbar navbar-default color-green-light" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#">Arrangementer</a>
+                                </li>
+                                <li class="active">
+                                    <a href="#">Biblioteker</a>
+                                </li>
+                                <li>
+                                    <a href="#">Temaer</a>
+                                </li>
+                                <li>
+                                    <a href="#">Materialer</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nyheder</a>
+                                </li>
+                                <li class="connected active">
+                                    <a href="#">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </li>
+                                <li class="connected">
+                                    <a href="#">Log ind</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-bar search-bar-green">
+        <div class="container">
+            <div class="g12-1">
+                <div class="search-bar search-bar-green">
+                    <div class="icon-search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+
+    <div class="container">
+        <div class="spacer-md"></div>
+        <div class="g6-1">
+            <div class="imgtext column scale">
+                <div class="img-wrap hide-sm">
+                    <a href="#">
+                        <img src="_/img/content/bib_001.jpg" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>
+                        <a href="">Hovedbiblioteket</a>
+                    </h3>
+                    <table class="table table-data">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Adresse</h4>
+                                </td>
+                                <td>Møllegade 1
+                                    <br>8000 Aarhus C</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Telefon</h4>
+                                </td>
+                                <td>89 40 92 00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Fax</h4>
+                                </td>
+                                <td>89 40 92 87</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>E-mail</h4>
+                                </td>
+                                <td>
+                                    <a href="">hovedbibliotek@aarhus.dk</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Links</h4>
+                                </td>
+                                <td>
+                                    <a href="">Se vores side på Facebook</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown1">
+                <label for="dropdown1">
+                    <span class="dropdown-title secondary">Åbningstider
+                        <i class="fa fa-chevron-down"></i>
+                    </span>
+                </label>
+                <div class="dropdown-content floated">
+                    <div class="dropdown-content-wrap">
+
+                        <div class="dropdown-content-head">
+                            <div class="week-display">
+                                <a href="" class="prev disable">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <h4 class="week-display-header">Uge 5 – 27/1 – 2/2</h4>
+                                <a href="" class="next">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <table class="table table-even light">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Mandag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Tirsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Onsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Torsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Fredag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Lørdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Søndag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="rclear rspacer"></div>
+        
+        <div class="g6-7">
+            <div class="imgtext column scale">
+                <div class="img-wrap hide-sm">
+                    <a href="#">
+                        <img src="_/img/content/bib_002.jpg" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>
+                        <a href="">Beder-Malling Bibliotek</a>
+                    </h3>
+                    <table class="table table-data">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Adresse</h4>
+                                </td>
+                                <td>Møllegade 1
+                                    <br>8000 Aarhus C</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Telefon</h4>
+                                </td>
+                                <td>89 40 92 00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Fax</h4>
+                                </td>
+                                <td>89 40 92 87</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>E-mail</h4>
+                                </td>
+                                <td>
+                                    <a href="">hovedbibliotek@aarhus.dk</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Links</h4>
+                                </td>
+                                <td>
+                                    <a href="">Se vores side på Facebook</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown3">
+                <label for="dropdown3">
+                    <span class="dropdown-title secondary">Åbningstider
+                        <i class="fa fa-chevron-down"></i>
+                    </span>
+                </label>
+                <div class="dropdown-content floated">
+                    <div class="dropdown-content-wrap">
+
+                        <div class="dropdown-content-head">
+                            <div class="week-display">
+                                <a href="" class="prev disable">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <h4 class="week-display-header">Uge 5 – 27/1 – 2/2</h4>
+                                <a href="" class="next">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <table class="table table-even light">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Mandag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Tirsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Onsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Torsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Fredag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Lørdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Søndag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gclear spacer-sm"></div>
+        
+        <div class="g6-1">
+            <div class="imgtext column scale">
+                <div class="img-wrap hide-sm">
+                    <a href="#">
+                        <img src="_/img/content/bib_003.jpg" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>
+                        <a href=""> Højbjerg Bibliotek</a>
+                    </h3>
+                    <table class="table table-data">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Adresse</h4>
+                                </td>
+                                <td>Møllegade 1
+                                    <br>8000 Aarhus C</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Telefon</h4>
+                                </td>
+                                <td>89 40 92 00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Fax</h4>
+                                </td>
+                                <td>89 40 92 87</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>E-mail</h4>
+                                </td>
+                                <td>
+                                    <a href="">hovedbibliotek@aarhus.dk</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Links</h4>
+                                </td>
+                                <td>
+                                    <a href="">Se vores side på Facebook</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown2">
+                <label for="dropdown2">
+                    <span class="dropdown-title secondary">Åbningstider
+                        <i class="fa fa-chevron-down"></i>
+                    </span>
+                </label>
+                <div class="dropdown-content floated">
+                    <div class="dropdown-content-wrap">
+
+                        <div class="dropdown-content-head">
+                            <div class="week-display">
+                                <a href="" class="prev disable">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <h4 class="week-display-header">Uge 5 – 27/1 – 2/2</h4>
+                                <a href="" class="next">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <table class="table table-even light">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Mandag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Tirsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Onsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Torsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Fredag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Lørdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Søndag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="rclear rspacer"></div>
+        
+        <div class="g6-7">
+            <div class="imgtext column scale">
+                <div class="img-wrap hide-sm">
+                    <a href="#">
+                        <img src="_/img/content/bib_004.jpg" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>
+                        <a href="">Lystrup Bibliotek</a>
+                    </h3>
+                    <table class="table table-data">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Adresse</h4>
+                                </td>
+                                <td>Møllegade 1
+                                    <br>8000 Aarhus C</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Telefon</h4>
+                                </td>
+                                <td>89 40 92 00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Fax</h4>
+                                </td>
+                                <td>89 40 92 87</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>E-mail</h4>
+                                </td>
+                                <td>
+                                    <a href="">hovedbibliotek@aarhus.dk</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Links</h4>
+                                </td>
+                                <td>
+                                    <a href="">Se vores side på Facebook</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown4">
+                <label for="dropdown4">
+                    <span class="dropdown-title secondary">Åbningstider
+                        <i class="fa fa-chevron-down"></i>
+                    </span>
+                </label>
+                <div class="dropdown-content floated">
+                    <div class="dropdown-content-wrap">
+
+                        <div class="dropdown-content-head">
+                            <div class="week-display">
+                                <a href="" class="prev disable">
+                                    <i class="fa fa-arrow-left"></i>
+                                </a>
+                                <h4 class="week-display-header">Uge 5 – 27/1 – 2/2</h4>
+                                <a href="" class="next">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <table class="table table-even light">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>Mandag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Tirsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Onsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Torsdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Fredag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Lørdag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Søndag</p>
+                                    </td>
+                                    <td class="right">
+                                        <p>lukket</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gclear spacer"></div>
+    <div id="footer">
+        <div class="container">
+            <div class="gclear spacer-md"></div>
+            <div class="g3-1 r2-1">
+                <div class="vertical-list">
+                    <h3 class="font-white">Bibliotekerne tilbyder</h3>
+                    <ul class="vertical-list-nav">
+                        <li>
+                            <a href="">Lorem ipsum.</a>
+                        </li>
+                        <li>
+                            <a href="">Unde, sequi!</a>
+                        </li>
+                        <li>
+                            <a href="">Adipisci, praesentium!</a>
+                        </li>
+                        <li>
+                            <a href="">Facere, qui.</a>
+                        </li>
+                        <li>
+                            <a href="">Nesciunt, ratione.</a>
+                        </li>
+                        <li>
+                            <a href="">Magnam, obcaecati.</a>
+                        </li>
+                        <li>
+                            <a href="">Sit, impedit!</a>
+                        </li>
+                        <li>
+                            <a href="">Ad, minus.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="g3-4 r2-2">
+                <div class="vertical-list">
+                    <h3 class="font-white">Online tilbud</h3>
+                    <ul class="vertical-list-nav">
+                        <li>
+                            <a href="">Lorem ipsum.</a>
+                        </li>
+                        <li>
+                            <a href="">Unde, sequi!</a>
+                        </li>
+                        <li>
+                            <a href="">Adipisci, praesentium!</a>
+                        </li>
+                        <li>
+                            <a href="">Facere, qui.</a>
+                        </li>
+                        <li>
+                            <a href="">Nesciunt, ratione.</a>
+                        </li>
+                        <li>
+                            <a href="">Magnam, obcaecati.</a>
+                        </li>
+                        <li>
+                            <a href="">Sit, impedit!</a>
+                        </li>
+                        <li>
+                            <a href="">Ad, minus.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rclear"></div>
+            <div class="g3-4-right gclear-right r2-1 ">
+                <div class="vertical-list">
+                    <h3 class="font-white">Om KBHs Bilioteker</h3>
+                    <ul class="vertical-list-nav">
+                        <li>
+                            <a href="">Lorem ipsum.</a>
+                        </li>
+                        <li>
+                            <a href="">Unde, sequi!</a>
+                        </li>
+                        <li>
+                            <a href="">Adipisci, praesentium!</a>
+                        </li>
+                        <li>
+                            <a href="">Facere, qui.</a>
+                        </li>
+                        <li>
+                            <a href="">Nesciunt, ratione.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="g3-1-right r2-2">
+                <div class="vertical-list">
+                    <h3 class="font-white">Om hjemmesiden</h3>
+                    <ul class="vertical-list-nav">
+                        <li>
+                            <a href="">Lorem ipsum.</a>
+                        </li>
+                        <li>
+                            <a href="">Unde, sequi!</a>
+                        </li>
+                        <li>
+                            <a href="">Adipisci, praesentium!</a>
+                        </li>
+                        <li>
+                            <a href="">Facere, qui.</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rclear"></div>
+            <div class="g5-2-right gclear-right" style="padding-top:24px">
+                <div class="search-bar search-bar-small search-bar-dark">
+                    <div class="icon-search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <div class="gclear spacer-md"></div>
+        </div>
+    </div>
+
+
+
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/holderjs/holder.js"></script>
+    <script type="text/javascript" src="bower_components/respond/dest/respond.src.js"></script>
+    <!--    <script src="_/js/grid_bookmark.js"></script>-->
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popup"]').popover();
+            $('.modal').on('shown.bs.modal', function() {
+                var wheight = $(window).height();
+                var initModalHeight = $('.modal-dialog').outerHeight();
+                if(initModalHeight<wheight) $('.modal-dialog').css('margin-top', (wheight/2) - (initModalHeight/2));
+            });
+        })
+    </script>
+</body>
+
+</html>

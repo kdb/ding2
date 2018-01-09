@@ -1,0 +1,123 @@
+@charset "UTF-8";
+@import '../bootstrap/popovers';
+
+
+// ----- P O P O V E R -----
+
+/*
+Tip / Popover
+
+To active the popovers, rund this code <code>$('[data-toggle="popup"]').popover();</code> when the document is ready. Change the title by change the <code>data-original-title</code> and change the content by changing the <code>data-content</code>.
+
+Markup: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, pariatur. <span data-toggle="popup" data-placement="{$modifiers}" title="" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, pariatur." data-original-title="This is a title">?</span></p>
+
+auto - Auto placement
+top - Top placement
+left - Left placement
+bottom - Bottom placement
+right - Right placement
+
+Styleguide 99.2
+*/
+
+.popover{
+    h3{
+        @extend h3;
+        border-bottom:none;
+        border-radius:$border-radius;
+        background-color: transparent;
+        font-size: 18px;
+        line-height: unit(3);
+        padding: 14px 14px 0px 14px;
+        margin: 0;
+    }
+}
+
+[data-toggle="popup"]{
+    cursor:pointer;
+    background-color: $color-mint-green;
+    color:white;
+    position: relative;
+    bottom:3px;
+    padding-bottom: 4px;
+    height: 18px;
+    width: 22px;
+    font-size: 15px;
+    border-radius:100%;
+    display:inline-block;
+    text-align: center;
+    vertical-align:middle;
+}
+
+// ----- T I P -----
+//.tip{
+//    position:relative;
+//    display:inline-block;
+//}
+//
+//.tip-header{
+//    @extend h3;
+//    margin: 0;padding: 0;
+//    display:block;
+//}
+//
+//.tip-btn, a[data-toggle="popup"]{
+//    cursor:pointer;
+//    background-color: $color-mint-green;
+//    color:white;
+//    position: relative;
+//    bottom:3px;
+//    padding-bottom: 4px;
+//    height: 18px;
+//    width: 22px;
+//    font-size: 15px;
+//    border-radius:100%;
+//    display:inline-block;
+//    text-align: center;
+//    vertical-align:middle;
+//}
+//
+//.tip:hover .tip-btn{
+//    box-shadow:inset 1px 1px 4px darken($color-mint-green, 10);
+//    color: tint($color-mint-green, 85);
+//}
+//
+//
+//.tip:hover .tip-toggle{
+//    display:block;
+//}
+//
+//.tip-toggle{
+//    display:none;
+//    position:absolute;
+//    left:-20px;
+//    bottom:0px;
+//    width:320px;
+//    padding-bottom: 35px;
+//}
+//
+//.tip-tip{
+//    background-color: white;
+//    border-radius:$border-radius;
+//    box-shadow:0px 1px 2px $color-grey-light;
+//    display:block;
+//    position:relative;
+//
+//    &:before{
+//        content:"";
+//        background-image: inline-image('arrowdown.svg');
+//        background-repeat: no-repeat;
+//        background: image-url('arrowdown.png')\9;
+//        width: 20px; height: 10px;
+//        position:absolute;
+//        display: block;
+//        bottom:-10px;
+//        left:20px;
+//    }
+//}
+//
+//.tip-tip-content{
+//    padding: 20px;
+//    display:block;
+//    position:relative;
+//}

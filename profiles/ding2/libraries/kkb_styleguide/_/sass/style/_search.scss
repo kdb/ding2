@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/*
+Searchbar
+
+Searchbaren er en mørkere farve en primær farverne.
+
+Markup: <div class="color {$modifiers}"> <!-- .color skal ikke med, bruges blot for at vise kontrast -->
+    <div class="search-bar {$modifiers} ">
+            <div class="icon-search"><i class="fa fa-search"></i></div>
+         <form action="" class="">
+            <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+        </form>
+    </div>
+</div>
+
+.search-bar-red - red
+.search-bar-purple - Purple
+.search-bar-blue - Blue
+.search-bar-yellow - Yellow
+.search-bar-green - Green
+.search-bar-pink - Pink
+
+Styleguide 75.0
+*/
+
+/*
+Mini searchbar
+
+Markup: <div class="search-bar search-bar-small search-bar-dark">
+    <div class="icon-search"><i class="fa fa-search"></i></div>
+    <form action="" class="">
+        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+    </form>
+</div>
+
+Styleguide 75.1
+*/
+
+
+
+.color.search-bar-red{background-color: $color-red; padding: 72px 0 0 0;}
+.color.search-bar-purple{background-color: $color-purple; padding: 72px 0 0 0;}
+.color.search-bar-blue{background-color: $color-blue; padding: 72px 0 0 0;}
+.color.search-bar-yellow{background-color: $color-yellow; padding: 72px 0 0 0;}
+.color.search-bar-green{background-color: $color-green; padding: 72px 0 0 0;}
+.color.search-bar-pink{background-color: $color-pink; padding: 72px 0 0 0;}
+
+.search-bar {
+    width: 100%;
+    height: 72px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.5);
+    display: table;
+    margin: 0;
+    padding: 0;
+
+    &.search-bar-small{
+        height:48px;
+
+        .icon-search{
+            font-size: 20px;
+            min-width: 55px;
+            width: 5%;
+        }
+    }
+
+    &.search-bar-red{
+        background-color: desaturate(darken($color-red, 12), 5);
+    }
+    &.search-bar-purple{
+        background-color: desaturate(darken($color-purple, 10), 2);
+    }
+    &.search-bar-blue{
+        background-color: desaturate(darken($color-blue, 10), 2);
+    }
+    &.search-bar-yellow{
+        background-color: desaturate(darken($color-yellow, 12), 5);
+    }
+    &.search-bar-green{
+        background-color: desaturate(darken($color-green, 12), 5);
+    }
+    &.search-bar-pink{
+        background-color: desaturate(darken($color-pink, 12), 4);
+    }
+
+    &.search-bar-dark{
+        background-color: #444545;
+    }
+
+    form {
+        height:inherit;
+
+        input[type=text] {
+            box-sizing: border-box;
+            outline: 0;
+            height:inherit;
+            width: 100%;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+            display: block;
+            text-align: left;
+            vertical-align: middle;
+            color: white;
+        }
+    }
+
+    .icon-search {
+        color: #f0f0e8;
+        display: table-cell;
+        font-size: 30px;
+        min-width: 60px;
+        width: 9%;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    $placeholdercolor: rgba(255,255,255,0.5);
+    ::-webkit-input-placeholder {color: $placeholdercolor;}
+    :-moz-placeholder {color: $placeholdercolor;}
+    ::-moz-placeholder {color: $placeholdercolor;}
+    :-ms-input-placeholder {color: $placeholdercolor;}
+}
+
+.lt-ie9 .search-bar form input[type=text] {
+    padding-top: 25px;
+}

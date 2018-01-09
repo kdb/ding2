@@ -1,0 +1,379 @@
+@charset "UTF-8";
+// ----- F O R M S -----
+
+
+/*
+Forms
+
+Styleguide 6.0
+*/
+
+/*
+Inputs
+
+Markup: <form action="">
+    <div class="form-group">
+        <label for="textinput">Basic Text input</label>
+        <input type="text" id="textinput" name="textinput" placeholder="Basic text input">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="message">Text Area</label>
+        <textarea rows="5" cols="50" id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.</textarea>
+        <span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn ">
+        <button class="btn  btn-secondary">Cancel</button>
+    </div>
+</form>
+
+Styleguide 6.1
+*/
+
+/*
+Checkbox & Radial
+
+Markup: <form action="">
+    <div class="form-group">
+        <label>Checkboxes</label><br>
+        <input id="checkboxone" class="input" type="checkbox" name="checkboxone" value="Checkbox One" checked >
+        <label class="label label-checkbox" for="checkboxone">Checkbox One</label><br>
+        <input id="checkboxtwo" class="input" type="checkbox" name="checkboxtwo" value="Checkbox One" >
+        <label class="label label-checkbox" for="checkboxtwo">Checkbox Two</label><br>
+        <input id="checkboxthree" class="input" type="checkbox" name="checkboxthree" value="Checkbox One" >
+        <label class="label label-checkbox" for="checkboxthree">Checkbox Three</label>
+    </div>
+    <div class="form-group">
+        <label>Radios</label><br>
+        <input id="radioone" class="input" type="radio" name="radio" value="Radio One" checked>
+        <label class="label label-radio" for="radioone">Radio One</label><br>
+        <input id="radiotwo" class="input" type="radio" name="radio" value="Radio Two">
+        <label class="label label-radio" for="radiotwo">Radio Two</label><br>
+        <input id="radiothree" class="input" type="radio" name="radio" value="Radio Three">
+        <label class="label label-radio" for="radiothree">Radio Three</label><br>
+    </div>
+</form>
+
+Styleguide 6.2
+*/
+/*
+Select
+
+Markup: <form action="">
+    <div class="form-group">
+        <label for="select">Select</label>
+        <select id="select" name="select" class="select">
+            <option value="Option One">Option One</option>
+            <option value="Option Two">Option Two</option>
+            <option value="Option Three">Option Three</option>
+            <option value="Option Four">Option Four</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selectmultiple">Select Multiple</label>
+        <select id="selectmultiple" multiple class="select-multiple">
+            <option value="Option One">Option One</option>
+            <option value="Option Two">Option Two</option>
+            <option value="Option Three">Option Three</option>
+            <option value="Option Four">Option Four</option>
+        </select>
+    </div>
+</form>
+
+Styleguide 6.3
+*/
+
+/*
+Fieldset Legend
+
+Markup: <form action="">
+    <fieldset>
+        <legend>I'm Legend</legend>
+        <div class="form-group">
+            <label for="textinput">Basic Text input</label>
+            <input type="text" id="textinput" name="textinput" placeholder="Basic text input">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="message">Text Area</label>
+            <textarea rows="5" cols="50" id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.</textarea>
+            <span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+        </div>
+        <button class="btn  btn-primary btn-sidebyside">Submit</button>
+        <a href="" class="btn btn-secondary">Cancel</a>
+    </fieldset>
+</form>
+
+Styleguide 6.4
+*/
+
+
+/*
+Login
+
+ <style>
+.color-pink-dark{
+    padding: 0px 20px;
+    width:100%;
+    float:left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.color-pink-dark:after{
+    content:'';
+    display:block;
+    clear: both;
+}
+</style>
+
+Markup: <div class="color-pink-dark">
+    <form action="" class="login">
+        <div class="form-group email">
+            <label for="email" class="meta-form">Låner- eller cpr-nr.</label>
+            <input type="text" id="email" name="email" placeholder="Nummeret er på 10 cifre">
+        </div>
+        <div class="form-group password">
+            <label for="password" class="meta-form">Pinkode</label>
+            <input type="password" id="password" name="password" placeholder="Pinkoden er på 4 cifre">
+            <input type="submit" value="Log ind" class="btn btn-secondary">
+        </div>
+    </form>
+</div>
+
+Styleguide 6.5
+*/
+
+$inputPaddingVer: 10px;
+$inputPaddingHor: 20px;
+
+form{
+    //padding: 0px $inputPaddingHor 0px 0px;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+
+    $placeholdercolor: lighten($color-mudgreen, 35);
+    ::-webkit-input-placeholder {color: $placeholdercolor;}
+    :-moz-placeholder {color: $placeholdercolor;}
+    ::-moz-placeholder {color: $placeholdercolor;}
+    :-ms-input-placeholder {color: $placeholdercolor;}
+};
+
+form *{
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+}
+
+.form-group{
+    /* FIX FOR 100% WIDTH */
+    margin-bottom: 20px;
+
+}
+
+input, textarea{
+    color: $color-mudgreen;
+    border-radius:$border-radius;
+    box-shadow:inset 1px 1px 2px $color-grey-light;
+    border: 0;
+//    border: 1px solid #d6d6d6\9; /*<=IE8*/
+    padding: 5px 10px;
+    outline:0;
+    width:100%;
+}
+
+
+
+select{
+    width:100%;
+    outline:0;
+    &.select, &.select-multiple{
+        color: $color-mudgreen;
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        vertical-align: middle;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius:$border-radius;
+        font-size: 16px;
+    }
+
+    &.select-multiple{
+        height:auto;
+    }
+}
+
+input[type="checkbox"], input[type="submit"], input[type="radio"]{
+    width:auto;
+    margin-right: 15px;
+}
+
+textarea{
+    padding: 10px;
+}
+
+input[type="radio"].input, input[type="checkbox"].input{
+    display: none;
+}
+
+input[type="radio"].input + label.label, input[type="checkbox"].input + label.label{
+    display:inline-block;
+    cursor:pointer;
+    position:relative;
+    padding-left:30px;
+
+    &:before{
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top:3px; left: 0;
+        background-color: white;
+        border-radius:3px;
+        box-shadow:inset 0px 1px 2px $color-grey-light;
+    }
+
+    &.label-radio:before{
+        border-radius: 8px;
+    }
+}
+
+input[type="radio"].input:checked + label.label:before, input[type="checkbox"].input:checked + label.label:before{
+    background-color: $color-mint-green;
+    box-shadow:0px 1px 1px darken($color-grey-light, 20);
+    color:white;
+    text-align: center;
+}
+
+input[type="radio"].input:checked + label.label:before{
+    content: "\2022";
+    font-size: 22px;
+    line-height: 15px;
+
+}
+input[type="checkbox"].input:checked + label.label:before {
+    content: "";
+    background-image: inline-image("checkmark2_small.svg");
+    background-position: 3px center;
+    background-repeat: no-repeat;
+}
+
+fieldset{
+    //padding:15px $inputPaddingHor+15px 15px 15px;
+    padding: 15px;
+    border: 1px solid $color-grey-light;
+    border-radius: $border-radius;
+
+    input{
+        width:auto;
+        min-width:100%;
+    }
+
+    legend{
+        border-bottom: 0;
+        padding: 0px 10px 0 10px;
+        margin: 0px 0px 0 -10px;
+        width: auto;
+    }
+}
+
+
+
+label{
+    font-weight: normal;
+}
+
+
+// LOGIN
+.login {
+  width: 100%;
+  margin-top: 8px;
+  label {
+    color: white;
+  }
+  .form-group {
+    position: relative;
+    float: left;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+
+    @include small(){
+        float:none;
+        display:block;
+        width:100%;
+    }
+
+  }
+  input {
+    &[type="text"], &[type="password"] {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 16px;
+      width: 100%;
+    }
+  }
+  .form-group {
+    &.email {
+      padding-right: 20px;
+    }
+    &.password {
+      padding-left: 20px;
+    }
+
+    @include small(){
+        &.email {
+          padding-right: 0px;
+        }
+        &.password {
+          padding-left: 0px;
+        }
+    }
+  }
+  input[type="submit"] {
+    position: absolute;
+    top: 32px;
+    right: -8px;
+  }
+}
+
+
+
+
+// IE8 FIX
+.lt-ie9 input, textarea{
+    border: 1px solid #d6d6d6;
+}
+
+.lt-ie9 input[type="radio"].input,
+.lt-ie9 input[type="checkbox"].input{
+    display: inline;
+    border:0;
+}
+
+.lt-ie9 input[type="radio"].input + label.label,
+.lt-ie9 input[type="checkbox"].input + label.label{
+    display:inline;
+    padding-left: 0px;
+   &:before{
+        content: "";
+        display: none;
+    }
+}

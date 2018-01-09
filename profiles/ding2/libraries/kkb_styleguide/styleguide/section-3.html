@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>Styleguide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="public/js/modernizr.js"></script>
+    <script type="text/javascript" src="public/js/css-calc.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/qqr6kuv.js"></script>
+    <script type="text/javascript">
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
+
+    <script>
+    </script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="public/js/selectivizr.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/normalize-css/normalize.css">
+    <link rel="stylesheet" href="public/zengrid.css">
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="shortcut icon" href="_/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="_/img/favicon.ico" type="image/x-icon">
+    
+    <style>
+        
+        .kss-head{
+            padding-top: 20px;
+        }
+        
+        
+        /* MENU */
+        .kss-head ul{
+            margin:0 0 0 10px; padding: 0;
+        }
+        .kss-head ul li{
+            margin: 0 0 20px 0; padding: 0;
+            list-style:none;
+        }
+        
+        .kss-head ul li a{
+            display:block;
+/*            border-bottom: 1px solid rgba(0,0,0,0.05);*/
+            padding-bottom: 5px;
+        }
+        
+        
+        .kss-head ul li ul{
+            margin: 0; padding: 0;            
+        }
+        
+        .kss-head ul li ul li{
+            margin: 0; padding: 0; 
+            border-bottom: none;           
+        }
+        
+        .kss-head ul li ul li a{
+            border-bottom: none;
+            color: rgba(0,0,0,0.3);
+            color: #bdbeb3\9;
+            padding-bottom: 0px;
+        }
+        
+        .kss-head ul li ul li a:hover{
+            color: rgba(0,0,0,0.5);
+            color: #b1b2ab\9;
+        }
+        
+        
+        /* SECTION */
+        .kss-section{
+           margin: 25px 100px 100px 0px;
+        }
+        
+        .kss-header{
+            border-bottom: 1px solid #d5d6c8;
+            margin-bottom:24px;
+        }
+        
+        .kss-title{
+            font-family: 'proxima-nova',sans-serif;
+            font-size: 24px;
+            font-weight: 100;
+            line-height: 24px;
+            padding-top: 25px;         
+        }
+        
+        .kss-title-top{
+            font-family: 'Merriweather',serif;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 24px;
+            padding-top: 25px;
+            color: #00b38a;     
+        }
+        
+        .kss-reference{
+            font-weight: 400;
+            color: #00b38a;
+        }
+        .kss-description{
+            margin:0 0 50px 0;
+        }
+        .kss-description:after{
+            content:"";
+            display: block;
+            clear: both;
+            float:none;
+        }
+        .kss-description>p{
+        }
+        .kss-markup{
+            margin-bottom:50px;
+        }
+        .kss-markup:after{
+            content:'';
+            display:block;
+            clear: both;
+        }
+        
+        
+        /* MODIFIER */
+        .kss-modifier{
+            margin:20px 0 20px 0;
+            border-radius:4px;
+            background-color: #F5F5EE;
+            border: 1px solid #DDDDD7;
+            position:relative;
+            padding: 30px;
+            padding-top: 50px;
+        }
+        
+        .kss-modifier>div, .kss-modifier .kss-description > p{
+            margin: 0;padding: 0;
+        }
+        .kss-modifier p{
+            line-height:auto;
+        }
+        
+        .kss-modifier .kss-description{
+            margin: 0 0 10px 0; padding: 0;
+            position:absolute;
+            top:-1px; left:-1px;
+            background-color: white;
+            width:100%;
+            border-radius:4px;
+            border: 1px solid #DDDDD7;
+        }
+        
+        .kss-modifier .kss-description p {
+            margin: 5px 5px 5px 10px;
+            font-size: 15px;
+             color:rgba(0,0,0,0.5);
+        }
+        
+        .kss-modifier .kss-name{
+            background-color: #7F7F7F;
+            float:right;
+            border-radius:4px;
+            color:white;
+            padding: 5px 8px 5px 8px;
+            position:absolute;
+            top:0px; right:-1px;
+            
+            font-size: 12px;
+        }
+        .kss-modifier .kss-markup{
+        }
+        
+        .kss-code-special{
+            float: left;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .kss-code pre{
+            background-color: #FCFCF9;
+            border-radius:10px;
+            padding:20px;
+            border: 1px solid #E3E3E1;
+            font-size: 13px;
+            font-weight: 200;
+        }
+        
+        code{
+            background-color: #FBFBF8;
+            color:black;
+            padding: 2px 4px;
+            border: 1px solid #E1E1DE;
+            font-size: 13px;
+        }
+        
+        code.block{
+/*            display:inline-block;*/
+/*            margin: 20px 0 20px 0;*/
+        }        
+        
+        
+        @media only screen and (max-width: 768px) {
+            .kss-section{
+               margin: 50px 0px 100px 0px;
+            }   
+            
+             .kss-head-menu{
+                position:relative;    
+                width:auto;
+            } 
+        }
+    </style> 
+    <script src="public/js/ua-parser.min.js"></script>
+    <script>
+        var parser = new UAParser(),
+            result = parser.getResult();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            var html = document.getElementsByTagName('html')[0];
+            html.className += " " + result.os.name.split(' ').join('_').toLowerCase();
+            html.className += " " + result.browser.name.split(' ').join('_').toLowerCase();
+        })
+    </script>
+
+</head>
+
+<body>
+ 
+<div class="g3-1">
+    <div class="kss-head">
+        <div class="kss-head-menu">
+            <h1>Ding2 Styleguide</h1>
+            <ul>
+<!--                <li><a href="index.html">0.0 Overview</a></li>-->
+                <li><a href="index.html">Overview</a></li>
+                
+<!--                    <li><a href="section-1.html">1.0: Typografi</a>-->
+                    <li><a href="section-1.html">Typografi</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.1">1.1 Headers</a></li>-->
+                                <li><a href="section-1.html#1.1">Headers</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.2">1.2 Links</a></li>-->
+                                <li><a href="section-1.html#1.2">Links</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.2">1.2 Meta data</a></li>-->
+                                <li><a href="section-1.html#1.2">Meta data</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.3">1.3 Tags</a></li>-->
+                                <li><a href="section-1.html#1.3">Tags</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H1, H4</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H1, H4</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H2</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H2</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H3</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H3</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-1.html#1.4">1.4 Copy H3, H4</a></li>-->
+                                <li><a href="section-1.html#1.4">Copy H3, H4</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-2.html">2.0: Farver</a>-->
+                    <li><a href="section-2.html">Farver</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-2.html#2.1">2.1 Primær Farver</a></li>-->
+                                <li><a href="section-2.html#2.1">Primær Farver</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-2.html#2.2">2.2 Tema Farver</a></li>-->
+                                <li><a href="section-2.html#2.2">Tema Farver</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-3.html">3.0: Vertical List</a>-->
+                    <li><a href="section-3.html">Vertical List</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.1">3.1 Vertical List Nav</a></li>-->
+                                <li><a href="section-3.html#3.1">Vertical List Nav</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.2">3.2 Vertical List Separator</a></li>-->
+                                <li><a href="section-3.html#3.2">Vertical List Separator</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.3">3.3 Vertical List With Forms</a></li>-->
+                                <li><a href="section-3.html#3.3">Vertical List With Forms</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-3.html#3.4">3.4 Vertical List With Icons</a></li>-->
+                                <li><a href="section-3.html#3.4">Vertical List With Icons</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-4.html">4.0: Tables</a>-->
+                    <li><a href="section-4.html">Tables</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-4.html#4.1">4.1 Tables for data</a></li>-->
+                                <li><a href="section-4.html#4.1">Tables for data</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-4.html#4.2">4.2 Table in dropdown</a></li>-->
+                                <li><a href="section-4.html#4.2">Table in dropdown</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-4.html#4.3">4.3 Data pair</a></li>-->
+                                <li><a href="section-4.html#4.3">Data pair</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-6.html">6.0: Forms</a>-->
+                    <li><a href="section-6.html">Forms</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.1">6.1 Inputs</a></li>-->
+                                <li><a href="section-6.html#6.1">Inputs</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.2">6.2 Checkbox &amp; Radial</a></li>-->
+                                <li><a href="section-6.html#6.2">Checkbox &amp; Radial</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.3">6.3 Select</a></li>-->
+                                <li><a href="section-6.html#6.3">Select</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.4">6.4 Fieldset Legend</a></li>-->
+                                <li><a href="section-6.html#6.4">Fieldset Legend</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-6.html#6.5">6.5 Login</a></li>-->
+                                <li><a href="section-6.html#6.5">Login</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-7.html">7.0: Images &amp; Text</a>-->
+                    <li><a href="section-7.html">Images &amp; Text</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.1">7.1 Reponsive image</a></li>-->
+                                <li><a href="section-7.html#7.1">Reponsive image</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.2">7.2 Image limited center</a></li>-->
+                                <li><a href="section-7.html#7.2">Image limited center</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.3">7.3 Image &amp; Text in columns</a></li>-->
+                                <li><a href="section-7.html#7.3">Image &amp; Text in columns</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.4">7.4 Image &amp; Text in columns with scale</a></li>-->
+                                <li><a href="section-7.html#7.4">Image &amp; Text in columns with scale</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.5">7.5 Image hide</a></li>-->
+                                <li><a href="section-7.html#7.5">Image hide</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-7.html#7.6">7.6 Image underline</a></li>-->
+                                <li><a href="section-7.html#7.6">Image underline</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-70.html">70.0: Menu</a>-->
+                    <li><a href="section-70.html">Menu</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-70.html#70.1">70.1 Menu Colors</a></li>-->
+                                <li><a href="section-70.html#70.1">Menu Colors</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-75.html">75.0: Searchbar</a>-->
+                    <li><a href="section-75.html">Searchbar</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-75.html#75.1">75.1 Mini searchbar</a></li>-->
+                                <li><a href="section-75.html#75.1">Mini searchbar</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-80.html">80.0: Content</a>-->
+                    <li><a href="section-80.html">Content</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-80.html#80.1">80.1 Content List</a></li>-->
+                                <li><a href="section-80.html#80.1">Content List</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-80.html#80.2">80.2 Arrangement</a></li>-->
+                                <li><a href="section-80.html#80.2">Arrangement</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-80.html#80.3">80.3 Temaer</a></li>-->
+                                <li><a href="section-80.html#80.3">Temaer</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-90.html">90.0: Dropdown</a>-->
+                    <li><a href="section-90.html">Dropdown</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-90.html#90.1">90.1 Dropdown with links</a></li>-->
+                                <li><a href="section-90.html#90.1">Dropdown with links</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-90.html#90.2">90.2 Dropdown with content</a></li>-->
+                                <li><a href="section-90.html#90.2">Dropdown with content</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-90.html#90.3">90.3 Dropdown with Vertical list</a></li>-->
+                                <li><a href="section-90.html#90.3">Dropdown with Vertical list</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+<!--                    <li><a href="section-99.html">99.0: Objects</a>-->
+                    <li><a href="section-99.html">Objects</a>
+                        <ul>
+                        
+                            
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.1">99.1 Buttons</a></li>-->
+                                <li><a href="section-99.html#99.1">Buttons</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.2">99.2 Tip / Popover</a></li>-->
+                                <li><a href="section-99.html#99.2">Tip / Popover</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.4">99.4 Rating</a></li>-->
+                                <li><a href="section-99.html#99.4">Rating</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.5">99.5 Rating interactive</a></li>-->
+                                <li><a href="section-99.html#99.5">Rating interactive</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.6">99.6 Alerts</a></li>-->
+                                <li><a href="section-99.html#99.6">Alerts</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.7">99.7 Alerts colors</a></li>-->
+                                <li><a href="section-99.html#99.7">Alerts colors</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.8">99.8 Loader</a></li>-->
+                                <li><a href="section-99.html#99.8">Loader</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.9">99.9 Favicon</a></li>-->
+                                <li><a href="section-99.html#99.9">Favicon</a></li>
+                              
+                        
+                            
+<!--                                <li><a href="section-99.html#99.10">99.10 Kalender</a></li>-->
+                                <li><a href="section-99.html#99.10">Kalender</a></li>
+                              
+                        
+                        </ul>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+<div class="g9-4">
+    <div class="kss-body">
+    
+        
+        
+                
+                <div class="kss-section" id="3">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">3.0</span> Vertical List</h1>-->
+                            <h1 class="kss-title">Vertical List</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <div class="vertical-list">
+<h4>Vertical List</h4>
+<ul class="{$modifiers}">
+    <li><p>Lorem ipsum dolor sit.</p></li>
+    <li><p>Eligendi, commodi nemo similique.</p></li>
+    <li><p>Et, nesciunt cupiditate aliquid.</p></li>
+    <li><p>Cum, officia cumque dolores!</p></li>
+    <li><p>Itaque, obcaecati omnis doloribus.</p></li>
+</ul>
+</div>
+                        </div>  
+                        
+                        
+                            
+                            <div class="kss-modifier" style="">
+                                <div class="kss-description"><p>A plain vertical list</p>
+</div>
+                                <div class="kss-name">.vertical-list-plain</div>
+                                <div class="kss-markup"><div class="vertical-list">
+<h4>Vertical List</h4>
+<ul class="vertical-list-plain">
+    <li><p>Lorem ipsum dolor sit.</p></li>
+    <li><p>Eligendi, commodi nemo similique.</p></li>
+    <li><p>Et, nesciunt cupiditate aliquid.</p></li>
+    <li><p>Cum, officia cumque dolores!</p></li>
+    <li><p>Itaque, obcaecati omnis doloribus.</p></li>
+</ul>
+</div></div>
+                            </div>
+                            
+                        
+                            
+                            <div class="kss-modifier" style="">
+                                <div class="kss-description"><p>A vertical list with bullets</p>
+</div>
+                                <div class="kss-name">.vertical-list-bullet</div>
+                                <div class="kss-markup"><div class="vertical-list">
+<h4>Vertical List</h4>
+<ul class="vertical-list-bullet">
+    <li><p>Lorem ipsum dolor sit.</p></li>
+    <li><p>Eligendi, commodi nemo similique.</p></li>
+    <li><p>Et, nesciunt cupiditate aliquid.</p></li>
+    <li><p>Cum, officia cumque dolores!</p></li>
+    <li><p>Itaque, obcaecati omnis doloribus.</p></li>
+</ul>
+</div></div>
+                            </div>
+                            
+                        
+                            
+                            <div class="kss-modifier" style="">
+                                <div class="kss-description"><p>A vertical list with numbers</p>
+</div>
+                                <div class="kss-name">.vertical-list-number</div>
+                                <div class="kss-markup"><div class="vertical-list">
+<h4>Vertical List</h4>
+<ul class="vertical-list-number">
+    <li><p>Lorem ipsum dolor sit.</p></li>
+    <li><p>Eligendi, commodi nemo similique.</p></li>
+    <li><p>Et, nesciunt cupiditate aliquid.</p></li>
+    <li><p>Cum, officia cumque dolores!</p></li>
+    <li><p>Itaque, obcaecati omnis doloribus.</p></li>
+</ul>
+</div></div>
+                            </div>
+                            
+                        
+                            
+                            <div class="kss-modifier" style="">
+                                <div class="kss-description"><p>A vertical list with checkmarks</p>
+</div>
+                                <div class="kss-name">.vertical-list-check</div>
+                                <div class="kss-markup"><div class="vertical-list">
+<h4>Vertical List</h4>
+<ul class="vertical-list-check">
+    <li><p>Lorem ipsum dolor sit.</p></li>
+    <li><p>Eligendi, commodi nemo similique.</p></li>
+    <li><p>Et, nesciunt cupiditate aliquid.</p></li>
+    <li><p>Cum, officia cumque dolores!</p></li>
+    <li><p>Itaque, obcaecati omnis doloribus.</p></li>
+</ul>
+</div></div>
+                            </div>
+                            
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class=&quot;vertical-list&quot;&gt;
+&lt;h4&gt;Vertical List&lt;/h4&gt;
+&lt;ul class=&quot;{$modifiers}&quot;&gt;
+    &lt;li&gt;&lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Eligendi, commodi nemo similique.&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Et, nesciunt cupiditate aliquid.&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Cum, officia cumque dolores!&lt;/p&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;p&gt;Itaque, obcaecati omnis doloribus.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="3.1">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">3.1.0</span> Vertical List Nav</h1>-->
+                            <h1 class="kss-title">Vertical List Nav</h1>
+                        </div>
+                            
+                                    
+                        
+                            <div class="kss-description">
+                                    <p>Denne vertical list kan bruges til navigation.</p>
+
+                            </div>
+                        
+                        
+                        <div class="kss-markup">
+                            <div class="vertical-list">
+<h3>Vertical List Nav</h3>
+<ul class="vertical-list-nav">
+    <li><a href="">Lorem ipsum dolor sit.</a></li>
+    <li><a href="">Molestiae, unde delectus laborum.</a></li>
+    <li class="active"><a href="" >Nesciunt porro fuga delectus.</a></li>
+    <li><a href="">Accusantium, incidunt dignissimos quos?</a></li>
+</ul>
+</div>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class=&quot;vertical-list&quot;&gt;
+&lt;h3&gt;Vertical List Nav&lt;/h3&gt;
+&lt;ul class=&quot;vertical-list-nav&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Lorem ipsum dolor sit.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Molestiae, unde delectus laborum.&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot; &gt;Nesciunt porro fuga delectus.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Accusantium, incidunt dignissimos quos?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="3.2">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">3.2.0</span> Vertical List Separator</h1>-->
+                            <h1 class="kss-title">Vertical List Separator</h1>
+                        </div>
+                            
+                                    
+                        
+                            <div class="kss-description">
+                                    <p>Denne vertical list kan bruges til filtrering af søgningsresultater. Brug den i forbindelse med <code>.vertical-list-nav</code>. </p>
+
+                            </div>
+                        
+                        
+                        <div class="kss-markup">
+                            <div class="vertical-list vertical-list-separator">
+<h3>Filtrér din søgning</h3>
+<h4>Efter materialetype</h4>
+<ul class="vertical-list-nav">
+    <li><a href="">Resumé</a></li>
+    <li><a href="">Anmeldelser</a></li>
+    <li class="active"><a href="">Om Joanne K. Rowling</a></li>
+    <li><a href="">Se alle eksemplarer</a></li>
+</ul>
+<a href="">+ Flere typer</a>
+</div>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class=&quot;vertical-list vertical-list-separator&quot;&gt;
+&lt;h3&gt;Filtrér din søgning&lt;/h3&gt;
+&lt;h4&gt;Efter materialetype&lt;/h4&gt;
+&lt;ul class=&quot;vertical-list-nav&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Resumé&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Anmeldelser&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;Om Joanne K. Rowling&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;Se alle eksemplarer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a href=&quot;&quot;&gt;+ Flere typer&lt;/a&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="3.3">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">3.3.0</span> Vertical List With Forms</h1>-->
+                            <h1 class="kss-title">Vertical List With Forms</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <div class="vertical-list">
+    <h4>Form Elements</h4>
+    <ul class="vertical-list-plain">
+        <form action="">
+            <li><input id="checkbox1" class="input" type="checkbox" name="vehicle" value="Bike"><label class="label label-checkbox" for="checkbox1">I have a bike</label></li>
+            <li><input id="checkbox2" class="input" type="checkbox" name="vehicle" value="Car"><label class="label label-checkbox" for="checkbox2">I have a car</label></li>
+            <li><input id="radio1" class="input" type="radio" name="sex" value="male"><label class="label label-radio" for="radio1">Male</label></li>
+            <li><input id="radio2" class="input" type="radio" name="sex" value="female"><label class="label label-radio" for="radio2">Female</label></li>
+        </form>
+    </ul>
+</div>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class=&quot;vertical-list&quot;&gt;
+    &lt;h4&gt;Form Elements&lt;/h4&gt;
+    &lt;ul class=&quot;vertical-list-plain&quot;&gt;
+        &lt;form action=&quot;&quot;&gt;
+            &lt;li&gt;&lt;input id=&quot;checkbox1&quot; class=&quot;input&quot; type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Bike&quot;&gt;&lt;label class=&quot;label label-checkbox&quot; for=&quot;checkbox1&quot;&gt;I have a bike&lt;/label&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;input id=&quot;checkbox2&quot; class=&quot;input&quot; type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Car&quot;&gt;&lt;label class=&quot;label label-checkbox&quot; for=&quot;checkbox2&quot;&gt;I have a car&lt;/label&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;input id=&quot;radio1&quot; class=&quot;input&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;&lt;label class=&quot;label label-radio&quot; for=&quot;radio1&quot;&gt;Male&lt;/label&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;input id=&quot;radio2&quot; class=&quot;input&quot; type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;&lt;label class=&quot;label label-radio&quot; for=&quot;radio2&quot;&gt;Female&lt;/label&gt;&lt;/li&gt;
+        &lt;/form&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+                
+                <div class="kss-section" id="3.4">
+                        <div class="kss-header">
+                            <!-- <h1 class="kss-title"><span class="kss-reference">3.4.0</span> Vertical List With Icons</h1>-->
+                            <h1 class="kss-title">Vertical List With Icons</h1>
+                        </div>
+                            
+                                    
+                        
+                        
+                        <div class="kss-markup">
+                            <div class="vertical-list">
+    <ul class="vertical-list-icons">
+        <li><p><i class="fa fa-calendar"></i>Torsdag 12. december til Fredag 20. december</p></li>
+        <li><p><i class="fa fa-clock-o"></i>10:00 til 17:00</p></li>
+        <li><p><i class="fa fa-home"></i><a href="">Risskov Biliotek</a></p></li>
+        <li><p><i class="fa fa-user"></i>For alle</p></li>
+    </ul>
+</div>
+                        </div>  
+                        
+                        
+                        
+                        <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class=&quot;vertical-list&quot;&gt;
+    &lt;ul class=&quot;vertical-list-icons&quot;&gt;
+        &lt;li&gt;&lt;p&gt;&lt;i class=&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;Torsdag 12. december til Fredag 20. december&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt;10:00 til 17:00&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;&lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt;&lt;a href=&quot;&quot;&gt;Risskov Biliotek&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;For alle&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre>
+                        </div>
+                        
+                        <a href="#" style="float: right;">to top</a>
+                </div>    
+                
+                
+                
+        
+      
+    </div>
+</div>
+      
+      
+
+  <!-- SCRIPTS -->
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/holder.js"></script>
+    <script src="public/js/respond.min.js"></script>
+    <script src="public/js/calendar.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popup"]').popover();
+            $('.modal').on('shown.bs.modal', function() {
+                var wheight = $(window).height();
+                var initModalHeight = $('.modal-dialog').outerHeight();
+                if(initModalHeight<wheight) $('.modal-dialog').css('margin-top', (wheight/2) - (initModalHeight/2));
+            });
+        })
+    </script>
+</div>
+</body>
+</html>

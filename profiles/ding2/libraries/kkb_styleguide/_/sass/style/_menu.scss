@@ -1,0 +1,332 @@
+@charset "UTF-8";
+@import '../bootstrap/forms';
+@import '../bootstrap/navbar';
+@import '../bootstrap/navs';
+
+
+
+
+
+
+
+
+/*
+Menu
+
+Menuen skal højre stilles <em>(se eksempelsider)</em>.
+Menuen skal have samme grund tema farve som headeren, dog skal den være lysere for at skille sig ud fra headeren og søgebaren.
+
+<div class="color-green" style="padding:30px 0 0 0"> <!-- div.color-green skal ikke med, blot for at vise farve -->
+    <nav class="navbar navbar-default color-green-light" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 0px;">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Arrangementer</a>
+                </li>
+                <li>
+                    <a href="#">Biblioteker</a>
+                </li>
+                <li>
+                    <a href="#">Temaer</a>
+                </li>
+                <li>
+                    <a href="#">Materialer</a>
+                </li>
+                <li>
+                    <a href="#">Nyheder</a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Log ind</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="color-green-dark" style="height:30px"></div> <!-- div.color-green-dark skal ikke med, blot for at vise farve -->
+</div>
+
+Styleguide 70.0
+*/
+
+/*
+
+Menu Colors
+
+Markup: <div class="color-{$modifiers}" style="padding:30px 0 0 0"> <!-- div.color-green skal ikke med, blot for at vise farve -->
+    <nav class="navbar navbar-default color-{$modifiers}-light" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-{$modifiers}">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-{$modifiers}" style="height: 0px;">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">Arrangementer</a>
+                </li>
+                <li>
+                    <a href="#">Biblioteker</a>
+                </li>
+                <li>
+                    <a href="#">Temaer</a>
+                </li>
+                <li>
+                    <a href="#">Materialer</a>
+                </li>
+                <li>
+                    <a href="#">Nyheder</a>
+                </li>
+                <li class="active">
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Log ind</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="color-{$modifiers}-dark" style="height:30px"></div> <!-- div.color-green-dark skal ikke med, blot for at vise farve -->
+</div>
+
+red        - Red
+purple     - Purple
+blue       - Blue
+yellow     - Yellow
+green      - Green
+pink       - Pink
+
+Styleguide 70.1
+*/
+
+
+
+
+
+
+
+.navbar {
+    margin-bottom: 0;
+    width: 100%;
+    min-height:0px;
+}
+.navbar-default,
+.navbar-collapse {
+    background-color: transparent;
+    border-color: transparent;
+    border: 0;
+}
+.nav.navbar-nav {
+    display: table;
+    width: 100%;
+    z-index:99;
+    li {
+        display: table-cell;
+        float: none;
+        a {
+            display: inline-block;
+            width: auto;
+            padding-left: 0;
+            padding-right: 0;
+            min-width: 60px;
+            text-align: center;
+            color: white;
+            background-color: transparent;
+            margin-bottom: 0;
+            &:hover {
+                color: white;
+                border-bottom: 5px solid white;
+                background-color: transparent;
+            }
+        }
+        &.active {
+            background-color: transparent;
+            a, a:hover {
+                color: white;
+                border-bottom: 5px solid white;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.navbar{
+
+    .nav.navbar-nav li.connected a{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .nav.navbar-nav li.connected.active a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &.color-red-light .nav.navbar-nav li.connected.active a{
+        border-bottom: 5px solid $red-dark;
+        background-color: $red-dark;
+    }
+    &.color-purple-light .nav.navbar-nav li.connected.active a{
+        border-bottom: 5px solid $purple-dark;
+        background-color: $purple-dark;
+    }
+    &.color-blue-light .nav.navbar-nav li.connected.active a{
+        border-bottom: 5px solid $blue-dark;
+        background-color: $blue-dark;
+    }
+    &.color-yellow-light .nav.navbar-nav li.connected.active a{
+        border-bottom: 5px solid $yellow-dark;
+        background-color: $yellow-dark;
+    }
+    &.color-green-light .nav.navbar-nav li.connected.active a{
+        border-bottom: 5px solid $green-dark;
+        background-color: $green-dark;
+    }
+    &.color-pink-light .nav.navbar-nav li.connected.active a{
+        border-bottom: 5px solid $pink-dark;
+        background-color: $pink-dark;
+    }
+}
+.navbar-collapse {
+    @include small-medium() {
+        display: none;
+        &.in {
+            display: block;
+        }
+    }
+}
+
+@include small-medium() {
+    .navbar {
+        //background-color: lighten($color-purple, 10);
+        border-radius: 0;
+        z-index: 99;
+        margin: 0;
+
+        &.color-red-light {
+            background-color: $red-light;
+        }
+        &.color-purple-light {
+            background-color: $purple-light;
+        }
+        &.color-blue-light {
+            background-color: $blue-light;
+        }
+        &.color-yellow-light {
+            background-color: $yellow-light;
+        }
+        &.color-green-light {
+            background-color: $green-light;
+        }
+        &.color-pink-light {
+            background-color: $pink-light;
+        }
+    }
+
+    .navbar-header {
+        border-top: 0;
+        border-bottom: 0;
+        min-height: 45px;
+    }
+    .nav.navbar-nav {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        li {
+            display: block;
+            float: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            a {
+                width: 100%;
+                padding-left: 20px;
+                text-align: left;
+                color: white;
+                border-bottom: 0;
+                @include box-sizing(border-box);
+            }
+            &:hover,
+            &.active {
+                background-color: white;
+                a {
+                    color: black;
+                    border-bottom: 0;
+                }
+            }
+            &.active:hover {
+                a {
+                    color: black;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+    .navbar-default .navbar-collapse,
+    .navbar-collapse {
+        margin: 0;
+        padding: 0;
+        border-color: transparent;
+        border-top: 0;
+        border-bottom: 0;
+    }
+}
+.navbar-default {
+
+    .navbar-toggle {
+        outline: 0;
+        border-color:white;
+
+        .icon-bar{
+            background-color: white;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+        &:hover,
+        &:focus,
+        &.active {
+            background-color: rgba(255,255,255,0.5);
+        }
+        padding:6px;
+    }
+}
+
+.lt-ie9 .navbar-default .navbar-toggle{
+    &:hover,
+    &:focus,
+    &.active {
+        background-color: rgb(190, 190, 190);
+    }
+}
+
+.lt-ie9 .nav.navbar-nav {
+    li {
+        a {
+            height:10px;
+        }
+    }
+}

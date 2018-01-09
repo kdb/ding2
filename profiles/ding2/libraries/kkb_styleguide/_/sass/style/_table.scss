@@ -1,0 +1,279 @@
+@charset "UTF-8";
+// ----- T A B L E -----
+
+/*
+Tables
+
+Markup: <table class="table table-even">
+    <tbody>
+        <tr>
+            <td><h4>Serie</h4></td>
+            <td><p>7. del af Harry Potter og de vise sten</p></td>
+        </tr>
+        <tr>
+            <td><h4>Type</h4></td>
+            <td><p>Bog</p></td>
+        </tr>
+        <tr>
+            <td><h4>Sprog</h4></td>
+            <td><p>Dansk</p></td></tr>
+            <tr class="odd"><td><h4>Genre</h4></td>
+            <td><p>Fiktion</p></td>
+        </tr>
+        <tr>
+            <td><h4>Emneord</h4></td>
+            <td><p><a href="">Fantasy</a><br><a href="">Magi</a><br><a href="">Troldmænd</a></p></td>
+        </tr>
+        <tr>
+            <td><h4>Original title</h4></td>
+            <td><p>Harry Potter and the deathly hallows</p></td>
+        </tr>
+    </tbody>
+</table>
+
+Styleguide 4.0
+*/
+
+/*
+Tables for data
+
+Markup: <table class="table table-even">
+    <thead>
+        <tr>
+            <td><h4>Biblioteker og opstilling</h4></td>
+            <td class="center"><h4>Antal</h4></td>
+            <td class="center"><h4>På hylden</h4></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><p>Beder-Malling &gt; Børn &gt; Fantasi/Fantasy &gt; Rowling</p></td>
+            <td class="center"><p>1</p></td>
+            <td class="center"><p>1</p></td>
+        </tr>
+        <tr>
+            <td><p>Egå &gt; Børn &gt; Rowling</p></td>
+            <td class="center"><p>2</p></td>
+            <td class="center"><p>1</p></td>
+        </tr>
+        <tr>
+            <td><p>Egå &gt; Skolebibliotek &gt; Sølystskolen &gt; Rowling</p></td>
+            <td class="center"><p>1</p></td>
+            <td class="center"><p>1</p></td>
+        </tr>
+        <tr>
+            <td><p>Gellerup &gt; Børn &gt; Fantasi/Fantasy &gt; Rowling</p></td>
+            <td class="center"><p>2</p></td>
+            <td class="center"><p>1</p></td>
+        </tr>
+        <tr>
+            <td><p>Kolt-Hasselager &gt; Børn &gt; Fantasi/Fantasy &gt; Rowling</p></td>
+            <td class="center"><p>1</p></td>
+            <td class="center"><p>1</p></td>
+        </tr>
+        <tr>
+            <td><p>Kolt-Hasselager &gt; Børn &gt; Rowling</p></td>
+            <td class="center"><p>2</p></td>
+            <td class="center"><p>2</p></td>
+        </tr>
+    </tbody>
+</table>
+
+Styleguide 4.1
+*/
+
+/*
+Table in dropdown
+
+Tilføj <code>.light</code> til <code>table</code> for bedre at matche odd/evens til den hvide baggrund.
+
+Markup: <div class="dropdown">
+    <input type="checkbox" id="dropdown1" checked>
+    <label for="dropdown1">
+        <span class="dropdown-title secondary">Se alle eksemplarer
+            <i class="fa fa-chevron-down"></i>
+        </span>
+    </label>
+    <div class="dropdown-content">
+        <div class="dropdown-content-wrap">
+            <p>Vi har indkøbt 42 eksemplarer. Der er 1 reservering til dette materiale.</p>
+            <table class="table table-even light">
+                <thead>
+                    <tr>
+                        <td>
+                            <h4>Biblioteker og opstilling</h4>
+                        </td>
+                        <td class="center">
+                            <h4>Antal</h4>
+                        </td>
+                        <td class="center">
+                            <h4>På hylden</h4>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>Beder-Malling &gt; Børn &gt; Fantasi/Fantasy &gt; Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Egå &gt; Børn &gt; Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Egå &gt; Skolebibliotek &gt; Sølystskolen &gt; Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Gellerup &gt; Børn &gt; Fantasi/Fantasy &gt; Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Kolt-Hasselager &gt; Børn &gt; Fantasi/Fantasy &gt; Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Kolt-Hasselager &gt; Børn &gt; Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+Styleguide 4.2
+*/
+
+
+/*
+Data pair
+
+Brug <code>.table-data</code> når data mængden er forholdsvis lille. Hvis der er mere en 2-3 linjer, brug da en alm. tabel med odd/even.
+
+Markup: <table class="table table-data">
+    <tbody>
+        <tr>
+            <td>
+                <h4>Lorem ipsum.</h4>
+            </td>
+            <td>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Facilis, mollitia.</h4>
+            </td>
+            <td>
+                <p>Ratione saepe suscipit repellendus voluptas!</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Quidem, animi.</h4>
+            </td>
+            <td>
+                <p>Debitis provident pariatur nobis quas!</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+Styleguide 4.3
+*/
+.table {
+    min-width:100%;
+    margin-top: 5px;
+
+    &.table-data{
+        min-width:0px;
+        margin-top: 0px;
+        >tbody{
+            >tr{
+                >td{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    >thead{
+        border-bottom:1px solid darken($color-dark-sand, 10);
+    }
+
+    >tbody, >thead{
+        >tr{
+            vertical-align:top;
+
+            >td{
+                padding: 6px 10px 6px 10px;
+                border: 0px;
+
+                >p{
+                    margin: 0;padding: 0;
+                }
+            }
+        }
+    }
+
+    &.table-even tr:nth-child(even){
+         background-color: $color-dark-sand;
+    }
+    &.table-odd tr:nth-child(odd), tr.highlight{
+        background-color: $color-dark-sand;
+    }
+
+    &.light{
+        &.table-even tr:nth-child(even){
+             background-color: lighten($color-dark-sand, 6);
+        }
+        &.table-odd tr:nth-child(odd), tr.highlight{
+            background-color: lighten($color-dark-sand, 6);
+        }
+    }
+
+
+} // .table

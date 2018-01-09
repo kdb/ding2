@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Styleguide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="bower_components/modernizr/feature-detects/css-calc.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/qqr6kuv.js"></script>
+    <script type="text/javascript">
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
+
+    <script>
+    </script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+      <script type="text/javascript" src="bower_components/selectivizr/selectivizr.js"></script>
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="_/css/zengrid.css">
+    <link rel="stylesheet" href="_/css/style.css">
+    <link rel="shortcut icon" href="_/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="_/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<!--
+http://reload.github.io/supershop/
+
+MISSING:
+~ Google maps
+~ tabs
+V loader
+? logo (Skal have logo fra hvem der har det)
+? favicon (Hvem laver det, og hvad skal det være)
+V menu (Skal lige finde ud af, hvordan den skal være responsive)  
+V Header med links indeni, eller uden på.. kig på ding2
+V Forms
+V copy
+V rating
+V select multiple
+V (data pairs -> table)
+V tips
+V messages / alerts
+V modal (overview/popup)
+
+MISSING from design:
+? Dato calendar
+? data "stamp"
+~ søgnings resultat header
+V menu
+V modal (popup)
+V searchbar
+
+STYLEGUIDE:
+V Beskrivelse af alle elementer og deres brug.
+V find et iconsæt som dækker deres behov.
+V hvad gør vi med headeren når den er på mobil?
+~ Lav typo responsive (er faktisk fin)
+V elementer som kombinere de forskellige items vi har lavet.
+V Forms: Fieldset legend
+V fix font visning proxima nova, smid op på ftp.
+V uddyb font brug & og vis navn i steder for "Lorem ipsum".
+V definer farver og brug.
+
+
+EXAMPLE PAGES:
+- http://ding2tal.ting.dk/arrangementer/udstilling/keramiker-susanne-bidstrup-udstiller-paa-viby-bibliotek
+- http://ding2tal.ting.dk/biblioteker
+- http://ding2tal.ting.dk/ting/object/870970-basis%3A26917921
+
+BUGS:
+V checkboks & radio  IE8
+V submit btn FIREFOX
+V responsive imgtext FIREFOX
+
+-->
+
+    
+<!--    
+    - Nyhed (http://ding2tal.ting.dk/nyheder)
+    - arrangement (http://ding2tal.ting.dk/arrangementer)
+    - temaer (http://ding2tal.ting.dk/temaer)    
+    - søgning (http://ding2tal.ting.dk/search/ting/Krimi)
+-->
+    <div class="container">
+        
+        <div class="g12-1">
+            <div class="calendar">
+    
+</div>
+            
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+            
+            <div class="calendar">
+                <div class="calendar-content">
+                    <div class="calendar-content-wrap">
+                        <ul class="calendar-week">
+                            <li class="calendar-weekday">
+                                <h4 class="big">Mandag</h4>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div><div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="calendar-weekday">
+                                <h4 class="big">Tirsdag</h4>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="calendar-weekday">
+                                <h4 class="big">Onsdag</h4>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                                <div class="calendar-content-item">
+                                    <div class="meta">
+                                        <span class="meta-primary"><a href="">15:00</a></span>
+                                        <span class="meta-secondary"><a href="">Kursus</a></span>
+                                    </div>
+                                    <h2 class="calendar-entry-header"><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                                    <div class="meta">
+                                        <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="calendar-nav">
+                    <ul>
+                        <li><a href=""><span class="month">JAN</span><span class="date">31</span></a></li>
+                        <li><a href=""><span class="month">FEB</span><span class="date">1</span></a></li>
+                        <li><a href=""><span class="month">FEB</span><span class="date">2</span></a></li>
+                    </ul>        
+                </div>
+            </div>        
+            
+        </div>
+        <div class="gclear spacer-sm"></div>
+        
+        <div class="g12-1">
+            <style>
+                .color-pink-dark{
+                    padding: 0px 20px;
+                    width:100%;
+                    margin-bottom: 50px;
+                }
+                .color-pink-dark:after{
+                    content:'';
+                    display:block;
+                    clear: both;
+                }
+            </style>
+            <div class="kss-markup">
+                <div class="color-pink-dark">
+                    <form action="" class="login">
+                        <div class="form-group email">
+                <label for="email" class="meta-form">Låner- eller cpr-nr.</label>
+                <input type="text" id="email" name="email" placeholder="Nummeret er på 10 cifre">
+                        </div>
+                        <div class="form-group password">
+                <label for="password" class="meta-form">Pinkode</label>
+                <input type="password" id="password" name="password" placeholder="Pinkoden er på 4 cifre">
+                <input type="submit" value="Log ind" class="btn btn-secondary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="kss-code">
+                            <pre class="prettyprint lang-html">&lt;div class="color-pink-dark"&gt;
+    &lt;form action="" class="login"&gt;
+        &lt;div class="form-group email"&gt;
+            &lt;label for="email" class="meta-form"&gt;Låner- eller cpr-nr.&lt;/label&gt;
+            &lt;input type="text" id="email" name="email" placeholder="Nummeret er på 10 cifre"&gt;
+        &lt;/div&gt;
+        &lt;div class="form-group password"&gt;
+            &lt;label for="password" class="meta-form"&gt;Pinkode&lt;/label&gt;
+            &lt;input type="password" id="password" name="password" placeholder="Pinkoden er på 4 cifre"&gt;
+            &lt;input type="submit" value="Log ind" class="btn btn-secondary"&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</pre>
+                        </div>
+            
+        </div>
+        <div class="gclear spacer"></div>
+        
+        
+        <div class="g12-1">
+            
+            <div class="alert alert-infomation">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h3>Oh snap! You got an error!</h3>
+                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+            
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+            <img src="_/img/favicon.ico" alt="">
+            <img src="_/img/favicon@100.png" alt="">
+            
+            <div class="loader color-purple">
+                <div class="loader-animation"></div>
+                <div class="loader-text">Søger - vent venligst</div>    
+            </div>
+        </div>
+        <div class="gclear spacer"></div>
+        <!-- Nyhed -->
+        <div class="g12-1">
+            <ul class="content-list">
+                <li>
+                    <div class="imgtext column">
+                        <div class="img-wrap hide">
+                            <a href="#"><img src="_/img/content/150x112.png"  alt=""></a>
+                        </div>
+                        <div class="text">
+                            <div class="meta">
+                                <span class="meta-primary"><i class="fa fa-calendar"></i> <a href="">Torsdag 21. august 2014</a></span>
+                                <span class="meta-secondary">19:00 til 20:00</span> <span class="meta-secondary meta-strong">GRATIS</span><br>
+                                <span class="meta-location"><a href=""><i class="fa fa-map-marker"></i>  Biblioteket Rentemestervej </a></span>
+                            </div>
+                            <h2><a href="">Tove Ditlevsens liv i litteratur og musik</a></h2>
+                            <p>Bliv klogere på Tove Ditlevsen</p>
+                            <div class="tags">
+                                <a href="" class="tag">Musik</a>
+                                <a href="" class="tag">Litteratur</a>
+                            </div>
+                        </div>
+                    </div>    
+                    <button class="btn btn-primary btn-right">Læs mere</button>
+                </li>
+                <li>
+                    <div class="imgtext column">
+                        <div class="img-wrap hide">
+                            <a href="#"><img src="_/img/content/150x112.png"  alt=""></a>
+                        </div>
+                        <div class="text">
+                            <div class="meta">
+                                <span class="meta-primary"><a href="">Mandag 18. november 2013</a></span>
+                                <span class="meta-secondary">af <a href="">Lene Frandsen</a></span>
+                            </div>
+                            <h2><a href="">Nickelback – drengerøve, romantikere, nostalgikere</a></h2>
+                            <p>Nickelback er som et hvert andet rockband: masser af guitar, masser af aggressioner og til tider en stille ballade. For mig er de dog meget mere end det. Det er ikke kun </p>
+                            <div class="tags">
+                                <a href="" class="tag">Bøger</a>
+                                <a href="" class="tag">Lystrup Bibliotek</a>
+                                <a href="" class="tag">Litteratur</a>
+                            </div>
+                        </div>
+                    </div>    
+                    <button class="btn btn-primary btn-right">Læs mere</button>
+                </li>
+                <li>
+                    <div class="imgtext column">
+                        <div class="img-wrap hide">
+                            <a href="#"><img src="_/img/content/150x112.png"  alt=""></a>
+                        </div>
+                        <div class="text">
+                            <div class="meta">
+                                <span class="meta-primary"><a href="">Mandag 18. november 2013</a></span>
+                                <span class="meta-secondary">af <a href="">David Hansen</a></span>
+                            </div>
+                            <h2><a href="">Efterårsaktviteter for børn i Skrotlab</a></h2>
+                            <p>Genbrug og skrot bruges i hele verden! Kom og lav en drage af genbrugt emballage som i Indien, en petroleumslampe af brugte dåser som i Thailand..</p>
+                            <div class="tags">
+                                <a href="" class="tag">Kort nyt</a>
+                                <a href="" class="tag">Hovedbiblioteket</a>
+                                <a href="" class="tag">Skrotlab</a>
+                            </div>
+                        </div> 
+                    </div>    
+                    <button class="btn btn-primary btn-right">Læs mere</button>
+                </li>
+                <li>
+                    <div class="imgtext column">
+                        <div class="img-wrap hide">
+                            <a href="#"><img src="_/img/content/150x112.png"  alt=""></a>
+                        </div>
+                        <div class="text">
+                            <div class="meta">
+                                <span class="meta-primary"><a href="">Onsdag 02. november 2013</a></span>
+                                <span class="meta-secondary">af <a href="">Troels Tomsen</a></span>
+                            </div>
+                            <h2><a href="">Bliv klar til køreprøven med Turteori.dk</a></h2>
+                            <p>Nu er det muligt at få et projekt eller arrangement op at stå via bibliotekernes nye crowdfundingside www.folkevent.nu</p>
+                            <div class="tags">
+                                <a href="" class="tag">Anbefalinger</a>
+                                <a href="" class="tag">Egå Kombi-bibliotek</a>
+                            </div>
+                        </div> 
+                    </div>    
+                    <button class="btn btn-primary btn-right">Læs mere</button>
+                </li>
+            </ul>
+        </div>
+        <div class="gclear spacer"></div>
+        
+        <!-- Temaer -->
+        <div class="g12-1">
+            <h1>Temaer</h1>
+            <ul class="content-list">
+                <li>
+                    <div class="imgtext column">
+                        <div class="img-wrap hide">
+                            <a href="#"><img src="_/img/content/150x112.png"  alt=""></a>
+                        </div>
+                        <div class="text">
+                            <h2><a href="">Biblioteket tilbyder også</a></h2>
+                            <p>Her kan du se hvad bibliotekerne også tilbyder</p>
+                        </div>
+                    </div>    
+                    <button class="btn btn-primary btn-right">Læs mere</button>
+                </li>
+                <li>
+                    <div class="imgtext column">
+                        <div class="img-wrap hide">
+                            <a href="#"><img src="_/img/content/150x112.png"  alt=""></a>
+                        </div>
+                        <div class="text">
+                            <h2><a href="">Faglitteratur - uhmm!</a></h2>
+                            <p>Hobby, interesse, fag - udforsk bibliotekets univers med de bedste bøger om alle emner i verden</p>
+                        </div> 
+                    </div>    
+                    <button class="btn btn-primary btn-right">Læs mere</button>
+                </li>
+            </ul>
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+            
+            <div class="color-green" style="padding:30px 0 0 0"> <!-- div.color-green skal ikke med, blot for at vise farve -->
+                <nav class="navbar navbar-default color-green-light" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 0px;">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="#">Arrangementer</a>
+                            </li>
+                            <li>
+                                <a href="#">Biblioteker</a>
+                            </li>
+                            <li>
+                                <a href="#">Temaer</a>
+                            </li>
+                            <li>
+                                <a href="#">Materialer</a>
+                            </li>
+                            <li>
+                                <a href="#">Nyheder</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">
+                                    <i class="fa fa-search"></i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Log ind</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="color-green-dark" style="height:30px"></div> <!-- div.color-green-dark skal ikke med, blot for at vise farve -->
+            </div>
+            
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+            
+            <a href="" class="tag">Fantasy</a>
+            <a href="" class="tag">Magi</a>
+            <a href="" class="tag">Troldmænd</a>
+            
+            <h1><a href="">H1: Merriweather 700 42/48</a></h1>
+            <h2><a href="">H2: Merriweather 700 20/24</a></h2>
+            <h3><a href="">H3: Merriweather 300 20/24</a></h3>
+            <h4><a href="">H4: Proxima Nova 400 16/24</a></h4> <br>
+            <p><a href="">P: Proxima Nova 300 16/24</a></p>
+        
+        </div>
+        <div class="gclear spacer"></div>
+        
+        <div class="g12-1">
+            <div class="nested">
+                <div class="g4-1">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="textinput">Basic Text input</label>
+                            <input type="text" id="textinput" name="textinput" placeholder="Basic text input">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" placeholder="Password">
+                        </div>  
+                        <div class="form-group">
+                            <label for="message">Text Area</label>
+                            <textarea rows="5" cols="50" id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.</textarea>
+                            <span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Checkboxes</label><br>
+                            <input id="checkboxone" class="input" type="checkbox" name="checkboxone" value="Checkbox One" checked >
+                            <label class="label label-checkbox" for="checkboxone">Checkbox One</label><br>
+                            <input id="checkboxtwo" class="input" type="checkbox" name="checkboxtwo" value="Checkbox One" >
+                            <label class="label label-checkbox" for="checkboxtwo">Checkbox Two</label><br>
+                            <input id="checkboxthree" class="input" type="checkbox" name="checkboxthree" value="Checkbox One" >
+                            <label class="label label-checkbox" for="checkboxthree">Checkbox Three</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Radios</label><br>
+                            <input id="radioone" class="input" type="radio" name="radio" value="Radio One" checked>
+                            <label class="label label-radio" for="radioone">Radio One</label><br>
+                            <input id="radiotwo" class="input" type="radio" name="radio" value="Radio Two">
+                            <label class="label label-radio" for="radiotwo">Radio Two</label><br>
+                            <input id="radiothree" class="input" type="radio" name="radio" value="Radio Three">
+                            <label class="label label-radio" for="radiothree">Radio Three</label><br>
+                        </div>
+                        <div class="form-group">
+                            <label for="select">Select</label>
+                            <select id="select" name="select" class="select">
+                                <option value="Option One">Option One</option>
+                                <option value="Option Two">Option Two</option>
+                                <option value="Option Three">Option Three</option>
+                                <option value="Option Four">Option Four</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectmultiple">Select Multiple</label>
+                            <select id="selectmultiple" multiple class="select-multiple">
+                                <option value="Option One">Option One</option>
+                                <option value="Option Two">Option Two</option>
+                                <option value="Option Three">Option Three</option>
+                                <option value="Option Four">Option Four</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Submit" class="btn ">
+                            <button class="btn  btn-secondary">Cancel</button>
+                        </div>
+                    </form>
+                </div>   
+            </div>
+        </div>     
+        
+        
+        
+        <div class="gclear spacer"></div>
+        <style>
+                .fix_color{
+                    padding: 15px 0px 15px 15px;
+                    color:rgba(255,255,255,0.75);
+                    font-size: 12px;
+                }
+                .fix_color_small{
+                    height:20px;
+                }
+                .fix_border{
+                border: 1px solid #D8D8D0;
+                color: rgba(120, 135, 128, 0.75);
+                padding: 14px 0px 14px 15px;
+            }
+            </style>
+        <div class="nested">
+            <div class="g4-1 fix_color color-sand fix_border"><strong>Sand</strong> - Baggrundsfarve</div>
+            <div class="g4-5 fix_color color-mudgreen"><strong>Mud Green</strong> - Brødtekst</div>
+            <div class="g4-9 fix_color color-black"><strong>Black</strong> - Headers, (Footer)</div>
+        </div>
+        <div class="gclear"></div>
+        <div class="nested">
+            <div class="g4-1 fix_color color-grey"><strong>Grey</strong> - Header 3</div>
+            <div class="g4-5 fix_color color-grey-light"><strong>Grey Light</strong> - Links, Knapper</div>
+            <div class="g4-9 fix_color color-dark-sand fix_border"><strong>Tinted Sand</strong> - Odd/even tabeller</div>
+        </div>
+        <div class="gclear"></div>
+        <div class="nested">
+            <div class="g6-1 fix_color color-red-bright"><strong>Bright red</strong> - VTL Menu Active</div>
+            <div class="g6-7 fix_color color-mint-green"><strong>Mint Green</strong> - Links, Knapper</div>
+        </div>
+        
+        
+        <div class="gclear spacer"></div>
+        <div class="g9-1">
+            
+            
+            <div class="nested">
+                <div class="g12-1">
+                    <p>Her ses de primære farver, som vil optræde i header, searchbar og menu:</p>
+                </div>
+            </div> 
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red-font">red</div>
+                <div class="g2-3 color-purple-font">Purple</div>
+                <div class="g2-5 color-blue-font">Blue</div>
+                <div class="g2-7 color-yellow-font">Yellow</div>
+                <div class="g2-9 color-green-font">Green</div>
+                <div class="g2-11 color-pink-font">Pink</div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red-light fix_color_small _small"></div>
+                <div class="g2-3 color-purple-light fix_color_small"></div>
+                <div class="g2-5 color-blue-light fix_color_small "></div>
+                <div class="g2-7 color-yellow-light fix_color_small "></div>
+                <div class="g2-9 color-green-light fix_color_small "></div>
+                <div class="g2-11 color-pink-light fix_color_small "></div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red fix_color_small "></div>
+                <div class="g2-3 color-purple fix_color_small "></div>
+                <div class="g2-5 color-blue fix_color_small "></div>
+                <div class="g2-7 color-yellow fix_color_small "></div>
+                <div class="g2-9 color-green fix_color_small "></div>
+                <div class="g2-11 color-pink fix_color_small "></div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red-dark fix_color_small "></div>
+                <div class="g2-3 color-purple-dark fix_color_small "></div>
+                <div class="g2-5 color-blue-dark fix_color_small "></div>
+                <div class="g2-7 color-yellow-dark fix_color_small "></div>
+                <div class="g2-9 color-green-dark fix_color_small "></div>
+                <div class="g2-11 color-pink-dark fix_color_small "></div>
+            </div>
+            <div class="gclear spacer-md"></div>
+            
+            <div class="nested">
+                <div class="g12-1">
+                    <p>
+                        Farverne der bliver brugt til baggrundsfarve på headeren er fx. <code>.color-red</code> eller <code>.color-purple</code> etc.
+                    </p>
+                </div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red fix_color">.color-red</div>
+                <div class="g2-3 color-purple fix_color">.color-purple</div>
+                <div class="g2-5 color-blue fix_color">.color-blue</div>
+                <div class="g2-7 color-yellow fix_color">.color-yellow</div>
+                <div class="g2-9 color-green fix_color">.color-green</div>
+                <div class="g2-11 color-pink fix_color">.color-pink</div>
+            </div>
+            <div class="gclear spacer-md"></div>
+            
+            <div class="nested">
+                <div class="g12-1">
+                    <p>
+                        Farverne der bliver brugt til searchbaren er fx. <code>.color-blue-dark</code> eller <code>.color-yellow-dark</code> etc.
+                    </p>
+                </div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red-dark fix_color">.color-red-dark</div>
+                <div class="g2-3 color-purple-dark fix_color">.color-purple-dark</div>
+                <div class="g2-5 color-blue-dark fix_color">.color-blue-dark</div>
+                <div class="g2-7 color-yellow-dark fix_color">.color-yellow-dark</div>
+                <div class="g2-9 color-green-dark fix_color">.color-green-dark</div>
+                <div class="g2-11 color-pink-dark fix_color">.color-pink-dark</div>
+            </div>
+            <div class="gclear spacer-md"></div>
+            
+            <div class="nested">
+                <div class="g12-1">
+                    <p>
+                        Farverne der bliver brugt til menu når den bliver responsive er fx. <code>.color-green-light</code> eller <code>.color-pink-light</code> etc.
+                    </p>
+                </div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red-light fix_color">.color-red-light</div>
+                <div class="g2-3 color-purple-light fix_color">.color-purple-light</div>
+                <div class="g2-5 color-blue-light fix_color">.color-blue-light</div>
+                <div class="g2-7 color-yellow-light fix_color">.color-yellow-light</div>
+                <div class="g2-9 color-green-light fix_color">.color-green-light</div>
+                <div class="g2-11 color-pink-light fix_color">.color-pink-light</div>
+            </div>
+            <div class="gclear spacer-md"></div>
+            
+            
+        
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+
+            <div class="nested">
+                <div class="g2-1 color-red-light fix_color">.color-red-light</div>
+                <div class="g2-3 color-purple-light fix_color">.color-purple-light</div>
+                <div class="g2-5 color-blue-light fix_color">.color-blue-light</div>
+                <div class="g2-7 color-yellow-light fix_color">.color-yellow-light</div>
+                <div class="g2-9 color-green-light fix_color">.color-green-light</div>
+                <div class="g2-11 color-pink-light fix_color">.color-pink-light</div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red fix_color">.color-red</div>
+                <div class="g2-3 color-purple fix_color">.color-purple</div>
+                <div class="g2-5 color-blue fix_color">.color-blue</div>
+                <div class="g2-7 color-yellow fix_color">.color-yellow</div>
+                <div class="g2-9 color-green fix_color">.color-green</div>
+                <div class="g2-11 color-pink fix_color">.color-pink</div>
+            </div>
+            <div class="gclear"></div>
+            <div class="nested">
+                <div class="g2-1 color-red-dark fix_color">.color-red-dark</div>
+                <div class="g2-3 color-purple-dark fix_color">.color-purple-dark</div>
+                <div class="g2-5 color-blue-dark fix_color">.color-blue-dark</div>
+                <div class="g2-7 color-yellow-dark fix_color">.color-yellow-dark</div>
+                <div class="g2-9 color-green-dark fix_color">.color-green-dark</div>
+                <div class="g2-11 color-pink-dark fix_color">.color-pink-dark</div>
+            </div>
+
+        </div>
+
+
+        <div class="gclear spacer"></div>
+
+        <div class="g3-1">
+            <h3>Biblioteket
+                <br>Rentemestervej [H3]</h3>
+
+            <p>Rentemestervej 76
+                <br>2400 København NV [P]</p>
+
+            <p>+45 82 32 16 00
+                <br>
+                <a href="">bibbro@kff.kk.dk [A]</a>
+            </p>
+        </div>
+
+        <div class="g9-4">
+            <h4>Af
+                <a href="">Joanne K. Rowling</a>(2007) [H4]</h4>
+            <br>
+            <h1>Harry Potter og dødsregalierne [H1]</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, necessitatibus soluta maxime recusandae voluptatem hic facilis veniam a dolorum eaque eius repudiandae veritatis doloremque commodi quam dolore odio sit accusamus fugit quidem vel reprehenderit possimus consectetur iure tempore quo omnis enim ipsa excepturi est. Aliquid inventore reprehenderit hic quidem libero. [P]</p>
+        </div>
+
+        <div class="gclear spacer-sm"></div>
+
+        <div class="g3-1">
+            <div class="vertical-list vertical-list-separator">
+                <h3>Filtrér din søgning [H3]</h3>
+                <h4>Efter materialetype [H4]</h4>
+                <ul class="vertical-list-nav">
+                    <li>
+                        <a href="">Resumé [A]</a>
+                    </li>
+                    <li>
+                        <a href="">Anmeldelser</a>
+                    </li>
+                    <li class="active">
+                        <a href="">Om Joanne K. Rowling</a>
+                    </li>
+                    <li>
+                        <a href="">Se alle eksemplarer</a>
+                    </li>
+                </ul>
+                <a href="">+ Flere typer</a>
+            </div>
+        </div>
+
+        <div class="g6-4">
+            <h2>Klassisk julemusik [H2]</h2>
+            <span class="meta">
+                <span class="meta-primary">Tirsdag 10. december 2013</span>
+                <span class="meta-secondary">af
+                    <a href="">Lene Frandsen</a>
+                </span>
+            </span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quam ex quae et mollitia pariatur ea dolorem nesciunt iste eligendi? [P]</p>
+            <button class="btn btn-small btn-sidebyside">Klassisk</button>
+            <button class="btn btn-small btn-sidebyside">Jul</button>
+            <button class="btn btn-small btn-sidebyside">Hygge</button>
+        </div>
+
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+
+
+
+            <div class="rating ">
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="checked">
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+            </div>
+
+            <div class="rating  rating-md">
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="checked">
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+            </div>
+
+            <div class="rating rating-interactive rating-lg">
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span>
+                    <i class="fa fa-star-o"></i>
+                </span>
+                <span class="checked">
+                    <i class="fa fa-star-o"></i>
+                </span>
+            </div>
+
+
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+
+            <div class="pt color-red">
+                <div class="search-bar search-bar-red ">
+                    <div class="icon-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="pt color-purple">
+                <div class="search-bar search-bar-purple ">
+                    <div class="icon-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="pt color-blue">
+                <div class="search-bar search-bar-blue ">
+                    <div class="icon-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="pt color-yellow">
+                <div class="search-bar search-bar-yellow ">
+                    <div class="icon-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="pt color-green">
+                <div class="search-bar search-bar-green ">
+                    <div class="icon-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="pt color-pink">
+                <div class="search-bar search-bar-pink ">
+                    <div class="icon-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </div>
+                    <form action="" class="">
+                        <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                    </form>
+                </div>
+            </div>
+            <br>
+            <br>
+
+
+            <div class="search-bar search-bar-small search-bar-dark">
+                <div class="icon-search">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+                <form action="" class="">
+                    <input type="text" placeholder="Skriv f.eks. Harry Potter, krimi eller lignende">
+                </form>
+            </div>
+
+
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+
+            <div class="nested">
+                <div class="g3-1">
+                    <div class="img-wrap img-center">
+                        <a href="#">
+                            <img src="" class="img-responsive limit-height">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="g9-4">
+                    <div class="text">
+                        <h3>Some header here</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, recusandae, quaerat earum numquam a est ut ullam autem ipsa commodi dolorem dolore error harum nemo incidunt quasi at libero mollitia placeat quis atque iusto fugit sed eveniet amet eum optio alias! Nihil, natus laboriosam porro. Alias quisquam recusandae reprehenderit nam molestiae soluta veritatis dicta beatae esse. Ducimus, dignissimos, debitis nostrum possimus eaque recusandae delectus at quis est nulla sequi consequatur quidem illum accusantium blanditiis mollitia quia esse. Alias, harum, commodi, ad, reprehenderit tempore officia sequi voluptates voluptate ducimus fuga perferendis quis dignissimos suscipit accusantium velit fugiat porro voluptatum aperiam eum.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="gclear"></div>
+        <div class="g6-1">
+            <div class="imgtext column scale">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="_/img/content/270x190.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>SCALE</h3>
+                    <p>Rentemestervej 76
+                        <br>2400 København NV</p>
+                    <p>+45 82321600
+                        <br>
+                        <a href="">bibbro@kff.kk.dk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="g6-7">
+            <div class="imgtext column scale">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="_/img/content/270x190.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>SCALE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum, earum assumenda dignissimos aperiam nostrum id quasi enim facilis alias voluptates laudantium soluta laboriosam minima error vero temporibus unde pariatur eligendi quas cupiditate impedit quidem delectus deserunt ratione illo reprehenderit nulla eum optio ipsam dolor itaque accusantium eaque sequi ad officia quibusdam deleniti. Recusandae, nemo, laborum eius eligendi earum expedita natus reprehenderit sapiente est assumenda eos optio sit porro quod in repellendus doloribus architecto eaque rem nesciunt ea molestias suscipit repudiandae! Quis, quisquam, nam incidunt ipsum adipisci quod perferendis dolore eum modi eveniet cum quaerat ipsa in quidem et non.</p>
+                </div>
+            </div>
+            <!--
+            <div class="imgtext column">
+                <div class="img-wrap">
+                    <a href="#"><img src="_/img/content/270x190.png"  alt=""></a>
+                </div>
+                <div class="text">
+                    <h3>Bibliotekshuset</h3>
+                    <p>Rodosvej 4<br>2300 København S</p>
+                    <p>+45 82321600<br><a href="">bibbro@kff.kk.dk</a></p>
+                </div>
+            </div>
+-->
+        </div>
+        <div class="gclear"></div>
+        <div class="g12-1">
+            <div class="imgtext column scale">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="_/img/content/270x190.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>SCALE</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, laborum, earum assumenda dignissimos aperiam nostrum id quasi enim facilis alias voluptates laudantium soluta laboriosam minima error vero temporibus unde pariatur eligendi quas cupiditate impedit quidem delectus deserunt ratione illo reprehenderit nulla eum optio ipsam dolor itaque accusantium eaque sequi ad officia quibusdam deleniti. Recusandae, nemo, laborum eius eligendi earum expedita natus reprehenderit sapiente est assumenda eos optio sit porro quod in repellendus doloribus architecto eaque rem nesciunt ea molestias suscipit repudiandae! Quis, quisquam, nam incidunt ipsum adipisci quod perferendis dolore eum modi eveniet cum quaerat ipsa in quidem et non.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear"></div>
+        <div class="g12-1">
+            <div class="imgtext">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="_/img/content/270x190.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>Biblioteket
+                        <br>Rentemestervej</h3>
+                    <p>Rentemestervej 76
+                        <br>2400 København NV</p>
+                    <p>+45 82321600
+                        <br>
+                        <a href="">bibbro@kff.kk.dk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear"></div>
+        <div class="g12-1">
+            <div class="imgtext column">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="_/img/content/270x190.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>Biblioteket Rentemestervej</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, recusandae, quaerat earum numquam a est ut ullam autem ipsa commodi dolorem dolore error harum nemo incidunt quasi at libero mollitia placeat quis atque iusto fugit sed eveniet amet eum optio alias! Nihil, natus laboriosam porro. Alias quisquam recusandae reprehenderit nam molestiae soluta veritatis dicta beatae esse. Ducimus, dignissimos, debitis nostrum possimus eaque recusandae delectus at quis est nulla sequi consequatur quidem illum accusantium blanditiis mollitia quia esse. Alias, harum, commodi, ad, reprehenderit tempore officia sequi voluptates voluptate ducimus fuga perferendis quis dignissimos suscipit accusantium velit fugiat porro voluptatum aperiam eum.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear"></div>
+        <div class="g12-1">
+            <div class="imgtext">
+                <div class="img-wrap hide">
+                    <a href="#">
+                        <img src="_/img/content/170x145.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <div class="meta">
+                        <span class="meta-primary">21 okt. 2013</span>
+                        <span class="meta-secondary">kort nyt</span>
+                    </div>
+                    <div class="meta">
+                        <span class="meta-primary">
+                            <a href="">21 okt. 2013</a>
+                        </span>
+                        <span class="meta-secondary">af
+                            <a href="">Lene Frandsen</a>
+                        </span>
+                    </div>
+                    <h2>Alle børn har ret til et godt liv</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, animi, aperiam laboriosam molestias illum nihil sit neque ipsam quasi nulla doloremque reiciendis odit eveniet dolorem quidem labore facere corrupti ratione.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear"></div>
+        <div class="g12-1">
+            <div class="imgtext">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="holder.js/400x325/#00b38a:#fff" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <p>Susanne Bidstrup arbejder både med drejede brugsting og unikke former i stentøjsler og porcelæn. Hun bruger ofte skrifttegn i sine dekorationer. Gentagelsen og rytmen giver en fornemmelse af ro, og udover det rent dekorative, udtrykker skrifttegnene også kommunikation mellem mennesker – også på tværs af tid og sted. Inspirationen kommer mange steder fra og det er hensigten på samme tid at skabe noget genkendeligt og nyt, hvor det æstetiske udtryk er væsentligt. Se mere på hjemme-siden
+                        <a href="">www.bidstrupkeramik.dk</a>Udstillingen kan ses i bibliotekets åbningstid.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gclear spacer"></div>
+
+        <div class="gclear"></div>
+        <div class="g12-1">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Arrangementer</a>
+                        </li>
+                        <li>
+                            <a href="#">Biblioteker</a>
+                        </li>
+                        <li>
+                            <a href="#">Temaer</a>
+                        </li>
+                        <li>
+                            <a href="#">Materialer</a>
+                        </li>
+                        <li>
+                            <a href="#">Nyheder</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">Log ind</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="gclear spacer"></div>
+
+        <div class="g4-1">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <h4>Lorem ipsum dolor sit amet.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, odio, aut, nihil quae quos amet sequi laborum totam est magnam voluptatem quasi et provident non veniam voluptate eos autem ea!</p>
+        </div>
+        <div class="g4-5">
+            <h1>Lorem ipsum dolor sit amet.</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, recusandae, officiis ut animi et tempora sunt quisquam aperiam distinctio quia aliquam voluptates laboriosam. Provident, deleniti, sint, soluta nam illo neque quo dolore harum dolor quia dolorem debitis possimus sed quos
+                <a href="">praesentium laudantium</a>beatae dicta alias est eos.</p>
+            <h4>Lorem ipsum dolor sit amet.</h4>
+            <p>Tempora, odit, deserunt, atque, vero non molestiae consequuntur dignissimos quo nemo ad iste rerum quisquam sit et asperiores eum illo ut aspernatur magni libero eligendi. Itaque, iusto exercitationem asperiores magni impedit assumenda minima nesciunt fuga.</p>
+        </div>
+        <div class="g4-9">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, odio, aut, nihil quae quos amet sequi laborum totam est magnam voluptatem quasi et provident non veniam
+                <a href="">voluptate eos autem</a>ea!</p>
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, excepturi, quas a recusandae nemo temporibus deserunt quo ipsum commodi consequuntur optio nesciunt ea. Nam, voluptate, ipsa, quaerat dolore a magni laudantium eos blanditiis ab saepe impedit optio consectetur animi quia explicabo. Est, dolor a harum veniam recusandae vero quidem cupiditate provident. Natus, vero, magnam, laboriosam, delectus quisquam consequuntur tenetur provident vel nesciunt ab labore eos nam.</p>
+        </div>
+
+        <div class="gclear spacer"></div>
+        <div class="g3-1">
+            <div class="vertical-list vertical-list-separator">
+                <h3>Filtrér din søgning</h3>
+                <h4>Efter materialetype</h4>
+                <ul class="vertical-list-nav">
+                    <li>
+                        <a href="">Resumé</a>
+                    </li>
+                    <li>
+                        <a href="">Anmeldelser</a>
+                    </li>
+                    <li class="active">
+                        <a href="">Om Joanne K. Rowling</a>
+                    </li>
+                    <li>
+                        <a href="">Se alle eksemplarer</a>
+                    </li>
+                    <li>
+                        <a href="">Lorem ipsum.</a>
+                    </li>
+                    <li>
+                        <a href="">Ratione, enim.</a>
+                    </li>
+                </ul>
+                <a href="">+ Flere typer</a>
+            </div>
+            <div class="vertical-list vertical-list-separator">
+                <h4>Efter materialetype</h4>
+                <ul class="vertical-list-nav">
+                    <li class="active">
+                        <a href="">Resumé</a>
+                    </li>
+                    <li>
+                        <a href="">Om Joanne K. Rowling</a>
+                    </li>
+                    <li>
+                        <a href="">Se alle eksemplarer</a>
+                    </li>
+                    <li>
+                        <a href="">Ratione, enim.</a>
+                    </li>
+                    <li>
+                        <a href="">Dukoliu amorie</a>
+                    </li>
+                </ul>
+                <a href="">+ Flere typer</a>
+            </div>
+        </div>
+        <div class="g3-4">
+
+            <div class="vertical-list">
+                <h3>Anmeldelser</h3>
+                <ul class="vertical-list-plain">
+                    <li>
+                        <a href="">Kristeligt dagblad, 2007-11-10</a>
+                    </li>
+                    <li>
+                        <a href="">Jyllands-posten, 2007-11-10</a>
+                    </li>
+                    <li>
+                        <a href="">Børsen, 2007-11-10</a>
+                    </li>
+                    <li>
+                        <a href="">Politikken, 2007-11-10</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <br>
+            <div class="vertical-list">
+                <h3>Vertical List With Links</h3>
+                <ul class="vertical-list-links">
+                    <li>
+                        <a href="">Lorem ipsum dolor sit.</a>
+                    </li>
+                    <li>
+                        <a href="">Molestiae, unde delectus laborum.</a>
+                    </li>
+                    <li class="active">
+                        <a href="">Nesciunt porro fuga delectus.</a>
+                    </li>
+                    <li>
+                        <a href="">Accusantium, incidunt dignissimos quos?</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="g3-7">
+
+            <div class="vertical-list">
+                <h3>Vertical List</h3>
+                <ul class="vertical-list-plain">
+                    <li class="active">
+                        <a href="">Resumé</a>
+                    </li>
+                    <li>
+                        <a href="">Anmeldelser</a>
+                    </li>
+                    <li>
+                        <a href="">Om Joanne K. Rowling</a>
+                    </li>
+                    <li>
+                        <a href="">Se alle eksemplarer</a>
+                    </li>
+                    <li>
+                        <a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, quisquam?</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="g3-10">
+            <div class="vertical-list">
+                <h3>Vertical List with a very long header so it breaks</h3>
+                <ul class="vertical-list-plain">
+                    <li>
+                        <a href="">Resumé</a>
+                    </li>
+                    <li>
+                        <a href="">Anmeldelser</a>
+                    </li>
+                    <li>
+                        <a href="">Om Joanne K. Rowling med meget lang text man kan klikke på</a>
+                    </li>
+                    <li class="active">
+                        <a href="">Se alle eksemplarer</a>
+                    </li>
+                    <li>
+                        <a href="">Lorem ipsum.</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="gclear spacer"></div>
+
+        <div class="g3-1">
+            <div class="vertical-list">
+                <h4>Plain Vertical List</h4>
+                <ul class="vertical-list-plain">
+                    <li>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </li>
+                    <li>
+                        <p>Eligendi, commodi nemo similique.</p>
+                    </li>
+                    <li>
+                        <p>Et, nesciunt cupiditate aliquid.</p>
+                    </li>
+                    <li>
+                        <p>Cum, officia cumque dolores!</p>
+                    </li>
+                    <li>
+                        <p>Itaque, obcaecati omnis doloribus.</p>
+                    </li>
+                </ul>
+            </div>
+            <br/>
+            <div class="vertical-list">
+                <h4>Bullet Vertical List</h4>
+                <ul class="vertical-list-bullet">
+                    <li>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </li>
+                    <li>
+                        <p>Odit excepturi vel facilis?</p>
+                    </li>
+                    <li>
+                        <p>Totam, recusandae est blanditiis.</p>
+                    </li>
+                    <li>
+                        <p>Facilis corrupti optio ipsam.</p>
+                    </li>
+                    <li>
+                        <p>Omnis aliquid minima amet?</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="g3-4">
+            <div class="vertical-list">
+                <h4>Number Vertical List (ol)</h4>
+                <ol class="vertical-list-number">
+                    <li>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </li>
+                    <li>
+                        <p>Quasi, cumque facilis nostrum!</p>
+                    </li>
+                    <li>
+                        <p>Doloribus, asperiores explicabo necessitatibus!</p>
+                    </li>
+                    <li>
+                        <p>Animi, libero suscipit esse.</p>
+                    </li>
+                    <li>
+                        <p>Minus, architecto cumque praesentium.</p>
+                    </li>
+                </ol>
+                <br/>
+                <h4>Number Vertical List (ul)</h4>
+                <ul class="vertical-list-number">
+                    <li>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </li>
+                    <li>
+                        <p>Ratione, praesentium alias veniam.</p>
+                    </li>
+                    <li>
+                        <p>Distinctio consequatur quia odio.</p>
+                    </li>
+                    <li>
+                        <p>Corporis, dolores impedit a?</p>
+                    </li>
+                    <li>
+                        <p>Nesciunt, ea sed vero.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="g3-7">
+            <div class="vertical-list">
+                <h4>Check Vertical List</h4>
+                <ul class="vertical-list-check">
+                    <li>
+                        <p>Lorem ipsum dolor sit.</p>
+                    </li>
+                    <li>
+                        <p>Quidem earum doloremque saepe.</p>
+                    </li>
+                    <li>
+                        <p>Magnam, impedit rem sapiente.</p>
+                    </li>
+                    <li>
+                        <p>Magni pariatur in veritatis.</p>
+                    </li>
+                    <li>
+                        <p>Quaerat sit quo minus.</p>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="vertical-list">
+                <h4>Form Elements</h4>
+                <ul class="">
+                    <form action="">
+                        <li>
+                            <input id="checkbox1" class="input" type="checkbox" name="vehicle" value="Bike">
+                            <label class="label label-checkbox" for="checkbox1">I have a bike</label>
+                        </li>
+                        <li>
+                            <input id="checkbox2" class="input" type="checkbox" name="vehicle" value="Car">
+                            <label class="label label-checkbox" for="checkbox2">I have a car</label>
+                        </li>
+                        <li>
+                            <input id="radio1" class="input" type="radio" name="sex" value="male">
+                            <label class="label label-radio" for="radio1">Male</label>
+                        </li>
+                        <li>
+                            <input id="radio2" class="input" type="radio" name="sex" value="female">
+                            <label class="label label-radio" for="radio2">Female</label>
+                        </li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+        <div class="g3-10">
+
+        </div>
+
+        <div class="gclear spacer"></div>
+
+        <div class="g6-4">
+            <form action="">
+
+                <div class="form-group">First name:
+                    <input type="text" name="firstname">
+                    <br>Last name:
+                    <input type="text" name="lastname">
+                </div>
+
+                <div class="form-group">
+                    <input id="checkbox5" class="input" type="checkbox" name="vehicle" value="Bike">
+                    <label class="label label-checkbox" for="checkbox5">I have a bike</label>
+                    <br>
+                    <input id="checkbox6" class="input" type="checkbox" name="vehicle" value="Car">
+                    <label class="label label-checkbox" for="checkbox6">I have a car</label>
+                </div>
+
+                <input id="radio5" class="input" type="radio" name="sex" value="male">
+                <label class="label label-radio" for="radio5">Male</label>
+                <br>
+                <input id="radio6" class="input" type="radio" name="sex" value="female">
+                <label class="label label-radio" for="radio6">Female</label>
+                <br>
+                <br>
+
+                <input id="checkbox3" class="" type="checkbox" name="vehicle" value="Bike">
+                <label class="" for="checkbox3">I have a bike</label>
+                <br>
+                <input id="checkbox4" class="" type="checkbox" name="vehicle" value="Car">
+                <label class="" for="checkbox4">I have a car</label>
+                <br>
+
+                <input id="radio3" class="" type="radio" name="sex" value="male">
+                <label class="" for="radio3">Male</label>
+                <br>
+                <input id="radio4" class="" type="radio" name="sex" value="female">
+                <label class="" for="radio4">Female</label>
+                <br>
+
+                <textarea rows="4" cols="50">At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+                </textarea>
+                <input type="submit" value="Submit" class="btn btn-small">
+                <button class="btn btn-small btn-danger">Stop</button>
+                <a href="" class="btn btn-small btn-secondary">Info</a>
+            </form>
+
+            <br>
+            <form action="">
+                <fieldset>
+                    <legend>Personal information:</legend>
+                    <div class="form-group">
+                        <label for="textinput">Basic Text input</label>
+                        <input type="text" id="textinput" name="textinput" placeholder="Basic text input">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password">
+                    </div>  
+                    <div class="form-group">
+                        <label for="message">Text Area</label>
+                        <textarea rows="5" cols="50" id="message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, id, illo, error quo repellat quasi atque doloribus ducimus asperiores modi adipisci rerum aperiam beatae eveniet voluptates dolorum culpa maiores sit.</textarea>
+                        <span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                    </div>
+                    <button class="btn  btn-primary btn-sidebyside">Stop</button>
+                    <a href="" class="btn btn-secondary">Info</a>
+                </fieldset>
+            </form>
+
+            <br>
+            <form action="">
+                <select name="cars" class="select">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat" selected>Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </form>
+            <br>
+            <form action="">
+                <select name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat" selected>Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </form>
+
+            <br>
+            <br>
+
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown1">
+                <label for="dropdown1">
+                    <span class="dropdown-title">Dropdown
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </span>
+                </label>
+                <div class="dropdown-content">
+                    <ul class="dropdown-list">
+                        <li>
+                            <a href="">Lorem ipsum dolor.</a>
+                        </li>
+                        <li>
+                            <p>Lorem ipsum dolor.</p>
+                        </li>
+                        <li>
+                            <a href="">Lorem ipsum dolor.</a>
+                        </li>
+                        <li>
+                            <p>Lorem ipsum dolor.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown2">
+                <label for="dropdown2">
+                    <span class="dropdown-title secondary">Dropdown
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </span>
+                </label>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-wrap">
+                        <h1>Lorem ipsum dolor.</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, similique, adipisci, explicabo velit facilis enim provident odio porro iste quas perferendis quo corporis laudantium eveniet culpa soluta eos deleniti harum beatae eaque sunt esse eligendi earum blanditiis nam dicta libero obcaecati sequi aliquid ducimus pariatur ea molestias dolor maxime cum officia ipsa officiis nobis amet consectetur! Minima, nemo explicabo iure id corrupti nesciunt ratione qui nam maiores animi unde laboriosam sint officia? Omnis, dolorem magnam fugit consequuntur sit vel ratione ab illum dignissimos quod? Consequuntur, rerum, aliquam reiciendis pariatur molestiae obcaecati aspernatur ut sequi in dolorem mollitia hic culpa cupiditate!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input type="checkbox" id="dropdown3">
+                <label for="dropdown3">
+                    <span class="dropdown-title danger">Instillinger
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </span>
+                </label>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-wrap">
+                        <div class="vertical-list">
+                            <h4>Instilling 1</h4>
+                            <ul class="">
+                                <form action="">
+                                    <li>
+                                        <input id="checkbox1a" class="input" type="checkbox" name="vehicle" value="Bike">
+                                        <label class="label label-checkbox" for="checkbox1a">I have a bike</label>
+                                    </li>
+                                    <li>
+                                        <input id="checkbox2a" class="input" type="checkbox" name="vehicle" value="Car">
+                                        <label class="label label-checkbox" for="checkbox2a">I have a car</label>
+                                    </li>
+                                    <li>
+                                        <input id="radio1a" class="input" type="radio" name="sex" value="male">
+                                        <label class="label label-radio" for="radio1a">Male</label>
+                                    </li>
+                                    <li>
+                                        <input id="radio2a" class="input" type="radio" name="sex" value="female">
+                                        <label class="label label-radio" for="radio2a">Female</label>
+                                    </li>
+
+
+                                </form>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g6-1">
+            <table class="table table-even">
+                <tr>
+                    <td>
+                        <h4>Serie</h4>
+                    </td>
+                    <td>
+                        <p>7. del af Harry Potter og de vise sten</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Type</h4>
+                    </td>
+                    <td>
+                        <p>Bog</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Sprog</h4>
+                    </td>
+                    <td>
+                        <p>Dansk</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Genre</h4>
+                    </td>
+                    <td>
+                        <p>Fiktion</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Emneord</h4>
+                    </td>
+                    <td>
+                        <p>
+                            <a href="">Fantasy</a>
+                            <br/>
+                            <a href="">Magi</a>
+                            <br/>
+                            <a href="">Troldmænd</a>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Original title</h4>
+                    </td>
+                    <td>
+                        <p>Harry Potter and the deathly hallows</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="g6-7">
+
+            <table class="table table-even">
+                <thead>
+                    <tr>
+                        <td>
+                            <h4>Biblioteker og opstilling</h4>
+                        </td>
+                        <td class="center">
+                            <h4>Antal</h4>
+                        </td>
+                        <td class="center">
+                            <h4>På hylden</h4>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>Beder-Malling > Børn > Fantasi/Fantasy > Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Egå > Børn > Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Egå > Skolebibliotek > Sølystskolen > Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Gellerup > Børn > Fantasi/Fantasy > Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Kolt-Hasselager > Børn > Fantasi/Fantasy > Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                        <td class="center">
+                            <p>1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Kolt-Hasselager > Børn > Rowling</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                        <td class="center">
+                            <p>2</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g5-1">
+
+            <table class="table table-data">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h4>Lorem ipsum.</h4>
+                            <td>
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Facilis, mollitia.</h4>
+                            <td>
+                                <p>Ratione saepe suscipit repellendus voluptas!</p>
+                            </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4>Quidem, animi.</h4>
+                            <td>
+                                <p>Debitis provident pariatur nobis quas!</p>
+                            </td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g3-1">
+            <h3>Lorem ipsum dolor sit.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, assumenda, doloremque corporis optio aut voluptates expedita obcaecati quasi dolorum sit repellendus suscipit fuga molestias laboriosam quae nostrum ut cum autem aliquam nam dolor exercitationem in esse adipisci et accusamus a. Molestiae, repellat, libero consequuntur nulla perferendis eius modi officia qui quia accusantium debitis est temporibus vitae vel nam aspernatur quisquam maxime iusto mollitia repellendus veritatis quae quos illo eum alias itaque amet atque neque perspiciatis enim porro ullam quam tempore? Cumque, facilis, non incidunt fuga quos suscipit quod quasi nam soluta cum dignissimos sapiente saepe at harum in quo similique!</p>
+        </div>
+        <div class="g2-4">
+            <br/>
+            <br/>
+            <button type="button" class="btn">
+                <span class="glyphicon glyphicon-briefcase"></span>Reservér bogen nu</button>
+            <button type="button" class="btn btn-small">Reservér bogen nu</button>
+            <br/>
+            <a href="" class="link link-primary">Reservér bogen nu</a>
+            <button type="button" class="btn btn-secondary">
+                <span class="glyphicon glyphicon-plus-sign"></span>Føj til huskeliste</button>
+            <button type="button" class="btn btn-small btn-secondary">Føj til huskeliste</button>
+            <br/>
+            <a href="" class="link  link-secondary">Føj til huskeliste</a>
+            <button type="button" class="btn btn-danger">
+                <span class="glyphicon glyphicon-warning-sign"></span>Er du sikker?</button>
+            <button type="button" class="btn btn-small btn-danger">Er du sikker?</button>
+            <br/>
+            <a href="" class="link  link-danger">Er du sikker?</a>
+        </div>
+        <div class="g6-1-right">
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-briefcase"></span>Reservér bogen nu</button>
+            <button type="button" class="btn btn-secondary">
+                <span class="glyphicon glyphicon-plus-sign"></span>Føj til huskeliste</button>
+            <button type="button" class="btn btn-danger">
+                <span class="glyphicon glyphicon-warning-sign"></span>Er du sikker?</button>
+        </div>
+        <div class="g6-1-right gclear-right">
+            <button type="button" class="btn btn-small btn-primary">Reservér bogen nu</button>
+            <button type="button" class="btn btn-small btn-secondary">Føj til huskeliste</button>
+            <button type="button" class="btn btn-small btn-danger">Er du sikker?</button>
+        </div>
+        <div class="g6-1-right gclear-right">
+            <a href="" class="link link-primary">Reservér bogen nu</a>
+            <a href="" class="link link-secondary">Føj til huskeliste</a>
+            <a href="" class="link link-danger">Er du sikker?</a>
+        </div>
+        <div class="gclear spacer"></div>
+
+        <div class="g6-1 responsive">
+            <div class="imgtext">
+                <div class="img-wrap shrink">
+                    <a href="#">
+                        <img src="_/img/content/270x190.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h3>Biblioteket
+                        <br>Rentemestervej</h3>
+                    <p>Rentemestervej 76
+                        <br>2400 København NV</p>
+                    <p>+45 82321600
+                        <br>
+                        <a href="">bibbro@kff.kk.dk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="g6-7 responsive">
+            <div class="imgtext">
+                <div class="img-wrap hide">
+                    <a href="#">
+                        <img src="_/img/content/170x145.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <div class="meta">
+                        <span class="date">21 okt. 2013</span>
+                        <span class="category">kort nyt</span>
+                    </div>
+                    <h2>Alle børn har ret til et godt liv</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, animi, aperiam laboriosam molestias illum nihil sit neque ipsam quasi nulla doloremque reiciendis odit eveniet dolorem quidem labore facere corrupti ratione.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g4-1 responsive">
+            <div class="imgtext imgtext-underline">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="holder.js/60x60/#00b38a:#fff" class="img-responsive img-round" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h4 class="big">Litteratur og lydbøger</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, porro!</p>
+                </div>
+            </div>
+        </div>
+        <div class="g4-5-right responsive">
+            <div class="imgtext imgtext-underline">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="holder.js/60x60/#00b38a:#fff" class="img-responsive img-round" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h4 class="big">Spil</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, porro!</p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear"></div>
+        <div class="g4-1 responsive">
+            <div class="imgtext imgtext-underline">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="holder.js/60x60/#00b38a:#fff" class="img-responsive img-round" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h4 class="big">Musik</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, porro!</p>
+                </div>
+            </div>
+        </div>
+        <div class="g4-5 responsive">
+            <div class="imgtext imgtext-underline">
+                <div class="img-wrap">
+                    <a href="#">
+                        <img src="holder.js/60x60/#00b38a:#fff" class="img-responsive img-round" alt="">
+                    </a>
+                </div>
+                <div class="text">
+                    <h4 class="big">Arrangementer</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, porro!</p>
+                </div>
+            </div>
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g4-1">
+            <h1>ToolTip / Popup</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, pariatur.
+                <span data-toggle="popup" data-placement="auto" title="This is a title" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, pariatur.">?</span>
+            </p>
+            <p>Suscipit, culpa dolores fugiat veritatis mollitia deleniti ipsam repudiandae excepturi.
+                <span data-placement="bottom" data-toggle="popup" title="This is a title" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, pariatur.">?</span>
+            </p>
+
+            <p>Beatae nesciunt sint aliquam ullam aliquid fuga magnam deleniti sit.
+                <span data-placement="auto" data-toggle="popup" title="This is a title" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, pariatur.">?</span>
+            </p>
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+
+            <h1>Modal</h1>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_01">
+                Launch demo modal
+            </button>
+
+            <div class="modal" id="modal_01" tabindex="-1" role="dialog" aria-labelledby="modal_label_01" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h3 class="modal-title" id="modal_label_01">Modal title</h3>
+                        </div>
+                        <div class="modal-body">
+
+                            <h4>En title her</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, obcaecati</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gclear spacer"></div>
+        <div class="g12-1">
+            <h1>Alerts</h1>
+            <div class="alert alert-danger fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4>Oh snap! You got an error!</h4>
+                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+                <button class="btn btn-danger" data-dismiss="alert">Okay jeg forstår</button>
+            </div>
+            <div class="alert alert-warning fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4>Oh snap! You got an error!</h4>
+                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+            <div class="alert alert-info fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4>Oh snap! You got an error!</h4>
+                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+            <div class="alert alert-success fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <h4>Oh snap! You got an error!</h4>
+                <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+        </div>
+        <div class="gclear spacer"></div>
+
+
+    </div>
+
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/holderjs/holder.js"></script>
+    <script type="text/javascript" src="bower_components/respond/dest/respond.min.js"></script>
+    <script type="text/javascript" src="_/js/calendar.js"></script>
+    <!--    <script src="_/js/grid_bookmark.js"></script>-->
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popup"]').popover();
+            $('.modal').on('shown.bs.modal', function() {
+                var wheight = $(window).height();
+                var initModalHeight = $('.modal-dialog').outerHeight();
+                if(initModalHeight<wheight) $('.modal-dialog').css('margin-top', (wheight/2) - (initModalHeight/2));
+            });
+        })
+    </script>
+</body>
+
+</html>

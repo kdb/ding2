@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/*
+Loader
+
+Loaderen kan bruges i forbindelse med tema farverne. Standard farven er sort.
+
+Markup: <div class="loader {$modifiers}">
+    <div class="loader-animation"></div>
+    <div class="loader-text">Søger - vent venligst</div>
+</div>
+
+.color-red - Red
+.color-purple - Purple
+.color-blue - Blue
+.color-yellow - Yellow
+.color-green - Green
+.color-pink - Pink
+
+Styleguide 99.8
+*/
+
+.loader{
+    border-radius:$border-radius*2;
+    width: 210px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    position:relative;
+    background-color: $color-black;
+
+    .loader-animation{
+        width: 90px;height: 90px;
+        border-radius:100%;
+        background-image: url('../img/book_loader.gif');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: white;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin-top: -55px;
+        margin-left: -45px;
+    }
+
+    .loader-text{
+        display:inline-block;
+        color: white;
+        font-size: 12px;
+        position: relative;
+        top: 145px;
+        text-align: center;
+    }
+
+    &.color-red {
+        background-color: $color-red;
+    }
+    &.color-purple {
+        background-color: $color-purple;
+    }
+    &.color-blue {
+        background-color: $color-blue;
+    }
+    &.color-yellow {
+        background-color: $color-yellow;
+    }
+    &.color-green {
+        background-color: $color-green;
+    }
+    &.color-pink {
+        background-color: $color-pink;
+    }
+}

@@ -1,0 +1,498 @@
+@charset "UTF-8";
+
+$TYPO: 1;
+ /*
+Typografi
+
+Styleguide #{$TYPO}.0
+*/
+
+ /*
+Headers
+
+Markup: <h1>H1: Merriweather 700 42/48</h1>
+<h2>H2: Merriweather 700 20/24</h2>
+<h3>H3: Merriweather 300 20/24</h3>
+<h4>H4: Proxima Nova 400 16/24</h4> <br>
+<p>P: Proxima Nova 300 16/24</p>
+
+Styleguide #{$TYPO}.1
+*/
+
+
+/*
+Links
+
+Markup: <a href="#" class="{$modifiers}">Lorem ipsum color deme</a>
+
+:hover - Highlight the button when hovered.
+:active - Highlight when active.
+.link-secondary - Secondary link.
+.link-danger - Warning/danger link.
+
+Styleguide #{$TYPO}.2
+*/
+
+ /*
+Meta data
+
+Meta data kan bruges til at vise datoer, kategorier, forfattere, arrangementer etc. Brug <code>.meta-form</code> som hints til forms.
+
+Markup: <div class="meta">
+    <span class="meta-primary">21 okt. 2013</span>
+    <span class="meta-secondary">kort nyt</span>
+</div> <br>
+<div class="meta">
+    <span class="meta-primary"><a href="">21 okt. 2013</a></span>
+    <span class="meta-secondary">af <a href="">Lene Frandsen</a></span>
+</div> <br>
+<div class="meta">
+    <span class="meta-primary"><i class="fa fa-calendar"></i> <a href="">Torsdag 21. august 2014</a></span>
+    <span class="meta-secondary">19:00 til 20:00</span> <span class="meta-secondary meta-strong">GRATIS</span><br>
+    <span class="meta-location"><i class="fa fa-map-marker"></i> <a href="">Biblioteket Rentemestervej</a></span>
+</div><br>
+<span class="meta-form"><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+
+Styleguide #{$TYPO}.2
+*/
+
+
+ /*
+Tags
+
+Tags skal bruges som de bruges på ding2 websitet.
+
+Markup: <a href="" class="tag">Fantasy</a>
+<a href="" class="tag">Magi</a>
+<a href="" class="tag">Troldmænd</a>
+
+Styleguide #{$TYPO}.3
+*/
+
+
+
+$COPY: 4;
+
+ /*
+Copy H1, H4
+
+Et eksempel på brug af <code>H1</code> kunne være ved overskrifter på materiale sider eller udstillingssider.
+Brug af <code>H4</code> kunne være til at vise forfatteren eller udstillingsbeskrivelse.
+
+Markup: <h4>Af <a href="">Joanne K. Rowling</a> (2007) [H4]</h4> <br>
+<h1>Harry Potter og dødsregalierne [H1]</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, necessitatibus soluta maxime recusandae voluptatem hic facilis veniam a dolorum eaque eius repudiandae veritatis doloremque commodi quam dolore odio sit accusamus fugit quidem vel reprehenderit possimus consectetur iure tempore quo omnis enim ipsa excepturi est. Aliquid inventore reprehenderit hic quidem libero. [P]</p>
+
+Styleguide #{$TYPO}.#{$COPY}
+*/
+
+ /*
+Copy H2
+
+Brug af <code>H2</code> kunne være ved visning af content i form af: nyheder, arrangementer etc.
+
+Markup:
+<span class="meta">
+    <span class="meta-primary">Tirsdag 10. december 2013</span>
+    <span class="meta-secondary">af <a href="">Lene Frandsen</a></span>
+</span>
+<h2>Klassisk julemusik [H2]</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, quam ex quae et mollitia pariatur ea dolorem nesciunt iste eligendi? [P]</p>
+<a href="" class="tag">Klassisk</a>
+<a href="" class="tag">Jul</a>
+<a href="" class="tag">Hygge</a>
+
+Styleguide #{$TYPO}.#{$COPY}
+*/
+
+ /*
+Copy H3
+
+Et eksempel på brug af <code>H3</code> kunne være ved adressevisning af et bibliotek.
+
+Markup: <h3>Biblioteket <br>
+        Rentemestervej [H3]</h3>
+<p>Rentemestervej 76 <br>
+    2400 København NV [P]</p>
+<p>+45 82 32 16 00 <br>
+    <a href="">bibbro@kff.kk.dk [A]</a></p>
+
+Styleguide #{$TYPO}.#{$COPY}
+*/
+
+ /*
+Copy H3, H4
+
+Brug af <code>H3</code> og <code>H4</code> kunne være ved en filtreringsmenu.
+
+Markup: <div class="vertical-list">
+    <h3>Filtrér din søgning [H3]</h3>
+    <h4>Efter materialetype [H4]</h4>
+    <ul class="vertical-list-nav">
+        <li><a href="">Resumé [A]</a></li>
+        <li><a href="">Anmeldelser</a></li>
+        <li class="active"><a href="">Om Joanne K. Rowling</a></li>
+        <li><a href="">Se alle eksemplarer</a></li>
+    </ul>
+    <a href="">+ Flere typer</a>
+</div>
+
+Styleguide #{$TYPO}.#{$COPY}
+*/
+
+
+
+@font-face {
+    font-family: 'merriweatherbold';
+    src: url('#{$font-path}merriweather-bold-webfont.eot');
+    src: url('#{$font-path}merriweather-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}merriweather-bold-webfont.woff') format('woff'),
+         url('#{$font-path}merriweather-bold-webfont.ttf') format('truetype'),
+         url('#{$font-path}merriweather-bold-webfont.svg#merriweatherbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatherlight';
+    src: url('#{$font-path}merriweather-light-webfont.eot');
+    src: url('#{$font-path}merriweather-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}merriweather-light-webfont.woff') format('woff'),
+         url('#{$font-path}merriweather-light-webfont.ttf') format('truetype'),
+         url('#{$font-path}merriweather-light-webfont.svg#merriweatherlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatherregular';
+    src: url('#{$font-path}merriweather-regular-webfont.eot');
+    src: url('#{$font-path}merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}merriweather-regular-webfont.woff') format('woff'),
+         url('#{$font-path}merriweather-regular-webfont.ttf') format('truetype'),
+         url('#{$font-path}merriweather-regular-webfont.svg#merriweatherregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+      font-family:  'merriweatherbold';
+      src: url('#{$font-path}merriweather-bold-webfont.svg#merriweatherbold') format('svg');
+  }
+  @font-face {
+      font-family:  'merriweatherlight';
+      src: url('#{$font-path}merriweather-light-webfont.svg#merriweatherlight') format('svg');
+  }
+    @font-face {
+      font-family:  'merriweatherregular';
+      src: url('#{$font-path}merriweather-regular-webfont.svg#merriweatherregular') format('svg');
+  }
+}
+
+
+body{
+    background-color: $color-sand;
+
+    font-family: $proxima-nova-font-name;
+    font-size: 16px;
+    font-weight: 300;
+    color:$color-mudgreen;
+    @include lineHeight(3);
+}
+
+
+h1,h2,h3,h4,h5,h6,p,a{
+    margin:0; padding: 0;
+
+    &.underline{
+        margin-top: unit(3);
+        padding-bottom: unit(2);
+    }
+}
+
+
+h1{
+//    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-family: 'merriweatherbold', serif;
+    font-size: 42px; //42
+    color:$color-black;
+    @include lineHeight(6);
+    @include margin(0,3);
+
+    .results{
+        padding-left:5px;
+        font-size: 26px;
+        height: 26px;
+        font-style:italic;
+        font-weight: 400;
+        color:$color-mudgreen;
+        display:inline-block;
+    }
+
+    &.subject{
+        font-size: 26px;
+    }
+
+}
+
+h2{
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 20px; //26
+    color:$color-black;
+    @include lineHeight(3);
+    @include margin(0,3);
+}
+
+h3{
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 18px; // 20
+//    color:$color-grey;
+    color:$color-black;
+    @include lineHeight(3);
+    @include margin(0,3);
+
+    &.title{
+        min-height: unit(6);
+        padding-top: 21px;
+        padding-bottom: 3px;
+    }
+}
+
+
+h4,h5,h6, legend{
+    font-family: $proxima-nova-font-name;
+    font-weight: 400;
+    font-size: 16px;
+    color:$color-grey;
+    @include lineHeight(3);
+    @include margin(0,0);
+
+    &.big{
+        font-size: 24px;
+        margin-bottom: unit(1);
+        font-weight: 100;
+    }
+}
+
+
+
+h1 a, h1 a:hover{
+    @extend h1;
+}
+
+h2 a, h2 a:hover{
+    @extend h2;
+}
+
+h3 a, h3 a:hover{
+    @extend h3;
+}
+
+h4 a, h4 a:hover,
+h5 a, h5 a:hover,
+h6 a, h6 a:hover{
+    @extend h4;
+}
+
+h1, h1 a, h1 a:hover, h2, h2 a, h2 a:hover{
+    font-family: 'merriweatherbold', serif;
+    font-weight: normal;
+}
+h3, h3 a, h3 a:hover{
+    font-family: 'merriweatherlight', serif;
+    font-weight: normal;
+}
+
+// Window Firefox Fix
+.windows.firefox{
+    h1, h1 a, h1 a:hover, h2, h2 a, h2 a:hover,h3, h3 a, h3 a:hover{
+        font-family: Georgia, serif;
+    }
+    h1, h1 a, h1 a:hover, h2, h2 a, h2 a:hover{
+        font-weight: bold;
+    }
+}
+
+p{
+    font-family: $proxima-nova-font-name;
+    font-size: 16px;
+    font-weight: 300;
+    color:$color-mudgreen;
+    @include lineHeight(3);
+    @include margin(0,3);
+
+    &.light{
+        color:$color-grey-light;
+    }
+    a{
+        display:inline;
+        line-height:inherit;
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+}
+
+
+a{
+    font-family: $proxima-nova-font-name;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+    color:$color-green;
+    @include lineHeight(3);
+
+    &:hover, &:active, &.pseudo-class-hover, &.pseudo-class-active{
+        text-decoration: none;
+        color: darken($color-green, 20);
+    }
+
+    &.link{
+        display:inline-block;
+        margin-bottom: unit(1);
+    }
+
+    &.link-primary{}
+    &.link-secondary{
+        color:$color-grey-light;
+        &:hover, &:active{
+            color: darken($color-grey-light, 20);
+        }
+    }
+    &.link-danger{
+        color:$color-red;
+        &:hover, &:active{
+            color: darken($color-red, 30);
+        }
+    }
+}
+
+
+
+// META
+.meta{
+    margin-bottom: unit(1);
+    display:inline-block;
+}
+
+%meta{
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    display:inline-block;
+    margin-right:4px;
+
+    i.fa, span{
+        margin-right: 4px;
+        text-align: center;
+        min-width:12px;
+    }
+
+}
+
+
+.meta-form{
+    font-size: 12px;
+    color: $color-grey-light;
+    line-height: 16px;
+    display: inline-block;
+    margin: 6px 0 0 0;
+}
+
+.meta-primary{
+    @extend %meta;
+    font-weight: 600;
+    color: $color-mint-green;
+}
+
+.meta-primary a{
+    @extend .meta-primary;
+    margin-right: 0;
+    &:hover{
+        color: darken($color-mint-green, 5);
+    }
+}
+
+.meta-secondary{
+    @extend %meta;
+    color: $color-grey-light;
+}
+
+.meta-secondary a, .meta-location a{
+    @extend .meta-secondary;
+    margin-right: 0;
+    &:hover{
+        color: darken($color-grey-light, 10);
+    }
+}
+
+.meta-location{
+    @extend .meta-secondary;
+}
+
+.meta-strong{
+    font-weight: 600;
+}
+
+// Tags
+
+.tags{
+    display:inline-block;
+    @include small(){
+        margin-bottom: unit(3);
+    }
+}
+@mixin tag{
+    @include btn;
+    @include btn-small;
+    @include btn-secondary;
+    display:inline-block;
+}
+.tag {
+  @include tag;
+}
+
+body .tag {
+    @include small(){
+        width:auto;
+    }
+}
+
+// Misc
+
+.inline-block{
+    display:inline-block;
+}
+.center{
+    text-align: center;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.more{
+    display: block;
+    clear: both;
+    @extend .center;
+    margin-top: -8px;
+    margin-bottom: unit(3);
+}
