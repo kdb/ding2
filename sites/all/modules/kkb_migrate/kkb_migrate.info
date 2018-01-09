@@ -1,0 +1,3 @@
+name = Kkb Migrate
+description = Temporary module for migrating to hosted service
+core = 7.x

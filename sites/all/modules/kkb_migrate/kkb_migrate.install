@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the kkb_migrate module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function kkb_migrate_install() {
+  variable_set('theme_default', 'ddbasic');
+  module_disable(array('kkb_frontpage'), TRUE);
+  drupal_uninstall_modules(array('kkb_frontpage'), TRUE);
+  features_revert_module('ding_frontend');
+}
+
+/**
+ * Implements hook_enable().
+ */
+function kkb_migrate_enable() {
+  // Run the same code as when installed. Makes for easier development.
+  kkb_migrate_install();
+}
