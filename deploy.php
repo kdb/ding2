@@ -94,6 +94,13 @@ task('drush:ccall', function () {
   run("{{drush}} cc all");
 });
 
+desc("Run migration.");
+task('drush:migrate', function () {
+  cd('{{release_path}}');
+  run("{{drush}} dis -y kkb_migrate");
+  run("{{drush}} en -y kkb_migrate");
+});
+
 desc("Set site offline.");
 task('drush:site_offline', function () {
   cd('{{release_path}}');
@@ -159,6 +166,7 @@ task('deploy', [
   'deploy:update_code',
   'deploy:shared',
   'drush:site_offline',
+  'drush:migrate',
   'drush:updb',
   'drush:ccall',
   'drush:site_online',
