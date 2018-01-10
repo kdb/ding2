@@ -54,6 +54,24 @@ function kkb_migrate_install() {
       'ding_social_links',
     )
   );
+
+  // Remove trace of deleted modules.
+  $modules = array(
+    'colorpath',
+    'cookiecontrol',
+    'ding_bookmark',
+    'ding_campaign_ctype',
+    'migrate',
+    'migrate_d2d',
+    'migrate_ding1_ding2',
+    'migrate_extras',
+    'migrate_ui',
+    'taxonomy_menu',
+  );
+  db_delete('system')
+    ->condition('name', $modules)
+    ->condition('type', 'module')
+    ->execute();
 }
 
 /**
