@@ -13,6 +13,47 @@ function kkb_migrate_install() {
   module_disable(array('kkb_frontpage'), TRUE);
   drupal_uninstall_modules(array('kkb_frontpage'), TRUE);
   features_revert_module('ding_frontend');
+
+  $menus = db_select('menu_custom', 'm')
+    ->fields('m', array('menu_name'))
+    ->condition('m.menu_name', 'content-menu')
+    ->execute()
+    ->fetchAll();
+
+  if (count($menus) < 1) {
+    // Create menu for content.
+    db_insert('menu_custom')
+      ->fields(
+        array(
+          'menu_name' => 'content-menu',
+          'title' => 'Indholds menu',
+          'description' => '',
+        )
+      )
+      ->execute();
+
+    // Move everything in main-menu to content-menu.
+    db_update('menu_links')
+      ->fields(array('menu_name' => 'content-menu'))
+      ->condition('menu_name', 'main-menu')
+      ->execute();
+
+    // Move everything but some selected items in topbar to main-menu.
+    db_update('menu_links')
+      ->fields(array('menu_name' => 'main-menu'))
+      ->condition('menu_name', 'menu-tabs-menu')
+      ->condition('mlid', array(1037, 320, 317, 316, 6121, 1273), 'NOT IN')
+      ->execute();
+  }
+
+  // Enable some standard DDB modules.
+  module_enable(
+    array(
+      'ding_ddbasic_opening_hours',
+      'ding_ddbasic',
+      'ding_social_links',
+    )
+  );
 }
 
 /**
