@@ -97,6 +97,7 @@ task('drush:ccall', function () {
 desc("Run migration.");
 task('drush:migrate', function () {
   cd('{{release_path}}');
+  run("{{drush}} dis -y flag");
   run("{{drush}} dis -y kkb_migrate");
   run("{{drush}} en -y kkb_migrate");
 });
