@@ -159,19 +159,32 @@ task('sync', [
 // If deploy fails in updb or after, restore old dump.
 after('deploy:failed', 'deploy:unlock');
 
-// Main deplayment procedure.
+// Main deployment procedure.
 task('deploy', [
-  'deploy:prepare',
-  'deploy:lock',
-  'deploy:release',
-  'deploy:update_code',
-  'deploy:shared',
-  'drush:site_offline',
-  'drush:migrate',
-  'drush:updb',
-  'drush:ccall',
-  'drush:site_online',
-  'deploy:symlink',
-  'deploy:unlock',
-  'cleanup',
+    'deploy:prepare',
+    'deploy:lock',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:shared',
+    'drush:site_offline',
+    'drush:migrate',
+    'drush:updb',
+    'drush:ccall',
+    'drush:site_online',
+    'deploy:symlink',
+    'deploy:unlock',
+    'cleanup',
+  ]);
+
+// quick deployment procedure.
+task('deploy:quick', [
+    'deploy:prepare',
+    'deploy:lock',
+    'deploy:release',
+    'deploy:update_code',
+    'deploy:shared',
+    'drush:migrate',
+    'deploy:symlink',
+    'deploy:unlock',
+    'cleanup',
 ]);
