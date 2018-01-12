@@ -10,8 +10,8 @@
  */
 function kkb_migrate_install() {
   variable_set('theme_default', 'ddbasic');
-  module_disable(array('kkb_frontpage'), TRUE);
-  drupal_uninstall_modules(array('kkb_frontpage'), TRUE);
+  module_disable(array('kkb_frontpage', 'extrafield_views_integration'), TRUE);
+  drupal_uninstall_modules(array('kkb_frontpage', 'extrafield_views_integration'), TRUE);
   features_revert_module('ding_frontend');
 
   $menus = db_select('menu_custom', 'm')
