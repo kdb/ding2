@@ -23,6 +23,7 @@ function kkb_migrate_install() {
     'kkb_related_links',
     'kkb_service_notice',
     'kkb_frontpage_promotions',
+    'kkb_eresource',
   );
   module_disable($remove_modules, TRUE);
   drupal_uninstall_modules($remove_modules, TRUE);
