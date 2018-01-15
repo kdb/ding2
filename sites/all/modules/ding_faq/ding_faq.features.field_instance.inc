@@ -17,6 +17,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -63,6 +69,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
@@ -109,6 +121,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'file_entity',
@@ -160,6 +178,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -206,6 +230,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -274,6 +304,18 @@ function ding_faq_field_default_field_instances() {
           'upload' => 0,
           'youtube' => 0,
         ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -288,6 +330,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'taxonomy',
@@ -333,6 +381,12 @@ function ding_faq_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'cs_adaptive_image',
@@ -401,6 +455,18 @@ function ding_faq_field_default_field_instances() {
           'upload' => 0,
           'youtube' => 0,
         ),
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_keyboard' => TRUE,
+        'manualcrop_maximize_default_crop_area' => FALSE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => FALSE,
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',

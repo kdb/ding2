@@ -32,3 +32,12 @@ function ding_faq_preprocess_node(&$variables) {
     $variables['theme_hook_suggestions'][] = 'node__ding_faq_question__override';
   }
 }
+
+/**
+ * Implements hook_views_post_render().
+ */
+function ding_faq_views_pre_render(&$view, &$output, &$cache) {
+  if ($view->name == 'ding_faq') {
+    drupal_add_css(drupal_get_path('module', 'ding_faq') . '/css/ding_faq.css');
+  }
+}

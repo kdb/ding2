@@ -32,7 +32,7 @@ function ding_faq_views_api($module = NULL, $api = NULL) {
 function ding_faq_node_info() {
   $items = array(
     'ding_faq_question' => array(
-      'name' => t('FAQ Question'),
+      'name' => t('FAQ spørgsmål'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
