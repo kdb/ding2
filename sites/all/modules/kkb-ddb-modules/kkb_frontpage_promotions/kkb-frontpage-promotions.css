@@ -1,0 +1,150 @@
+@media only screen and (min-width : 951px) {
+  body.has-kkb-promotion.front {
+    padding-top: 0;
+  }
+  .has-kkb-promotion .site-header {
+    width: 100%;
+    float: left;
+    position: relative;
+  }
+  .has-kkb-promotion .content-wrapper,
+  .has-kkb-promotion .footer {
+    width: 100%;
+    float: left;
+  }
+
+  /* Topbar */
+  .has-kkb-promotion .site-header .topbar {
+    position: relative;
+    float: left;
+  }
+  .has-kkb-promotion .site-header .topbar .topbar-inner {
+    position: static;
+  }
+  .has-kkb-promotion.search-form-extended .site-header .topbar {
+    margin-bottom: 84px;
+  }
+  .admin-menu.has-kkb-promotion .site-header .topbar {
+    top: 0;
+  }
+  .has-kkb-promotion .site-header .topbar::after {
+    -webkit-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1), height 0s cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
+    -moz-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1), height 0s cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
+    transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1), height 0s cubic-bezier(0.165, 0.84, 0.44, 1) 300ms;
+    content: '';
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #262626;
+    opacity: 0;
+  }
+  .has-kkb-promotion.topbar-is-open .site-header .topbar::after,
+  .has-kkb-promotion.overlay-is-active .site-header .topbar::after,
+  .has-kkb-promotion.popupbar-is-open .site-header .topbar::after {
+    -webkit-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1), height 0s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1), height 0s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1), height 0s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 0.5;
+    height: 100%;
+  }
+  .has-kkb-promotion.topbar-is-open.search-form-extended .site-header .topbar::after,
+  .has-kkb-promotion.overlay-is-active.search-form-extended .site-header .topbar::after,
+  .has-kkb-promotion.popupbar-is-open.search-form-extended .site-header .topbar::after {
+    height: calc(100% + 84px);
+  }
+  .has-kkb-promotion .site-header .topbar .topbar-inner {
+    height: auto;
+  }
+  .has-kkb-promotion .site-header .topbar .topbar-inner .logo,
+  .has-kkb-promotion .site-header .topbar .topbar-inner .topbar-menu {
+    position: relative;
+    z-index: 2;
+  }
+  .pane-frontpage-promotion-panel-pane-1 {
+    width: 100%;
+    float: left;
+    clear: left;
+  }
+
+  .pane-frontpage-promotion-panel-pane-1 .views-row {
+    margin-bottom: 0;
+  }
+
+
+  /* Header wrapper */
+  .has-kkb-promotion .site-header .header-wrapper {
+    position: absolute;
+    top: auto;
+    bottom: 84px;
+  }
+  body.has-kkb-promotion.search-form-extended .site-header > .header-wrapper .header-inner {
+    position: static;
+  }
+  body.has-kkb-promotion.search-form-extended .site-header > .header-wrapper .header-inner .pane-search-form {
+    position: absolute;
+    width: 100%;
+    top: -84px;
+  }
+  .admin-menu.has-kkb-promotion .site-header .header-inner .pane-search-form {
+    top: 0;
+  }
+
+  /* Navigation wrapper */
+  body.has-kkb-promotion .site-header > .navigation-wrapper {
+    position: static;
+    float: left;
+  }
+
+  /* Node promotion */
+  .pane-frontpage-promotion-panel-pane-1 .view-frontpage-promotion .node-promotion {
+    margin: 20px 0 30px;
+  }
+  .node-promotion .title {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 15px;
+  }
+  .node-promotion .field-collection-container {
+    position: relative;
+    z-index: 2;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .node-promotion .field-collection-container > ul {
+    list-style: none;
+    margin-bottom: 0;
+  }
+  .node-promotion .field-collection-container > ul li {
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  .node-promotion .field-collection-container > ul li:last-child {
+    margin-right: 0;
+  }
+  .node-promotion .promotion-bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+  .node-promotion.contextual-links-region {
+    position: static;
+  }
+  .node-promotion .action-links,
+  .node-promotion .field-collection-description {
+    display: none;
+  }
+}
+@media only screen and (max-width : 950px) {
+  .pane-frontpage-promotion-panel-pane-1 {
+    display: none;
+  }
+}

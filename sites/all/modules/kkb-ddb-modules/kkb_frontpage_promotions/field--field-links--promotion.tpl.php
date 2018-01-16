@@ -1,0 +1,1 @@
+<?php print $ul_image_links; ?>

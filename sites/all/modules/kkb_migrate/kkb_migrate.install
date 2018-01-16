@@ -22,7 +22,6 @@ function kkb_migrate_install() {
     'kkb_permissions',
     'kkb_related_links',
     'kkb_service_notice',
-    'kkb_frontpage_promotions',
     'kkb_eresource',
   );
   module_disable($remove_modules, TRUE);
