@@ -86,6 +86,20 @@ function kkb_migrate_install() {
       ->execute();
   }
 
+  // Delete field groups related to kkb_related_links.
+  foreach (array('ding_group', 'ding_page') as $node_type) {
+    if ($group = field_group_load_field_group('group_related_links', 'node', $node_type, 'form')) {
+      ctools_include('export');
+      field_group_group_export_delete($group, FALSE);
+    }
+  }
+
+  // Delete field related to kkb_related_links.
+  field_delete_field('field_related_links');
+  // field_purge_batch needs to run twice to purge both instances and bases.
+  field_purge_batch(100);
+  field_purge_batch(100);
+
   // Enable some standard DDB modules.
   module_enable(
     array(
