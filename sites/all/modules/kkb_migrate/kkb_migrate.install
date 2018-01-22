@@ -100,6 +100,9 @@ function kkb_migrate_install() {
   field_purge_batch(100);
   field_purge_batch(100);
 
+  // Remove opening_hours from pages.
+  variable_set('opening_hours_enabled_ding_page', 0);
+
   // Enable some standard DDB modules.
   module_enable(
     array(
