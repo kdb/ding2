@@ -68,6 +68,16 @@ function ding_faq_views_default_views() {
       'fallback_style' => 'ding_list_large',
     ),
   );
+  /* Felt: Indhold: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'faq-link';
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Læs mere';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -99,16 +109,6 @@ function ding_faq_views_default_views() {
   $handler->display->display_options['fields']['field_ding_faq_lead']['element_class'] = 'faq-list-content';
   $handler->display->display_options['fields']['field_ding_faq_lead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_faq_lead']['element_default_classes'] = FALSE;
-  /* Felt: Indhold: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'faq-link';
-  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Læs mere';
   /* Sorteringskriterie: Indhold: Titel */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
