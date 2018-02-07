@@ -129,6 +129,20 @@ function kkb_migrate_install() {
     ->condition('name', $modules)
     ->condition('type', 'module')
     ->execute();
+
+  // Delete opening hours on pages.
+  $query = db_select('opening_hours', 'o');
+  $query->join('node', 'n', 'n.nid = o.nid');
+  $nids = $query
+    ->fields('o', array('nid'))
+    ->condition('n.type', 'ding_page')
+    ->distinct()
+    ->execute()
+    ->fetchCol();
+
+  db_delete('opening_hours')
+    ->condition('nid', $nids, 'IN')
+    ->execute();
 }
 
 /**
