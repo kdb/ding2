@@ -22,6 +22,25 @@ function kkb_wayfinder_menu() {
 }
 
 /**
+ * Implements hook_theme().
+ */
+function kkb_wayfinder_theme() {
+  return array(
+    'kkb_wayfinder_button' => array(
+      'file' => 'theme/theme.inc',
+      'template' => 'templates/kkb-wayfinder-button',
+      'variables' => array(
+        'type' => NULL,
+        'value' => NULL,
+        'title' => NULL,
+        'value_title' => FALSE,
+        'options' => FALSE,
+      ),
+    ),
+  );
+}
+
+/**
  * Implements hook_ding_entity_buttons().
  */
 function kkb_wayfinder_ding_entity_buttons($type, $entity) {
@@ -50,11 +69,11 @@ function kkb_wayfinder_ding_entity_buttons($type, $entity) {
     if ($options) {
       // We have to use drupal_add_js() because #attached on the
       // ding_list_add_button is ignored for some reason.
-      drupal_add_js(drupal_get_path('module', 'kkb_wayfinder') . '/js/kkb_wayfinder.js');
-      drupal_add_js('https://os2.wayfindingkkb.dk/embed/v1/wayfinding.js', 'external');
+      // drupal_add_js(drupal_get_path('module', 'kkb_wayfinder') . '/js/kkb_wayfinder.js');
+      // drupal_add_js('https://os2.wayfindingkkb.dk/embed/v1/wayfinding.js', 'external');
 
       $return[] = array(
-        '#theme' => 'ding_list_add_button',
+        '#theme' => 'kkb_wayfinder_button',
         '#title' => t('See on map'),
         '#value' => $entity->ding_entity_id,
         '#options' => $options,
@@ -62,5 +81,41 @@ function kkb_wayfinder_ding_entity_buttons($type, $entity) {
     }
     return $return;
   }
+}
 
+/**
+ * Preprocess kkb_wayfinder_button.
+ */
+function template_preprocess_kkb_wayfinder_button(&$variables) {
+  // Steal theming from ding_list_add_button.
+  $variables['classes_array'] = array('ding-list-add-button');
+  if (empty($variables['title'])) {
+    $variables['title'] = t('See on map');
+  }
+
+  $variables['buttons'] = array(
+    '#theme' => 'links',
+    '#links' => array(),
+    '#attributes' => array(
+      'class' => array('buttons'),
+    ),
+    '#attached' => array(
+      'library' => array(array('system', 'drupal.ajax')),
+      'js' => array(
+        drupal_get_path('module', 'kkb_wayfinder') . '/js/kkb_wayfinder.js',
+        array('data' => 'https://os2.wayfindingkkb.dk/embed/v1/wayfinding.js', 'type' => 'external'),
+      ),
+    ),
+  );
+
+  $variables['single_link'] = FALSE;
+
+  $options = $variables['options'];
+  foreach ($options as $option) {
+    if ($option['type'] == 'search_query') {
+      $option['title'] = t('Add to searches I follow');
+    }
+
+    $variables['buttons']['#links'][] = $option['custom'];
+  }
 }

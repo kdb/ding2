@@ -8,6 +8,8 @@
 
   var click_handler = function (e) {
     e.preventDefault();
+    // Close overlay.
+    $(this).parents('.open-overlay').removeClass('open-overlay');
     embedOS2($(this).data('wayfinder-faust'), $(this).data('wayfinder-branch'));
   };
 
