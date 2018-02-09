@@ -238,30 +238,6 @@ function kkb_page_default_page_manager_handlers() {
     $pane->uuid = 'a9c2b751-50d9-4e00-8002-6e25aaa93ca8';
     $display->content['new-a9c2b751-50d9-4e00-8002-6e25aaa93ca8'] = $pane;
     $display->panels['main_content'][0] = 'new-a9c2b751-50d9-4e00-8002-6e25aaa93ca8';
-    $pane = new stdClass();
-    $pane->pid = 'new-146b99a6-8968-48cd-b8ce-8f21763f08f8';
-    $pane->panel = 'main_content';
-    $pane->type = 'week';
-    $pane->subtype = 'week';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'hide_if_empty' => 1,
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '146b99a6-8968-48cd-b8ce-8f21763f08f8';
-    $display->content['new-146b99a6-8968-48cd-b8ce-8f21763f08f8'] = $pane;
-    $display->panels['main_content'][1] = 'new-146b99a6-8968-48cd-b8ce-8f21763f08f8';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
