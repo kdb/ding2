@@ -49,6 +49,7 @@ function kkb_migrate_install() {
     'ding_user_frontend',
     'ting_material_details',
     'ting_oembed_features',
+    'kkb_page',
   );
   foreach ($revert_modules as $module) {
     features_revert_module($module);
