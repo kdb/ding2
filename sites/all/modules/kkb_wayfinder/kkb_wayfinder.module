@@ -58,7 +58,8 @@ function kkb_wayfinder_ding_entity_buttons($type, $entity) {
             'title' => $holding['placement'][0],
             'href' => '#',
             'attributes' => array(
-              'class' => array(),
+              // Steal some styling.
+              'class' => array('list-title'),
               'data-wayfinder-faust' => $entity->localId,
               'data-wayfinder-branch' => $branches[drupal_strtolower($holding['placement'][0])],
             ),
