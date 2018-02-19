@@ -67,11 +67,6 @@ function kkb_wayfinder_ding_entity_buttons($type, $entity) {
       }
     }
     if ($options) {
-      // We have to use drupal_add_js() because #attached on the
-      // ding_list_add_button is ignored for some reason.
-      // drupal_add_js(drupal_get_path('module', 'kkb_wayfinder') . '/js/kkb_wayfinder.js');
-      // drupal_add_js('https://os2.wayfindingkkb.dk/embed/v1/wayfinding.js', 'external');
-
       $return[] = array(
         '#theme' => 'kkb_wayfinder_button',
         '#title' => t('See on map'),
@@ -112,10 +107,6 @@ function template_preprocess_kkb_wayfinder_button(&$variables) {
 
   $options = $variables['options'];
   foreach ($options as $option) {
-    if ($option['type'] == 'search_query') {
-      $option['title'] = t('Add to searches I follow');
-    }
-
     $variables['buttons']['#links'][] = $option['custom'];
   }
 }
