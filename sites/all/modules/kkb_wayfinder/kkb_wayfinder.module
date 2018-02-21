@@ -55,11 +55,12 @@ function kkb_wayfinder_ding_entity_buttons($type, $entity) {
       if ($holding['available_count'] > 0 && isset($branches[drupal_strtolower($holding['placement'][0])])) {
         $options[] = array(
           'custom' => array(
-            'title' => $holding['placement'][0],
+            // DDBasic styling forces us to do it like this.
+            'title' => '<div class="list-title">' . $holding['placement'][0] . '</div>',
             'href' => '#',
+            'html' => TRUE,
             'attributes' => array(
-              // Steal some styling.
-              'class' => array('list-title'),
+              'class' => array(),
               'data-wayfinder-faust' => $entity->localId,
               'data-wayfinder-branch' => $branches[drupal_strtolower($holding['placement'][0])],
             ),
