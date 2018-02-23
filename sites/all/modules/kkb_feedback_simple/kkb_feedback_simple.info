@@ -1,0 +1,4 @@
+name = Kkb Feedback Simple
+description = Styling for Feedback Simple on bibliotek.kk.dk
+core = 7.x
+stylesheets[all][] = css/kkb_feedback_simple.base.css
