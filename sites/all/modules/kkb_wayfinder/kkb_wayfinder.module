@@ -27,7 +27,6 @@ function kkb_wayfinder_menu() {
 function kkb_wayfinder_theme() {
   return array(
     'kkb_wayfinder_button' => array(
-      'file' => 'theme/theme.inc',
       'template' => 'templates/kkb-wayfinder-button',
       'variables' => array(
         'type' => NULL,
