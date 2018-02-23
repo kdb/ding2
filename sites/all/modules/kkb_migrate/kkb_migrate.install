@@ -130,6 +130,10 @@ function kkb_migrate_install() {
     ->condition('name', $modules)
     ->condition('type', 'module')
     ->execute();
+
+  // Delete opening hours.
+  db_delete('opening_hours')
+    ->execute();
 }
 
 /**
