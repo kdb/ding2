@@ -27,29 +27,30 @@ function kkb_migrate_install() {
   module_disable($remove_modules, TRUE);
   drupal_uninstall_modules($remove_modules, TRUE);
   $revert_modules = array(
-    'ding_frontend',
-    'ding_eresource',
     'ding_base',
     'ding_campaign',
     'ding_content',
     'ding_ekurser',
     'ding_entity_rating',
+    'ding_eresource',
     'ding_event',
     'ding_faq',
+    'ding_frontend',
     'ding_frontend',
     'ding_frontpage',
     'ding_groups',
     'ding_interaction_manual',
     'ding_library',
+    'ding_news',
     'ding_page',
     'ding_serendipity',
     'ding_staff',
     'ding_tabroll',
     'ding_ting_frontend',
     'ding_user_frontend',
+    'kkb_page',
     'ting_material_details',
     'ting_oembed_features',
-    'kkb_page',
   );
   foreach ($revert_modules as $module) {
     features_revert_module($module);
