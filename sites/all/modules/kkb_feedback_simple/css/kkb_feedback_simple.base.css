@@ -1,11 +1,9 @@
-
-
-#feedback_simple div {
+a.feedback_simple-text div {
   display: inline-block;
   white-space: nowrap;
 }
 
-#feedback_simple a {
+a.feedback_simple-text {
   cursor: pointer;
   display: block;
   overflow: hidden;
@@ -21,7 +19,7 @@
   transform-origin: calc(100% - 24px) calc(100% - 24px);
 }
 
-#feedback_simple a,
+a.feedback_simple-text,
 .feedback_simple-text:link {
   padding: 15px 14px;
   line-height: 100%;
@@ -46,4 +44,19 @@
 .feedback_simple-text:link:hover,
 .feedback_simple-text:link:hover:visited {
   color: white;
+}
+
+@media screen and (max-width: 769px) {
+  a.feedback_simple-right.feedback_simple-text,
+  .feedback_simple-right.feedback_simple-text:link {
+    border-radius: 4px 4px;
+    bottom: 0;
+    top: inherit !important;
+    transform: none;
+  }
+
+  a.feedback_simple-text div,
+  .feedback_simple-text:link div {
+    transform: none;
+  }
 }
