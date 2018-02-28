@@ -135,6 +135,9 @@ function kkb_migrate_install() {
   // Delete opening hours.
   db_delete('opening_hours')
     ->execute();
+
+  // And drop an old index that hasn't been deleted for some reason.
+  db_drop_unique_key('opening_hours', 'nid_date_time');
 }
 
 /**
