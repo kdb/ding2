@@ -158,8 +158,8 @@ function kkb_group_pages_default_page_manager_pages() {
       'context' => array(
         0 => 'argument_term_1',
       ),
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => '%term:name',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
