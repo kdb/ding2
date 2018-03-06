@@ -46,6 +46,7 @@ function ding_faq_views_default_views() {
   $handler->display->display_options['style_options']['class'] = 'list faq-list';
   $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Felt: Indhold: List image */
   $handler->display->display_options['fields']['field_ding_faq_list_image']['id'] = 'field_ding_faq_list_image';
   $handler->display->display_options['fields']['field_ding_faq_list_image']['table'] = 'field_data_field_ding_faq_list_image';
@@ -68,27 +69,6 @@ function ding_faq_views_default_views() {
       'fallback_style' => 'ding_list_large',
     ),
   );
-  /* Felt: Indhold: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'faq-link';
-  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Læs mere';
-  /* Felt: Indhold: Titel */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_class'] = 'faq-heading';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Category */
   $handler->display->display_options['fields']['field_ding_faq_category']['id'] = 'field_ding_faq_category';
   $handler->display->display_options['fields']['field_ding_faq_category']['table'] = 'field_data_field_ding_faq_category';
@@ -100,6 +80,17 @@ function ding_faq_views_default_views() {
   $handler->display->display_options['fields']['field_ding_faq_category']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_ding_faq_category']['element_wrapper_class'] = 'faq-sub-heading';
   $handler->display->display_options['fields']['field_ding_faq_category']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_class'] = 'faq-heading';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   /* Felt: Indhold: Lead */
   $handler->display->display_options['fields']['field_ding_faq_lead']['id'] = 'field_ding_faq_lead';
   $handler->display->display_options['fields']['field_ding_faq_lead']['table'] = 'field_data_field_ding_faq_lead';
@@ -109,6 +100,16 @@ function ding_faq_views_default_views() {
   $handler->display->display_options['fields']['field_ding_faq_lead']['element_class'] = 'faq-list-content';
   $handler->display->display_options['fields']['field_ding_faq_lead']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ding_faq_lead']['element_default_classes'] = FALSE;
+  /* Felt: Indhold: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'faq-link';
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Læs mere';
   /* Sorteringskriterie: Indhold: Titel */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';

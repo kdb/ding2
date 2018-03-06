@@ -23,7 +23,11 @@ function ding_faq_ctools_plugin_api($module = NULL, $api = NULL) {
  * Implements hook_views_api().
  */
 function ding_faq_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
+  return array(
+    "api" => "3.0",
+    'path' => drupal_get_path('module', 'ding_faq'),
+    'template path' => drupal_get_path('module', 'ding_faq'),
+  );
 }
 
 /**

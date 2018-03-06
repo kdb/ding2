@@ -12,45 +12,54 @@
 
 .faq-list .faq-image-wrapper {
   float: left;
-  margin-right: 20px;
-  max-width: 150px;
-}
-
-.faq-list .faq-image-wrapper a {
-  display: block;
+  max-width: 20%;
 }
 
 .faq-list .faq-heading {
   font-weight: normal;
   font-size: 20px;
-  color: #313233;
+  color: #474747;
   line-height: 24px;
   margin-top: 0px;
   margin-bottom: 24px;
-  margin: 40px 0 0 170px;
+  margin: 10px 0 0;
 }
 
-.faq-list .faq-sub-heading {
-  display: block;
+.faq-list .faq-heading a {
+  color: #474747;
 }
 
-.faq-list .faq-label {
+.faq-list .faq-content {
+  float: left;
+  padding: 0 20px;
+  width: 49%;
+}
+
+.faq-list .faq-buttons {
+  float: left;
   position: absolute;
-  top: 16px;
-  padding: 0;
+  right: 10px;
+  bottom: 0;
+  width: 30%;
 }
 
-.faq-list .faq-list-content {
-  max-height: 50px;
-  overflow: hidden;
+@media screen and (max-width: 600px) {
+  .faq-list .faq-image-wrapper {
+    max-width: 40%;
+  }
+
+  .faq-list .faq-content {
+    width: 59%;
+  }
+
+  .faq-list .faq-buttons {
+    position: relative;
+    margin-top: 20px;
+    width: 100%;
+  }
 }
 
-.faq-list .faq-link {
-  float: right;
-  width: 22.16216%;
-}
-
-.faq-list .faq-link a {
+.faq-list .faq-buttons a {
   margin-bottom: 10px;
   background-color: #808285;
   position: relative;
@@ -65,7 +74,7 @@
   padding-right: 45px;
 }
 
-.faq-list .faq-link a::after {
+.faq-list .faq-buttons a::after {
   font-family: icomoon;
   speak: none;
   font-style: normal;
